@@ -1,0 +1,34 @@
+name: Bug report
+description: Báo lỗi có thể tái hiện trong Penta AI
+title: "bug: "
+labels: [bug]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Mô tả lỗi
+      description: Điều gì xảy ra và kết quả mong đợi là gì?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Các bước tái hiện
+      placeholder: |-
+        1. ...
+        2. ...
+        3. ...
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Môi trường
+      placeholder: macOS/Linux, Python version, commit hoặc tag
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Log hoặc ảnh chụp
+      description: Xóa token, password và dữ liệu riêng tư trước khi gửi.

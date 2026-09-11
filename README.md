@@ -12,6 +12,7 @@ Hệ sinh thái AI đa module với `pentami-core` làm lõi điều phối, fro
 - [Cấu trúc repository](#cấu-trúc-repository)
 - [Trạng thái module](#trạng-thái-module)
 - [Roadmap](#roadmap)
+- [Development & Release](#development--release)
 
 ## Tổng quan
 
@@ -150,3 +151,24 @@ docs/               Kiến trúc, roadmap và reality check
 - [Kiến trúc thực tế và kế hoạch triển khai](./ARCHITECTURE.md)
 - [Reality check](./docs/analysis/reality-check.md)
 - [Hướng dẫn riêng của pentami-core](./pentami-core/README.md)
+- [Kế hoạch GitHub và release](./docs/github-release-plan.md)
+
+## Development & Release
+
+Repository dùng GitHub Actions để kiểm tra Python syntax, frontend JavaScript và Docker Compose trên mỗi push/PR vào `main`.
+
+Quy trình đóng góp:
+
+1. Tạo branch `feature/...`, `fix/...` hoặc `docs/...`.
+2. Mở pull request và điền checklist.
+3. Chờ CI xanh và maintainer review.
+4. Squash merge vào `main`.
+
+Release dùng Semantic Versioning. Sau khi merge và cập nhật [CHANGELOG.md](./CHANGELOG.md), tạo tag:
+
+```bash
+git tag -a v0.1.0 -m "Release v0.1.0"
+git push origin v0.1.0
+```
+
+GitHub Actions sẽ tự tạo GitHub Release từ tag `v*.*.*`. Chi tiết xem [docs/github-release-plan.md](./docs/github-release-plan.md).
