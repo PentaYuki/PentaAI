@@ -4,6 +4,8 @@
 
 Tài liệu này mô tả những gì có thể xác minh từ repository tại thời điểm hiện tại. Đây là kiến trúc triển khai local, chưa phải sơ đồ production.
 
+Mô hình tổ chức repository chi tiết nằm ở [docs/repository-architecture.md](./docs/repository-architecture.md): sáu ứng dụng nghiệp vụ độc lập về ranh giới, cùng platform layer dùng chung.
+
 ## 2. Thành phần đã có
 
 ```text
@@ -134,5 +136,6 @@ docker compose -f deploy/docker-compose.yml ps
 ## 6. Tài liệu nguồn
 
 - [Runbook repository](./README.md)
+- [Cấu trúc repository 6 ứng dụng](./docs/repository-architecture.md)
 - [Reality check](./docs/analysis/reality-check.md)
 - [Backend README](./pentami-core/README.md)
