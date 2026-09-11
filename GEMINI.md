@@ -39,6 +39,7 @@ Backend chạy từ `pentami-core/backend/main.py` với các endpoint:
 - Schema chung phải đặt trong `shared/` trước khi dùng giữa module.
 - `tenant_id` là trường hợp đồng dữ liệu; chỉ khẳng định isolation khi query layer thực sự áp dụng filter và có test.
 - Các thao tác gây tác động bên ngoài như thanh toán, xóa dữ liệu, gửi hồ sơ hoặc browser automation cần confirmation và audit log trước khi bật production.
+- MCP Playwright chỉ được dùng cho workflow web của `pentami-core`, `pentaschool`, `pentamarket`, `pentajob` và `pentanote`; tuyệt đối không dùng cho `pentakuru` hoặc truy cập filesystem local qua browser.
 - Không dùng các số đo như `<1ms`, `<500ms` hoặc "zero latency" nếu chưa có benchmark, môi trường đo và ngưỡng kiểm thử được ghi lại.
 
 ## 5. Quy trình thay đổi

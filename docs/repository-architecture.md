@@ -23,7 +23,7 @@ Penta AI được tổ chức thành một monorepo gồm **6 ứng dụng nghi�
 | --- | --- |
 | `shared/` | Schema, API contract, event/chunk protocol và type dùng chung |
 | `deploy/` | PostgreSQL, Redis, Qdrant, migration và local environment |
-| `mcp-playwright/` | Browser automation adapter dùng bởi core hoặc app được cấp quyền |
+| `mcp-playwright/` | Browser automation adapter dùng bởi core, school, market, job và note; không dùng cho `pentakuru` |
 | `docs/` | Architecture, API contract, roadmap và runbook |
 | `scripts/` | Tooling, seed và đồng bộ dữ liệu; không chứa business API |
 
@@ -70,8 +70,9 @@ Quy tắc bắt buộc:
 2. App giao tiếp với `pentami-core` qua HTTP, event hoặc contract; không gọi trực tiếp function nội bộ của core.
 3. `shared` không import ngược vào app và không chứa business rule riêng của một app.
 4. `deploy` chỉ cung cấp hạ tầng; không đặt logic nghiệp vụ vào Docker Compose hoặc migration chung.
-5. `mcp-playwright` chỉ nhận action contract được cấp quyền, có confirmation và audit trước thao tác side effect.
-6. Mỗi app sở hữu dữ liệu nghiệp vụ của mình. Dùng `tenant_id` trong contract, nhưng chỉ tuyên bố isolation sau khi query layer có filter và test.
+5. `mcp-playwright` chỉ nhận action contract được cấp quyền từ `pentami-core`; chỉ phục vụ workflow web của `pentami-core`, `pentaschool`, `pentamarket`, `pentajob` và `pentanote`.
+6. `pentakuru` không được gọi Playwright. File/local automation phải đi qua permission boundary và API local riêng.
+7. Mỗi app sở hữu dữ liệu nghiệp vụ của mình. Dùng `tenant_id` trong contract, nhưng chỉ tuyên bố isolation sau khi query layer có filter và test.
 
 ## Phân lớp dữ liệu
 

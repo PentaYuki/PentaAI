@@ -77,6 +77,8 @@ Tag `latest` của Qdrant nên được pin theo version trước khi triển kh
 
 `mcp-playwright/src/server.py` cung cấp `PentaPlaywrightController` với các thao tác navigate, click, fill, extract text và screenshot. File này chưa expose MCP transport, chưa có process entrypoint và chưa được backend gọi tự động. Vì vậy chỉ ghi nhận là controller/integration prototype.
 
+Phạm vi đích của MCP là điều khiển workflow web cho `pentami-core`, `pentaschool`, `pentamarket`, `pentajob` và `pentanote`. `pentakuru` bị loại trừ cố định vì xử lý file/local; Playwright không được cấp quyền truy cập filesystem của máy người dùng.
+
 ## 3. Contract API hiện tại
 
 ### `GET /api/health`
@@ -137,5 +139,6 @@ docker compose -f deploy/docker-compose.yml ps
 
 - [Runbook repository](./README.md)
 - [Cấu trúc repository 6 ứng dụng](./docs/repository-architecture.md)
+- [Người dùng cuối và phạm vi MCP](./docs/user-personas-and-mcp-scope.md)
 - [Reality check](./docs/analysis/reality-check.md)
 - [Backend README](./pentami-core/README.md)

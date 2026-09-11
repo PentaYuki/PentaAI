@@ -14,6 +14,18 @@ Module này hiện cung cấp `PentaPlaywrightController` tại `src/server.py`.
 
 Đây là integration prototype/controller Python. Repository chưa có MCP SDK, transport stdio/SSE, process entrypoint, dependency manifest hoặc cấu hình allowlist URL. Vì vậy không khởi động module này như một MCP server bằng tài liệu hiện tại.
 
+## Phạm vi hệ thống
+
+MCP Playwright được thiết kế cho workflow web của:
+
+- `pentami-core`
+- `pentaschool`
+- `pentamarket`
+- `pentajob`
+- `pentanote`
+
+`pentakuru` không nằm trong phạm vi MCP. Pentakuru xử lý file và dữ liệu local, nên phải dùng local permission boundary/API riêng; Playwright không được truy cập filesystem hoặc tự động tải nội dung file lên website.
+
 ## An toàn trước khi tích hợp
 
 Trước khi cho AI gọi controller, cần bổ sung allowlist URL, giới hạn timeout/kích thước dữ liệu, cô lập browser context, confirmation cho thao tác có side effect và audit log. Không đưa credential hoặc raw page content vào log.

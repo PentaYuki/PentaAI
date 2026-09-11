@@ -148,6 +148,7 @@ docs/               Kiến trúc, roadmap và reality check
 ## Tài liệu liên quan
 
 - [Cấu trúc repository 6 ứng dụng](./docs/repository-architecture.md)
+- [Người dùng cuối và phạm vi MCP](./docs/user-personas-and-mcp-scope.md)
 - [Quy tắc phát triển](./GEMINI.md)
 - [Kiến trúc thực tế và kế hoạch triển khai](./ARCHITECTURE.md)
 - [Reality check](./docs/analysis/reality-check.md)
