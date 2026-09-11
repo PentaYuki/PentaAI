@@ -7,10 +7,40 @@ Mỗi thay đổi phải dễ review, mỗi release phải tái hiện được 
 ## Quy ước nhánh
 
 - `main`: code đã qua CI, là nhánh phát hành.
+- `work/<module>`: nhánh phát triển dài hơn cho một module lớn trong monorepo.
 - `feature/<scope>-<short-name>`: tính năng mới.
 - `fix/<scope>-<short-name>`: sửa lỗi.
 - `docs/<scope>-<short-name>`: tài liệu.
 - Không push trực tiếp vào `main` sau khi bật branch protection; mọi thay đổi đi qua pull request.
+
+### Branch map của monorepo
+
+Các nhánh nền dưới đây dùng để tách tiến độ giữa các module. Chúng đều bắt đầu từ `main`, không phải là release branch:
+
+| Branch | Phạm vi |
+| --- | --- |
+| `work/pentami-core` | FastAPI backend, frontend desktop và orchestration |
+| `work/pentaschool` | Module giáo dục, dataset và knowledge base |
+| `work/pentakuru` | File assistant, indexing và dataset tài liệu |
+| `work/pentamarket` | Commerce, pricing, voucher và VAT |
+| `work/pentajob` | Job matching, CV và mock interview |
+| `work/pentanote` | Notes, flashcards và knowledge graph |
+| `work/mcp-playwright` | Browser controller/MCP integration |
+| `work/shared` | Schema, protocol và helper dùng chung |
+| `work/deploy` | Compose, migration và môi trường triển khai |
+
+Quy trình cho một module:
+
+```text
+main
+	-> work/pentami-core
+			 -> feature/pentami-core/chat-router
+			 -> fix/pentami-core/health-check
+```
+
+Chỉ merge thay đổi nhỏ vào `work/<module>` qua PR. Khi module đạt mốc tích hợp, mở PR từ `work/<module>` vào `main`; không merge chéo mã nguồn nội bộ giữa các module chỉ vì chúng nằm trong cùng repository.
+
+Không nên tạo branch cho từng thư mục `dataset/`, `assets/` hoặc từng file. Những phần đó đi cùng branch module sở hữu chúng.
 
 ## Quy ước commit
 
@@ -70,6 +100,7 @@ git push origin v0.1.0
 ## Cấu hình GitHub nên bật
 
 - Branch protection cho `main`: PR bắt buộc, CI bắt buộc, branch up-to-date.
+- Branch protection nhẹ cho `work/*`: yêu cầu CI xanh và PR khi thay đổi ảnh hưởng contract/shared.
 - Squash merge; tắt merge commit nếu team nhỏ.
 - Dependency alerts, secret scanning và push protection.
 - Discussions hoặc issue labels cho roadmap.
