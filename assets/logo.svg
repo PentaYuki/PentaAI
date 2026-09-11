@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <filter id="penta-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.65"/>
+    </filter>
+  </defs>
+  <g filter="url(#penta-shadow)">
+    <!-- Sector 1: Top-Right (Solid Black) -->
+    <polygon points="100,10 185.6,72.2 100,100" fill="#050505" stroke="#ffffff" stroke-width="1.8" stroke-linejoin="round"/>
+    
+    <!-- Sector 2: Bottom-Right (Dark Grey) -->
+    <polygon points="185.6,72.2 152.9,172.8 100,100" fill="#38383c" stroke="#ffffff" stroke-width="1.8" stroke-linejoin="round"/>
+    
+    <!-- Sector 3: Bottom-Left (Charcoal Grey) -->
+    <polygon points="152.9,172.8 47.1,172.8 100,100" fill="#4a4a50" stroke="#ffffff" stroke-width="1.8" stroke-linejoin="round"/>
+    
+    <!-- Sector 4: Middle-Left (Mid Grey) -->
+    <polygon points="47.1,172.8 14.4,72.2 100,100" fill="#585860" stroke="#ffffff" stroke-width="1.8" stroke-linejoin="round"/>
+    
+    <!-- Sector 5: Top-Left (Dark Charcoal) -->
+    <polygon points="14.4,72.2 100,10 100,100" fill="#303034" stroke="#ffffff" stroke-width="1.8" stroke-linejoin="round"/>
+
+    <!-- Outer Outline -->
+    <polygon points="100,10 185.6,72.2 152.9,172.8 47.1,172.8 14.4,72.2" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linejoin="round"/>
+  </g>
+</svg>

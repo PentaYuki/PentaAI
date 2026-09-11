@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Penta Sys — Màn hình chính</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="icon" type="image/svg+xml" href="./assets/logo.svg">
+</head>
+<body>
+
+  <!-- SVG Symbols -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <!-- Faceted Shaded Pentagon Vector (matching Image 2) -->
+      <symbol id="icon-faceted-pentagon" viewBox="0 0 200 200">
+        <!-- Sector 1: Top-Right (Solid Black) -->
+        <polygon points="100,10 185.6,72.2 100,100" fill="#000000" stroke="#ffffff" stroke-width="1.8" stroke-linejoin="round"/>
+        <!-- Sector 2: Bottom-Right (Dark Charcoal Grey) -->
+        <polygon points="185.6,72.2 152.9,172.8 100,100" fill="#3c3c40" stroke="#ffffff" stroke-width="1.8" stroke-linejoin="round"/>
+        <!-- Sector 3: Bottom-Left (Charcoal Grey) -->
+        <polygon points="152.9,172.8 47.1,172.8 100,100" fill="#4a4a50" stroke="#ffffff" stroke-width="1.8" stroke-linejoin="round"/>
+        <!-- Sector 4: Middle-Left (Mid Grey) -->
+        <polygon points="47.1,172.8 14.4,72.2 100,100" fill="#585860" stroke="#ffffff" stroke-width="1.8" stroke-linejoin="round"/>
+        <!-- Sector 5: Top-Left (Dark Grey) -->
+        <polygon points="14.4,72.2 100,10 100,100" fill="#303034" stroke="#ffffff" stroke-width="1.8" stroke-linejoin="round"/>
+        <!-- Outer White Outline -->
+        <polygon points="100,10 185.6,72.2 152.9,172.8 47.1,172.8 14.4,72.2" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linejoin="round"/>
+      </symbol>
+
+      <!-- App Grid Icon -->
+      <symbol id="icon-grid" viewBox="0 0 24 24">
+        <rect x="3.5" y="3.5" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+        <rect x="13.5" y="3.5" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+        <rect x="3.5" y="13.5" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+        <rect x="13.5" y="13.5" width="7" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+      </symbol>
+
+      <!-- Signal Icon -->
+      <symbol id="icon-signal" viewBox="0 0 24 24">
+        <rect x="2" y="14" width="3" height="6" rx="0.8" fill="currentColor"/>
+        <rect x="7" y="11" width="3" height="9" rx="0.8" fill="currentColor"/>
+        <rect x="12" y="8" width="3" height="12" rx="0.8" fill="currentColor"/>
+        <rect x="17" y="4" width="3" height="16" rx="0.8" fill="currentColor"/>
+      </symbol>
+
+      <!-- Wifi Icon -->
+      <symbol id="icon-wifi" viewBox="0 0 24 24">
+        <path d="M3 9.5a14 14 0 0 1 18 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M6.2 13.2a9.2 9.2 0 0 1 11.6 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M9.6 16.8a4.6 4.6 0 0 1 4.8 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <circle cx="12" cy="19.4" r="1.15" fill="currentColor"/>
+      </symbol>
+
+      <!-- Battery Icon -->
+      <symbol id="icon-battery" viewBox="0 0 24 24">
+        <rect x="2" y="7" width="18" height="10" rx="2.4" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <rect x="21" y="10" width="2" height="4" rx="1" fill="currentColor"/>
+        <rect x="4" y="9" width="13" height="6" rx="1.2" fill="currentColor" opacity=".85"/>
+      </symbol>
+
+      <!-- Close Icon -->
+      <symbol id="icon-close" viewBox="0 0 24 24">
+        <line x1="5" y1="5" x2="19" y2="19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="19" y1="5" x2="5" y2="19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      </symbol>
+
+      <!-- Download / Install Icon -->
+      <symbol id="icon-download" viewBox="0 0 24 24">
+        <path d="M12 4v11m0 0l-4-4m4 4l4-4M4 19h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <main class="stage">
+    
+    <!-- Top Minimalist Statusbar (Compact) -->
+    <header class="statusbar">
+      <div class="brand">
+        <div class="brand-logo-pentagon" title="Penta Sys">
+          <svg viewBox="0 0 200 200"><use href="#icon-faceted-pentagon"></use></svg>
+        </div>
+        <span class="brand-name">Penta Sys</span>
+      </div>
+
+      <div class="clock" id="clock">--:-- --</div>
+
+      <div class="status-icons">
+        <svg viewBox="0 0 24 24"><use href="#icon-signal"></use></svg>
+        <svg viewBox="0 0 24 24"><use href="#icon-wifi"></use></svg>
+        <svg viewBox="0 0 24 24"><use href="#icon-battery"></use></svg>
+      </div>
+    </header>
+
+    <!-- Wallpaper Background (Faceted Shaded Pentagon with Dynamic Aura) -->
+    <div class="wallpaper">
+      <div class="wallpaper-ambient-glow"></div>
+      <div class="wallpaper-pentagon">
+        <svg viewBox="0 0 200 200"><use href="#icon-faceted-pentagon"></use></svg>
+      </div>
+    </div>
+
+    <!-- Desktop Workspace Grid (Installed Apps by User) -->
+    <section class="home-grid" id="homeGrid"></section>
+
+    <!-- Bottom Floating Minimalist Dock (Compact) -->
+    <footer class="dock">
+      <!-- Pentastore Installer / CH Play Hub (uses PNG logo) -->
+      <button class="dock-btn store-btn" id="dockStore" title="Pentastore — Cửa hàng ứng dụng Penta Sys" aria-label="Mở Pentastore">
+        <img src="./assets/logo.png" alt="Pentastore Logo" class="dock-store-png">
+      </button>
+      <div class="dock-divider"></div>
+      <button class="dock-btn drawer-btn" id="dockDrawer" title="Khay ứng dụng" aria-label="Mở khay ứng dụng">
+        <svg viewBox="0 0 24 24"><use href="#icon-grid"></use></svg>
+      </button>
+    </footer>
+
+    <!-- AI Kurumi is the shared conversation entry point for every subsystem. -->
+    <button class="kurumi-launcher" id="kurumiLauncher" type="button" aria-label="Mở trợ lý AI Kurumi" aria-expanded="false">
+      <img src="./assets/ai-kurumi.png" alt="AI kurumi">
+    </button>
+
+    <section class="kurumi-chat" id="kurumiChat" aria-label="Trợ lý AI Kurumi" aria-hidden="true">
+      <header class="kurumi-chat-header">
+        <div class="kurumi-chat-identity">
+          <img src="./assets/ai-kurumi.png" alt="" aria-hidden="true">
+          <div>
+            <strong>AI kurumi</strong>
+            <span id="kurumiRoute">Đang kết nối Penta Core</span>
+          </div>
+        </div>
+        <button class="chat-close" id="kurumiClose" type="button" aria-label="Đóng khung chat">
+          <svg viewBox="0 0 24 24"><use href="#icon-close"></use></svg>
+        </button>
+      </header>
+      <div class="kurumi-context-bar">
+        <span class="context-pulse"></span>
+        <span>Ngữ cảnh chung</span>
+        <span class="context-session" id="kurumiSession">Phiên mới</span>
+      </div>
+      <div class="kurumi-messages" id="kurumiMessages" aria-live="polite">
+        <div class="chat-message assistant-message">
+          Anh đang làm việc trong Penta Sys. Em có thể định tuyến yêu cầu tới School, Kuru, Market, Job hoặc Note mà vẫn giữ ngữ cảnh chung.
+        </div>
+      </div>
+      <form class="kurumi-composer" id="kurumiComposer">
+        <label class="sr-only" for="kurumiInput">Nhập yêu cầu cho AI Kurumi</label>
+        <input id="kurumiInput" type="text" autocomplete="off" placeholder="Hỏi bất kỳ hệ thống nào...">
+        <button type="submit" aria-label="Gửi tin nhắn" title="Gửi tin nhắn">↗</button>
+      </form>
+    </section>
+
+    <!-- Scrim Modal Backdrop -->
+    <div class="scrim" id="scrim"></div>
+
+    <!-- Pentastore Modal / CH Play Hub (Store Drawer) -->
+    <div class="drawer" id="drawer">
+      <div class="drawer-handle"></div>
+      
+      <div class="drawer-header">
+        <div class="drawer-header-left">
+          <img src="./assets/logo.png" alt="Pentastore" class="drawer-store-logo">
+          <div>
+            <div class="drawer-title">Pentastore</div>
+            <div class="drawer-subtitle">Cửa hàng cài đặt ứng dụng Hệ sinh thái Penta Sys</div>
+          </div>
+        </div>
+        <button class="drawer-close" id="drawerClose" aria-label="Đóng">
+          <svg viewBox="0 0 24 24"><use href="#icon-close"></use></svg>
+        </button>
+      </div>
+
+      <div class="drawer-body" id="drawerBody">
+        <div class="store-grid" id="storeGrid"></div>
+      </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+  </main>
+
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>

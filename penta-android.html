@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Penta — Màn hình chính</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#030303;
+    --screen-bg:#08080a;
+    --text-primary:#f2f1ee;
+    --text-secondary:#a3a3a9;
+    --text-muted:#68686d;
+    --accent:#5fd4ff;
+    --accent-dim:rgba(95,212,255,.16);
+    --font-mono:'Space Mono', ui-monospace, monospace;
+    --font-sans:'Inter', system-ui, -apple-system, "Helvetica Neue", sans-serif;
+  }
+
+  *{box-sizing:border-box;}
+  html,body{height:100%;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text-primary);
+    font-family:var(--font-sans);
+    overflow-x:hidden;
+  }
+
+  .stage{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:20px;
+    padding:48px 16px;
+  }
+
+  .caption{
+    margin:0;
+    color:var(--text-muted);
+    font-size:13px;
+    text-align:center;
+  }
+
+  @keyframes riseIn{
+    from{opacity:0; transform:translateY(10px);}
+    to{opacity:1; transform:translateY(0);}
+  }
+
+  .phone{
+    width:min(380px, 86vw, calc(82vh * 9 / 19.5));
+    aspect-ratio:9 / 19.5;
+    background:#050506;
+    border-radius:46px;
+    padding:12px;
+    box-shadow:0 40px 90px -20px rgba(0,0,0,.75), 0 0 0 1px rgba(255,255,255,.05), 0 0 100px -30px rgba(95,212,255,.1);
+    animation:riseIn .55s ease both;
+  }
+
+  .screen{
+    position:relative;
+    width:100%;
+    height:100%;
+    border-radius:34px;
+    overflow:hidden;
+    background:var(--screen-bg);
+  }
+
+  .wallpaper{
+    position:absolute;
+    inset:0;
+    background:
+      radial-gradient(120% 55% at 12% 0%, rgba(95,212,255,.16), transparent 60%),
+      radial-gradient(120% 55% at 92% 100%, rgba(178,120,255,.13), transparent 60%),
+      var(--screen-bg);
+  }
+  .wallpaper .pentagon-mark{
+    position:absolute;
+    left:50%;
+    bottom:-14%;
+    width:150%;
+    transform:translateX(-50%);
+    color:var(--text-primary);
+    opacity:.045;
+  }
+
+  .notch{
+    position:absolute;
+    top:10px;
+    left:50%;
+    transform:translateX(-50%);
+    width:64px;
+    height:16px;
+    border-radius:10px;
+    background:#000;
+    z-index:5;
+  }
+
+  .statusbar{
+    position:absolute;
+    top:0; left:0; right:0;
+    height:46px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:16px 20px 0;
+    font-family:var(--font-mono);
+    font-size:12px;
+    color:var(--text-primary);
+    z-index:4;
+  }
+  .status-icons{display:flex; align-items:center; gap:6px; color:var(--text-secondary);}
+  .status-icons svg{width:15px; height:15px;}
+
+  .home-grid{
+    position:absolute;
+    top:64px;
+    left:0; right:0; bottom:104px;
+    padding:6px 20px;
+    overflow-y:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(62px, 1fr));
+    gap:22px 10px;
+    align-content:start;
+  }
+  .home-empty{
+    grid-column:1 / -1;
+    text-align:center;
+    color:var(--text-muted);
+    font-size:12px;
+    line-height:1.6;
+    padding:40px 12px 0;
+  }
+
+  .tile{display:flex; flex-direction:column; align-items:center; gap:6px;}
+  .mono-badge{
+    width:52px; height:52px;
+    border-radius:14px;
+    background:linear-gradient(180deg, #232327, #17171a);
+    border:1px solid rgba(255,255,255,.12);
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--font-mono);
+    font-weight:700;
+    font-size:14px;
+    color:var(--text-primary);
+  }
+  .tile-label{font-size:10.5px; color:var(--text-secondary); text-align:center; line-height:1.3;}
+
+  .dock{
+    position:absolute;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:9px 14px;
+    border-radius:999px;
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.12);
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+    z-index:6;
+  }
+  .dock-btn{
+    width:50px; height:50px;
+    border-radius:50%;
+    border:none;
+    background:rgba(255,255,255,.04);
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer;
+    padding:0;
+  }
+  .dock-btn:hover{background:rgba(255,255,255,.09);}
+  .dock-btn.logo-btn svg{width:34px; height:34px;}
+  .dock-btn.drawer-btn svg{width:20px; height:20px; color:var(--text-primary);}
+  .dock-divider{width:1px; height:26px; background:rgba(255,255,255,.14);}
+
+  .scrim{
+    position:absolute;
+    inset:0;
+    z-index:9;
+    background:rgba(0,0,0,.3);
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .25s ease;
+  }
+  .scrim.show{opacity:1; pointer-events:auto;}
+
+  .drawer{
+    position:absolute;
+    left:0; right:0; bottom:0;
+    height:86%;
+    background:rgba(11,11,13,.94);
+    backdrop-filter:blur(24px);
+    -webkit-backdrop-filter:blur(24px);
+    border-top-left-radius:26px;
+    border-top-right-radius:26px;
+    border-top:1px solid rgba(255,255,255,.08);
+    transform:translateY(100%);
+    transition:transform .32s cubic-bezier(.2,.8,.2,1);
+    z-index:10;
+    display:flex;
+    flex-direction:column;
+    padding:12px 18px 14px;
+  }
+  .drawer.open{transform:translateY(0);}
+
+  .drawer-handle{
+    width:34px; height:4px;
+    border-radius:3px;
+    background:rgba(255,255,255,.22);
+    margin:2px auto 12px;
+  }
+
+  .drawer-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:12px;
+  }
+  .drawer-title{font-size:14.5px; font-weight:600;}
+  .drawer-subtitle{font-size:11px; color:var(--text-muted); margin-top:1px;}
+  .drawer-close{
+    width:28px; height:28px;
+    border-radius:50%;
+    border:none;
+    background:rgba(255,255,255,.06);
+    color:var(--text-secondary);
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer;
+  }
+  .drawer-close svg{width:13px; height:13px;}
+  .drawer-close:hover{color:var(--text-primary);}
+
+  .drawer-grid{
+    flex:1;
+    overflow-y:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(70px, 1fr));
+    gap:20px 8px;
+    align-content:start;
+    padding-bottom:6px;
+  }
+  .app-cell{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:6px;
+    background:none;
+    border:none;
+    cursor:pointer;
+    padding:2px;
+  }
+  .app-cell .mono-badge{position:relative;}
+  .app-cell.installed .mono-badge{border-color:var(--accent);}
+  .check-badge{
+    position:absolute;
+    top:-4px; right:-4px;
+    width:16px; height:16px;
+    border-radius:50%;
+    background:var(--accent);
+    color:#04191f;
+    display:flex; align-items:center; justify-content:center;
+    font-size:10px;
+    font-weight:700;
+    opacity:0;
+    transform:scale(.5);
+    transition:opacity .2s ease, transform .2s ease;
+  }
+  .app-cell.installed .check-badge{opacity:1; transform:scale(1);}
+  .app-hint{font-size:9px; color:var(--text-muted);}
+  .app-cell.installed .app-hint{color:var(--accent);}
+
+  .toast{
+    position:absolute;
+    left:50%;
+    bottom:96px;
+    transform:translate(-50%, 8px);
+    background:#1c1c20;
+    border:1px solid rgba(255,255,255,.14);
+    color:var(--text-primary);
+    font-size:11.5px;
+    padding:8px 13px;
+    border-radius:9px;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .2s ease, transform .2s ease;
+    white-space:nowrap;
+    z-index:15;
+  }
+  .toast.show{opacity:1; transform:translate(-50%, 0);}
+
+  *:focus-visible{outline:2px solid var(--accent); outline-offset:2px;}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important; transition:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="logo-pentastore" viewBox="0 0 200 190">
+      <g stroke="#e9e8e4" stroke-width="1.5" stroke-linejoin="round">
+        <polygon points="100,95 19.2,68.7 100,10" fill="#57575d"/>
+        <polygon points="100,95 100,10 180.8,68.7" fill="#0a0a0c"/>
+        <polygon points="100,95 180.8,68.7 150,163.8" fill="#3c3c42"/>
+        <polygon points="100,95 150,163.8 50,163.8" fill="#414147"/>
+        <polygon points="100,95 50,163.8 19.2,68.7" fill="#3c3c42"/>
+      </g>
+      <polygon points="100,10 180.8,68.7 150,163.8 50,163.8 19.2,68.7" fill="none" stroke="#f2f1ee" stroke-width="2.5" stroke-linejoin="round"/>
+      <g fill="none" stroke="#f4f3f0" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="68,58 138,58 122,106 80,106"/>
+        <line x1="103" y1="58" x2="101" y2="106" stroke-width="3" opacity=".85"/>
+        <line x1="85.5" y1="58" x2="90.5" y2="106" stroke-width="2.5" opacity=".55"/>
+        <line x1="120.5" y1="58" x2="111.5" y2="106" stroke-width="2.5" opacity=".55"/>
+        <polyline points="138,58 150,34 170,30" stroke-width="6"/>
+        <line x1="80" y1="106" x2="88" y2="120" stroke-width="4.5"/>
+        <line x1="122" y1="106" x2="114" y2="120" stroke-width="4.5"/>
+      </g>
+      <circle cx="88" cy="123" r="7.5" fill="#f4f3f0"/>
+      <circle cx="114" cy="123" r="7.5" fill="#f4f3f0"/>
+    </symbol>
+
+    <symbol id="pentagon-outline" viewBox="0 0 200 190">
+      <polygon points="100,10 180.8,68.7 150,163.8 50,163.8 19.2,68.7" fill="none" stroke="currentColor" stroke-width="3"/>
+    </symbol>
+
+    <symbol id="icon-grid" viewBox="0 0 24 24">
+      <rect x="3.5" y="3.5" width="7" height="7" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+      <rect x="13.5" y="3.5" width="7" height="7" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+      <rect x="3.5" y="13.5" width="7" height="7" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+      <rect x="13.5" y="13.5" width="7" height="7" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+    </symbol>
+
+    <symbol id="icon-signal" viewBox="0 0 24 24">
+      <rect x="2" y="14" width="3" height="6" rx="0.8" fill="currentColor"/>
+      <rect x="7" y="11" width="3" height="9" rx="0.8" fill="currentColor"/>
+      <rect x="12" y="8" width="3" height="12" rx="0.8" fill="currentColor"/>
+      <rect x="17" y="4" width="3" height="16" rx="0.8" fill="currentColor"/>
+    </symbol>
+
+    <symbol id="icon-wifi" viewBox="0 0 24 24">
+      <path d="M3 9.5a14 14 0 0 1 18 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      <path d="M6.2 13.2a9.2 9.2 0 0 1 11.6 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      <path d="M9.6 16.8a4.6 4.6 0 0 1 4.8 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      <circle cx="12" cy="19.4" r="1.15" fill="currentColor"/>
+    </symbol>
+
+    <symbol id="icon-battery" viewBox="0 0 24 24">
+      <rect x="2" y="7" width="18" height="10" rx="2.4" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <rect x="21" y="10" width="2" height="4" rx="1" fill="currentColor"/>
+      <rect x="4" y="9" width="13" height="6" rx="1.2" fill="currentColor" opacity=".85"/>
+    </symbol>
+
+    <symbol id="icon-close" viewBox="0 0 24 24">
+      <line x1="5" y1="5" x2="19" y2="19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      <line x1="19" y1="5" x2="5" y2="19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    </symbol>
+  </defs>
+</svg>
+
+<main class="stage">
+  <div class="phone">
+    <div class="screen" id="screen">
+      <div class="wallpaper">
+        <svg class="pentagon-mark" viewBox="0 0 200 190"><use href="#pentagon-outline"></use></svg>
+      </div>
+      <div class="notch"></div>
+
+      <div class="statusbar">
+        <span id="clock">--:--</span>
+        <div class="status-icons">
+          <svg viewBox="0 0 24 24"><use href="#icon-signal"></use></svg>
+          <svg viewBox="0 0 24 24"><use href="#icon-wifi"></use></svg>
+          <svg viewBox="0 0 24 24"><use href="#icon-battery"></use></svg>
+        </div>
+      </div>
+
+      <div class="home-grid" id="homeGrid"></div>
+
+      <div class="dock">
+        <button class="dock-btn logo-btn" id="dockLogo" title="Mở Pentastore" aria-label="Mở Pentastore">
+          <svg viewBox="0 0 200 190"><use href="#logo-pentastore"></use></svg>
+        </button>
+        <div class="dock-divider"></div>
+        <button class="dock-btn drawer-btn" id="dockDrawer" title="Mở khay ứng dụng" aria-label="Mở khay ứng dụng">
+          <svg viewBox="0 0 24 24"><use href="#icon-grid"></use></svg>
+        </button>
+      </div>
+
+      <div class="scrim" id="scrim"></div>
+
+      <div class="drawer" id="drawer">
+        <div class="drawer-handle"></div>
+        <div class="drawer-header">
+          <div>
+            <div class="drawer-title">Pentastore</div>
+            <div class="drawer-subtitle">Hệ sinh thái Penta</div>
+          </div>
+          <button class="drawer-close" id="drawerClose" aria-label="Đóng">
+            <svg viewBox="0 0 24 24"><use href="#icon-close"></use></svg>
+          </button>
+        </div>
+        <div class="drawer-grid" id="drawerGrid"></div>
+      </div>
+    </div>
+  </div>
+  <p class="caption">Một thư mục. Một hệ sinh thái.</p>
+</main>
+
+<script>
+  const apps = [
+    { id:'pentakuru',    name:'PentaKuRu',        mono:'PK' },
+    { id:'todo',         name:'Penta Todo',       mono:'PT' },
+    { id:'pentamo',      name:'PentaMo',          mono:'PM' },
+    { id:'pentaana',     name:'PentaAna',         mono:'PA' },
+    { id:'pentabi',      name:'PentaBi',          mono:'PB' },
+    { id:'pentaiot',     name:'PentaIOT',         mono:'IO' },
+    { id:'pentaali',     name:'PentaAli',         mono:'AL' },
+    { id:'khafood',      name:'KHA FOOD',         mono:'KH' },
+    { id:'kyniem',       name:'Kỷ Niệm',          mono:'KN' },
+    { id:'salto',        name:'Salto',            mono:'SL' },
+    { id:'antigravity',  name:'Antigravity Linux',mono:'AG' },
+    { id:'stockai',      name:'Stock-AI VN',      mono:'SA' },
+  ];
+
+  const state = { installed:new Set(), drawerOpen:false };
+
+  const homeGrid = document.getElementById('homeGrid');
+  const drawerGrid = document.getElementById('drawerGrid');
+  const drawer = document.getElementById('drawer');
+  const scrim = document.getElementById('scrim');
+  const clockEl = document.getElementById('clock');
+
+  function updateClock(){
+    const d = new Date();
+    let h = d.getHours();
+    const m = d.getMinutes().toString().padStart(2,'0');
+    const ampm = h >= 12 ? 'PM' : 'AM';
+    h = h % 12; if(h === 0) h = 12;
+    clockEl.textContent = `${h}:${m} ${ampm}`;
+  }
+  updateClock();
+  setInterval(updateClock, 15000);
+
+  function setDrawer(open){
+    state.drawerOpen = open;
+    drawer.classList.toggle('open', open);
+    scrim.classList.toggle('show', open);
+    document.getElementById('dockDrawer').setAttribute('aria-expanded', String(open));
+  }
+
+  document.getElementById('dockLogo').addEventListener('click', () => setDrawer(true));
+  document.getElementById('dockDrawer').addEventListener('click', () => setDrawer(!state.drawerOpen));
+  document.getElementById('drawerClose').addEventListener('click', () => setDrawer(false));
+  scrim.addEventListener('click', () => setDrawer(false));
+  document.addEventListener('keydown', e => { if(e.key === 'Escape') setDrawer(false); });
+
+  function renderHomeGrid(){
+    homeGrid.innerHTML = '';
+    const installedApps = apps.filter(a => state.installed.has(a.id));
+    if(installedApps.length === 0){
+      const p = document.createElement('p');
+      p.className = 'home-empty';
+      p.textContent = 'Trống — mở Pentastore để cài ứng dụng vào đây.';
+      homeGrid.appendChild(p);
+      return;
+    }
+    installedApps.forEach(a => {
+      const tile = document.createElement('div');
+      tile.className = 'tile';
+      tile.innerHTML = `
+        <div class="mono-badge">${a.mono}</div>
+        <span class="tile-label">${a.name}</span>
+      `;
+      homeGrid.appendChild(tile);
+    });
+  }
+
+  function renderDrawerGrid(){
+    drawerGrid.innerHTML = '';
+    apps.forEach(a => {
+      const installed = state.installed.has(a.id);
+      const cell = document.createElement('button');
+      cell.className = `app-cell ${installed ? 'installed' : ''}`;
+      cell.innerHTML = `
+        <div class="mono-badge">
+          ${a.mono}
+          <span class="check-badge">✓</span>
+        </div>
+        <span class="tile-label">${a.name}</span>
+        <span class="app-hint">${installed ? '✓ Đã cài đặt' : 'Chạm để cài'}</span>
+      `;
+      cell.addEventListener('click', () => {
+        if(state.installed.has(a.id)) return;
+        state.installed.add(a.id);
+        renderHomeGrid();
+        renderDrawerGrid();
+        showToast(`Đã cài đặt ${a.name}`);
+      });
+      drawerGrid.appendChild(cell);
+    });
+  }
+
+  let toastTimer;
+  function showToast(msg){
+    let toast = document.getElementById('toast');
+    if(!toast){
+      toast = document.createElement('div');
+      toast.id = 'toast';
+      toast.className = 'toast';
+      document.getElementById('screen').appendChild(toast);
+    }
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove('show'), 2200);
+  }
+
+  renderHomeGrid();
+  renderDrawerGrid();
+</script>
+</body>
+</html>

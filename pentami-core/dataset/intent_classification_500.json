@@ -1,0 +1,5002 @@
+[
+  {
+    "id": "intent_0001",
+    "intent": "pentaschool",
+    "query_accented": "Làm ơn học cho tôi về thuật toán cây nhị phân",
+    "query_unaccented": "lam on hoc cho toi ve thuat toan cay nhi phan",
+    "keyword_signals": [
+      "hoc",
+      "thuat toan cay nhi phan"
+    ]
+  },
+  {
+    "id": "intent_0002",
+    "intent": "pentaschool",
+    "query_accented": "Cho mình hỏi cách học cấu trúc dữ liệu với",
+    "query_unaccented": "cho minh hoi cach hoc cau truc du lieu voi",
+    "keyword_signals": [
+      "hoc",
+      "cau truc du lieu"
+    ]
+  },
+  {
+    "id": "intent_0003",
+    "intent": "pentaschool",
+    "query_accented": "Tôi muốn học lập trình Python ngay bây giờ",
+    "query_unaccented": "toi muon hoc lap trinh python ngay bay gio",
+    "keyword_signals": [
+      "hoc",
+      "lap trinh python"
+    ]
+  },
+  {
+    "id": "intent_0004",
+    "intent": "pentaschool",
+    "query_accented": "Có thể học ngôn ngữ Golang giúp tôi được không",
+    "query_unaccented": "co the hoc ngon ngu golang giup toi duoc khong",
+    "keyword_signals": [
+      "hoc",
+      "ngon ngu golang"
+    ]
+  },
+  {
+    "id": "intent_0005",
+    "intent": "pentaschool",
+    "query_accented": "Hướng dẫn tôi học toán rời rạc này nhé",
+    "query_unaccented": "huong dan toi hoc toan roi rac nay nhe",
+    "keyword_signals": [
+      "hoc",
+      "toan roi rac"
+    ]
+  },
+  {
+    "id": "intent_0006",
+    "intent": "pentaschool",
+    "query_accented": "Làm ơn học cho tôi về machine learning",
+    "query_unaccented": "lam on hoc cho toi ve machine learning",
+    "keyword_signals": [
+      "hoc",
+      "machine learning"
+    ]
+  },
+  {
+    "id": "intent_0007",
+    "intent": "pentaschool",
+    "query_accented": "Cho mình hỏi cách học kiến trúc vi dịch vụ với",
+    "query_unaccented": "cho minh hoi cach hoc kien truc vi dich vu voi",
+    "keyword_signals": [
+      "hoc",
+      "kien truc vi dich vu"
+    ]
+  },
+  {
+    "id": "intent_0008",
+    "intent": "pentaschool",
+    "query_accented": "Tôi muốn học lập trình web ngay bây giờ",
+    "query_unaccented": "toi muon hoc lap trinh web ngay bay gio",
+    "keyword_signals": [
+      "hoc",
+      "lap trinh web"
+    ]
+  },
+  {
+    "id": "intent_0009",
+    "intent": "pentaschool",
+    "query_accented": "Có thể học database SQL giúp tôi được không",
+    "query_unaccented": "co the hoc database sql giup toi duoc khong",
+    "keyword_signals": [
+      "hoc",
+      "database sql"
+    ]
+  },
+  {
+    "id": "intent_0010",
+    "intent": "pentaschool",
+    "query_accented": "Hướng dẫn tôi học hệ điều hành Linux này nhé",
+    "query_unaccented": "huong dan toi hoc he dieu hanh linux nay nhe",
+    "keyword_signals": [
+      "hoc",
+      "he dieu hanh linux"
+    ]
+  },
+  {
+    "id": "intent_0011",
+    "intent": "pentaschool",
+    "query_accented": "Làm ơn xem bài giảng cho tôi về thuật toán cây nhị phân",
+    "query_unaccented": "lam on xem bai giang cho toi ve thuat toan cay nhi phan",
+    "keyword_signals": [
+      "xem bai giang",
+      "thuat toan cay nhi phan"
+    ]
+  },
+  {
+    "id": "intent_0012",
+    "intent": "pentaschool",
+    "query_accented": "Cho mình hỏi cách xem bài giảng cấu trúc dữ liệu với",
+    "query_unaccented": "cho minh hoi cach xem bai giang cau truc du lieu voi",
+    "keyword_signals": [
+      "xem bai giang",
+      "cau truc du lieu"
+    ]
+  },
+  {
+    "id": "intent_0013",
+    "intent": "pentaschool",
+    "query_accented": "Tôi muốn xem bài giảng lập trình Python ngay bây giờ",
+    "query_unaccented": "toi muon xem bai giang lap trinh python ngay bay gio",
+    "keyword_signals": [
+      "xem bai giang",
+      "lap trinh python"
+    ]
+  },
+  {
+    "id": "intent_0014",
+    "intent": "pentaschool",
+    "query_accented": "Có thể xem bài giảng ngôn ngữ Golang giúp tôi được không",
+    "query_unaccented": "co the xem bai giang ngon ngu golang giup toi duoc khong",
+    "keyword_signals": [
+      "xem bai giang",
+      "ngon ngu golang"
+    ]
+  },
+  {
+    "id": "intent_0015",
+    "intent": "pentaschool",
+    "query_accented": "Hướng dẫn tôi xem bài giảng toán rời rạc này nhé",
+    "query_unaccented": "huong dan toi xem bai giang toan roi rac nay nhe",
+    "keyword_signals": [
+      "xem bai giang",
+      "toan roi rac"
+    ]
+  },
+  {
+    "id": "intent_0016",
+    "intent": "pentaschool",
+    "query_accented": "Làm ơn xem bài giảng cho tôi về machine learning",
+    "query_unaccented": "lam on xem bai giang cho toi ve machine learning",
+    "keyword_signals": [
+      "xem bai giang",
+      "machine learning"
+    ]
+  },
+  {
+    "id": "intent_0017",
+    "intent": "pentaschool",
+    "query_accented": "Cho mình hỏi cách xem bài giảng kiến trúc vi dịch vụ với",
+    "query_unaccented": "cho minh hoi cach xem bai giang kien truc vi dich vu voi",
+    "keyword_signals": [
+      "xem bai giang",
+      "kien truc vi dich vu"
+    ]
+  },
+  {
+    "id": "intent_0018",
+    "intent": "pentaschool",
+    "query_accented": "Tôi muốn xem bài giảng lập trình web ngay bây giờ",
+    "query_unaccented": "toi muon xem bai giang lap trinh web ngay bay gio",
+    "keyword_signals": [
+      "xem bai giang",
+      "lap trinh web"
+    ]
+  },
+  {
+    "id": "intent_0019",
+    "intent": "pentaschool",
+    "query_accented": "Có thể xem bài giảng database SQL giúp tôi được không",
+    "query_unaccented": "co the xem bai giang database sql giup toi duoc khong",
+    "keyword_signals": [
+      "xem bai giang",
+      "database sql"
+    ]
+  },
+  {
+    "id": "intent_0020",
+    "intent": "pentaschool",
+    "query_accented": "Hướng dẫn tôi xem bài giảng hệ điều hành Linux này nhé",
+    "query_unaccented": "huong dan toi xem bai giang he dieu hanh linux nay nhe",
+    "keyword_signals": [
+      "xem bai giang",
+      "he dieu hanh linux"
+    ]
+  },
+  {
+    "id": "intent_0021",
+    "intent": "pentaschool",
+    "query_accented": "Làm ơn giải thích cho tôi về thuật toán cây nhị phân",
+    "query_unaccented": "lam on giai thich cho toi ve thuat toan cay nhi phan",
+    "keyword_signals": [
+      "giai thich",
+      "thuat toan cay nhi phan"
+    ]
+  },
+  {
+    "id": "intent_0022",
+    "intent": "pentaschool",
+    "query_accented": "Cho mình hỏi cách giải thích cấu trúc dữ liệu với",
+    "query_unaccented": "cho minh hoi cach giai thich cau truc du lieu voi",
+    "keyword_signals": [
+      "giai thich",
+      "cau truc du lieu"
+    ]
+  },
+  {
+    "id": "intent_0023",
+    "intent": "pentaschool",
+    "query_accented": "Tôi muốn giải thích lập trình Python ngay bây giờ",
+    "query_unaccented": "toi muon giai thich lap trinh python ngay bay gio",
+    "keyword_signals": [
+      "giai thich",
+      "lap trinh python"
+    ]
+  },
+  {
+    "id": "intent_0024",
+    "intent": "pentaschool",
+    "query_accented": "Có thể giải thích ngôn ngữ Golang giúp tôi được không",
+    "query_unaccented": "co the giai thich ngon ngu golang giup toi duoc khong",
+    "keyword_signals": [
+      "giai thich",
+      "ngon ngu golang"
+    ]
+  },
+  {
+    "id": "intent_0025",
+    "intent": "pentaschool",
+    "query_accented": "Hướng dẫn tôi giải thích toán rời rạc này nhé",
+    "query_unaccented": "huong dan toi giai thich toan roi rac nay nhe",
+    "keyword_signals": [
+      "giai thich",
+      "toan roi rac"
+    ]
+  },
+  {
+    "id": "intent_0026",
+    "intent": "pentaschool",
+    "query_accented": "Làm ơn giải thích cho tôi về machine learning",
+    "query_unaccented": "lam on giai thich cho toi ve machine learning",
+    "keyword_signals": [
+      "giai thich",
+      "machine learning"
+    ]
+  },
+  {
+    "id": "intent_0027",
+    "intent": "pentaschool",
+    "query_accented": "Cho mình hỏi cách giải thích kiến trúc vi dịch vụ với",
+    "query_unaccented": "cho minh hoi cach giai thich kien truc vi dich vu voi",
+    "keyword_signals": [
+      "giai thich",
+      "kien truc vi dich vu"
+    ]
+  },
+  {
+    "id": "intent_0028",
+    "intent": "pentaschool",
+    "query_accented": "Tôi muốn giải thích lập trình web ngay bây giờ",
+    "query_unaccented": "toi muon giai thich lap trinh web ngay bay gio",
+    "keyword_signals": [
+      "giai thich",
+      "lap trinh web"
+    ]
+  },
+  {
+    "id": "intent_0029",
+    "intent": "pentaschool",
+    "query_accented": "Có thể giải thích database SQL giúp tôi được không",
+    "query_unaccented": "co the giai thich database sql giup toi duoc khong",
+    "keyword_signals": [
+      "giai thich",
+      "database sql"
+    ]
+  },
+  {
+    "id": "intent_0030",
+    "intent": "pentaschool",
+    "query_accented": "Hướng dẫn tôi giải thích hệ điều hành Linux này nhé",
+    "query_unaccented": "huong dan toi giai thich he dieu hanh linux nay nhe",
+    "keyword_signals": [
+      "giai thich",
+      "he dieu hanh linux"
+    ]
+  },
+  {
+    "id": "intent_0031",
+    "intent": "pentaschool",
+    "query_accented": "Làm ơn hướng dẫn cho tôi về thuật toán cây nhị phân",
+    "query_unaccented": "lam on huong dan cho toi ve thuat toan cay nhi phan",
+    "keyword_signals": [
+      "huong dan",
+      "thuat toan cay nhi phan"
+    ]
+  },
+  {
+    "id": "intent_0032",
+    "intent": "pentaschool",
+    "query_accented": "Cho mình hỏi cách hướng dẫn cấu trúc dữ liệu với",
+    "query_unaccented": "cho minh hoi cach huong dan cau truc du lieu voi",
+    "keyword_signals": [
+      "huong dan",
+      "cau truc du lieu"
+    ]
+  },
+  {
+    "id": "intent_0033",
+    "intent": "pentaschool",
+    "query_accented": "Tôi muốn hướng dẫn lập trình Python ngay bây giờ",
+    "query_unaccented": "toi muon huong dan lap trinh python ngay bay gio",
+    "keyword_signals": [
+      "huong dan",
+      "lap trinh python"
+    ]
+  },
+  {
+    "id": "intent_0034",
+    "intent": "pentaschool",
+    "query_accented": "Có thể hướng dẫn ngôn ngữ Golang giúp tôi được không",
+    "query_unaccented": "co the huong dan ngon ngu golang giup toi duoc khong",
+    "keyword_signals": [
+      "huong dan",
+      "ngon ngu golang"
+    ]
+  },
+  {
+    "id": "intent_0035",
+    "intent": "pentaschool",
+    "query_accented": "Hướng dẫn tôi hướng dẫn toán rời rạc này nhé",
+    "query_unaccented": "huong dan toi huong dan toan roi rac nay nhe",
+    "keyword_signals": [
+      "huong dan",
+      "toan roi rac"
+    ]
+  },
+  {
+    "id": "intent_0036",
+    "intent": "pentaschool",
+    "query_accented": "Làm ơn hướng dẫn cho tôi về machine learning",
+    "query_unaccented": "lam on huong dan cho toi ve machine learning",
+    "keyword_signals": [
+      "huong dan",
+      "machine learning"
+    ]
+  },
+  {
+    "id": "intent_0037",
+    "intent": "pentaschool",
+    "query_accented": "Cho mình hỏi cách hướng dẫn kiến trúc vi dịch vụ với",
+    "query_unaccented": "cho minh hoi cach huong dan kien truc vi dich vu voi",
+    "keyword_signals": [
+      "huong dan",
+      "kien truc vi dich vu"
+    ]
+  },
+  {
+    "id": "intent_0038",
+    "intent": "pentaschool",
+    "query_accented": "Tôi muốn hướng dẫn lập trình web ngay bây giờ",
+    "query_unaccented": "toi muon huong dan lap trinh web ngay bay gio",
+    "keyword_signals": [
+      "huong dan",
+      "lap trinh web"
+    ]
+  },
+  {
+    "id": "intent_0039",
+    "intent": "pentaschool",
+    "query_accented": "Có thể hướng dẫn database SQL giúp tôi được không",
+    "query_unaccented": "co the huong dan database sql giup toi duoc khong",
+    "keyword_signals": [
+      "huong dan",
+      "database sql"
+    ]
+  },
+  {
+    "id": "intent_0040",
+    "intent": "pentaschool",
+    "query_accented": "Hướng dẫn tôi hướng dẫn hệ điều hành Linux này nhé",
+    "query_unaccented": "huong dan toi huong dan he dieu hanh linux nay nhe",
+    "keyword_signals": [
+      "huong dan",
+      "he dieu hanh linux"
+    ]
+  },
+  {
+    "id": "intent_0041",
+    "intent": "pentaschool",
+    "query_accented": "Làm ơn chữa bài cho tôi về thuật toán cây nhị phân",
+    "query_unaccented": "lam on chua bai cho toi ve thuat toan cay nhi phan",
+    "keyword_signals": [
+      "chua bai",
+      "thuat toan cay nhi phan"
+    ]
+  },
+  {
+    "id": "intent_0042",
+    "intent": "pentaschool",
+    "query_accented": "Cho mình hỏi cách chữa bài cấu trúc dữ liệu với",
+    "query_unaccented": "cho minh hoi cach chua bai cau truc du lieu voi",
+    "keyword_signals": [
+      "chua bai",
+      "cau truc du lieu"
+    ]
+  },
+  {
+    "id": "intent_0043",
+    "intent": "pentaschool",
+    "query_accented": "Tôi muốn chữa bài lập trình Python ngay bây giờ",
+    "query_unaccented": "toi muon chua bai lap trinh python ngay bay gio",
+    "keyword_signals": [
+      "chua bai",
+      "lap trinh python"
+    ]
+  },
+  {
+    "id": "intent_0044",
+    "intent": "pentaschool",
+    "query_accented": "Có thể chữa bài ngôn ngữ Golang giúp tôi được không",
+    "query_unaccented": "co the chua bai ngon ngu golang giup toi duoc khong",
+    "keyword_signals": [
+      "chua bai",
+      "ngon ngu golang"
+    ]
+  },
+  {
+    "id": "intent_0045",
+    "intent": "pentaschool",
+    "query_accented": "Hướng dẫn tôi chữa bài toán rời rạc này nhé",
+    "query_unaccented": "huong dan toi chua bai toan roi rac nay nhe",
+    "keyword_signals": [
+      "chua bai",
+      "toan roi rac"
+    ]
+  },
+  {
+    "id": "intent_0046",
+    "intent": "pentaschool",
+    "query_accented": "Làm ơn chữa bài cho tôi về machine learning",
+    "query_unaccented": "lam on chua bai cho toi ve machine learning",
+    "keyword_signals": [
+      "chua bai",
+      "machine learning"
+    ]
+  },
+  {
+    "id": "intent_0047",
+    "intent": "pentaschool",
+    "query_accented": "Cho mình hỏi cách chữa bài kiến trúc vi dịch vụ với",
+    "query_unaccented": "cho minh hoi cach chua bai kien truc vi dich vu voi",
+    "keyword_signals": [
+      "chua bai",
+      "kien truc vi dich vu"
+    ]
+  },
+  {
+    "id": "intent_0048",
+    "intent": "pentaschool",
+    "query_accented": "Tôi muốn chữa bài lập trình web ngay bây giờ",
+    "query_unaccented": "toi muon chua bai lap trinh web ngay bay gio",
+    "keyword_signals": [
+      "chua bai",
+      "lap trinh web"
+    ]
+  },
+  {
+    "id": "intent_0049",
+    "intent": "pentaschool",
+    "query_accented": "Có thể chữa bài database SQL giúp tôi được không",
+    "query_unaccented": "co the chua bai database sql giup toi duoc khong",
+    "keyword_signals": [
+      "chua bai",
+      "database sql"
+    ]
+  },
+  {
+    "id": "intent_0050",
+    "intent": "pentaschool",
+    "query_accented": "Hướng dẫn tôi chữa bài hệ điều hành Linux này nhé",
+    "query_unaccented": "huong dan toi chua bai he dieu hanh linux nay nhe",
+    "keyword_signals": [
+      "chua bai",
+      "he dieu hanh linux"
+    ]
+  },
+  {
+    "id": "intent_0051",
+    "intent": "pentaschool",
+    "query_accented": "Làm ơn kiểm tra cho tôi về thuật toán cây nhị phân",
+    "query_unaccented": "lam on kiem tra cho toi ve thuat toan cay nhi phan",
+    "keyword_signals": [
+      "kiem tra",
+      "thuat toan cay nhi phan"
+    ]
+  },
+  {
+    "id": "intent_0052",
+    "intent": "pentaschool",
+    "query_accented": "Cho mình hỏi cách kiểm tra cấu trúc dữ liệu với",
+    "query_unaccented": "cho minh hoi cach kiem tra cau truc du lieu voi",
+    "keyword_signals": [
+      "kiem tra",
+      "cau truc du lieu"
+    ]
+  },
+  {
+    "id": "intent_0053",
+    "intent": "pentaschool",
+    "query_accented": "Tôi muốn kiểm tra lập trình Python ngay bây giờ",
+    "query_unaccented": "toi muon kiem tra lap trinh python ngay bay gio",
+    "keyword_signals": [
+      "kiem tra",
+      "lap trinh python"
+    ]
+  },
+  {
+    "id": "intent_0054",
+    "intent": "pentaschool",
+    "query_accented": "Có thể kiểm tra ngôn ngữ Golang giúp tôi được không",
+    "query_unaccented": "co the kiem tra ngon ngu golang giup toi duoc khong",
+    "keyword_signals": [
+      "kiem tra",
+      "ngon ngu golang"
+    ]
+  },
+  {
+    "id": "intent_0055",
+    "intent": "pentaschool",
+    "query_accented": "Hướng dẫn tôi kiểm tra toán rời rạc này nhé",
+    "query_unaccented": "huong dan toi kiem tra toan roi rac nay nhe",
+    "keyword_signals": [
+      "kiem tra",
+      "toan roi rac"
+    ]
+  },
+  {
+    "id": "intent_0056",
+    "intent": "pentaschool",
+    "query_accented": "Làm ơn kiểm tra cho tôi về machine learning",
+    "query_unaccented": "lam on kiem tra cho toi ve machine learning",
+    "keyword_signals": [
+      "kiem tra",
+      "machine learning"
+    ]
+  },
+  {
+    "id": "intent_0057",
+    "intent": "pentaschool",
+    "query_accented": "Cho mình hỏi cách kiểm tra kiến trúc vi dịch vụ với",
+    "query_unaccented": "cho minh hoi cach kiem tra kien truc vi dich vu voi",
+    "keyword_signals": [
+      "kiem tra",
+      "kien truc vi dich vu"
+    ]
+  },
+  {
+    "id": "intent_0058",
+    "intent": "pentaschool",
+    "query_accented": "Tôi muốn kiểm tra lập trình web ngay bây giờ",
+    "query_unaccented": "toi muon kiem tra lap trinh web ngay bay gio",
+    "keyword_signals": [
+      "kiem tra",
+      "lap trinh web"
+    ]
+  },
+  {
+    "id": "intent_0059",
+    "intent": "pentaschool",
+    "query_accented": "Có thể kiểm tra database SQL giúp tôi được không",
+    "query_unaccented": "co the kiem tra database sql giup toi duoc khong",
+    "keyword_signals": [
+      "kiem tra",
+      "database sql"
+    ]
+  },
+  {
+    "id": "intent_0060",
+    "intent": "pentaschool",
+    "query_accented": "Hướng dẫn tôi kiểm tra hệ điều hành Linux này nhé",
+    "query_unaccented": "huong dan toi kiem tra he dieu hanh linux nay nhe",
+    "keyword_signals": [
+      "kiem tra",
+      "he dieu hanh linux"
+    ]
+  },
+  {
+    "id": "intent_0061",
+    "intent": "pentaschool",
+    "query_accented": "Làm ơn ôn tập cho tôi về thuật toán cây nhị phân",
+    "query_unaccented": "lam on on tap cho toi ve thuat toan cay nhi phan",
+    "keyword_signals": [
+      "on tap",
+      "thuat toan cay nhi phan"
+    ]
+  },
+  {
+    "id": "intent_0062",
+    "intent": "pentaschool",
+    "query_accented": "Cho mình hỏi cách ôn tập cấu trúc dữ liệu với",
+    "query_unaccented": "cho minh hoi cach on tap cau truc du lieu voi",
+    "keyword_signals": [
+      "on tap",
+      "cau truc du lieu"
+    ]
+  },
+  {
+    "id": "intent_0063",
+    "intent": "pentaschool",
+    "query_accented": "Tôi muốn ôn tập lập trình Python ngay bây giờ",
+    "query_unaccented": "toi muon on tap lap trinh python ngay bay gio",
+    "keyword_signals": [
+      "on tap",
+      "lap trinh python"
+    ]
+  },
+  {
+    "id": "intent_0064",
+    "intent": "pentaschool",
+    "query_accented": "Có thể ôn tập ngôn ngữ Golang giúp tôi được không",
+    "query_unaccented": "co the on tap ngon ngu golang giup toi duoc khong",
+    "keyword_signals": [
+      "on tap",
+      "ngon ngu golang"
+    ]
+  },
+  {
+    "id": "intent_0065",
+    "intent": "pentaschool",
+    "query_accented": "Hướng dẫn tôi ôn tập toán rời rạc này nhé",
+    "query_unaccented": "huong dan toi on tap toan roi rac nay nhe",
+    "keyword_signals": [
+      "on tap",
+      "toan roi rac"
+    ]
+  },
+  {
+    "id": "intent_0066",
+    "intent": "pentaschool",
+    "query_accented": "Làm ơn ôn tập cho tôi về machine learning",
+    "query_unaccented": "lam on on tap cho toi ve machine learning",
+    "keyword_signals": [
+      "on tap",
+      "machine learning"
+    ]
+  },
+  {
+    "id": "intent_0067",
+    "intent": "pentaschool",
+    "query_accented": "Cho mình hỏi cách ôn tập kiến trúc vi dịch vụ với",
+    "query_unaccented": "cho minh hoi cach on tap kien truc vi dich vu voi",
+    "keyword_signals": [
+      "on tap",
+      "kien truc vi dich vu"
+    ]
+  },
+  {
+    "id": "intent_0068",
+    "intent": "pentaschool",
+    "query_accented": "Tôi muốn ôn tập lập trình web ngay bây giờ",
+    "query_unaccented": "toi muon on tap lap trinh web ngay bay gio",
+    "keyword_signals": [
+      "on tap",
+      "lap trinh web"
+    ]
+  },
+  {
+    "id": "intent_0069",
+    "intent": "pentaschool",
+    "query_accented": "Có thể ôn tập database SQL giúp tôi được không",
+    "query_unaccented": "co the on tap database sql giup toi duoc khong",
+    "keyword_signals": [
+      "on tap",
+      "database sql"
+    ]
+  },
+  {
+    "id": "intent_0070",
+    "intent": "pentaschool",
+    "query_accented": "Hướng dẫn tôi ôn tập hệ điều hành Linux này nhé",
+    "query_unaccented": "huong dan toi on tap he dieu hanh linux nay nhe",
+    "keyword_signals": [
+      "on tap",
+      "he dieu hanh linux"
+    ]
+  },
+  {
+    "id": "intent_0071",
+    "intent": "pentaschool",
+    "query_accented": "Làm ơn làm bài tập cho tôi về thuật toán cây nhị phân",
+    "query_unaccented": "lam on lam bai tap cho toi ve thuat toan cay nhi phan",
+    "keyword_signals": [
+      "lam bai tap",
+      "thuat toan cay nhi phan"
+    ]
+  },
+  {
+    "id": "intent_0072",
+    "intent": "pentaschool",
+    "query_accented": "Cho mình hỏi cách làm bài tập cấu trúc dữ liệu với",
+    "query_unaccented": "cho minh hoi cach lam bai tap cau truc du lieu voi",
+    "keyword_signals": [
+      "lam bai tap",
+      "cau truc du lieu"
+    ]
+  },
+  {
+    "id": "intent_0073",
+    "intent": "pentaschool",
+    "query_accented": "Tôi muốn làm bài tập lập trình Python ngay bây giờ",
+    "query_unaccented": "toi muon lam bai tap lap trinh python ngay bay gio",
+    "keyword_signals": [
+      "lam bai tap",
+      "lap trinh python"
+    ]
+  },
+  {
+    "id": "intent_0074",
+    "intent": "pentaschool",
+    "query_accented": "Có thể làm bài tập ngôn ngữ Golang giúp tôi được không",
+    "query_unaccented": "co the lam bai tap ngon ngu golang giup toi duoc khong",
+    "keyword_signals": [
+      "lam bai tap",
+      "ngon ngu golang"
+    ]
+  },
+  {
+    "id": "intent_0075",
+    "intent": "pentaschool",
+    "query_accented": "Hướng dẫn tôi làm bài tập toán rời rạc này nhé",
+    "query_unaccented": "huong dan toi lam bai tap toan roi rac nay nhe",
+    "keyword_signals": [
+      "lam bai tap",
+      "toan roi rac"
+    ]
+  },
+  {
+    "id": "intent_0076",
+    "intent": "pentaschool",
+    "query_accented": "Làm ơn làm bài tập cho tôi về machine learning",
+    "query_unaccented": "lam on lam bai tap cho toi ve machine learning",
+    "keyword_signals": [
+      "lam bai tap",
+      "machine learning"
+    ]
+  },
+  {
+    "id": "intent_0077",
+    "intent": "pentaschool",
+    "query_accented": "Cho mình hỏi cách làm bài tập kiến trúc vi dịch vụ với",
+    "query_unaccented": "cho minh hoi cach lam bai tap kien truc vi dich vu voi",
+    "keyword_signals": [
+      "lam bai tap",
+      "kien truc vi dich vu"
+    ]
+  },
+  {
+    "id": "intent_0078",
+    "intent": "pentaschool",
+    "query_accented": "Tôi muốn làm bài tập lập trình web ngay bây giờ",
+    "query_unaccented": "toi muon lam bai tap lap trinh web ngay bay gio",
+    "keyword_signals": [
+      "lam bai tap",
+      "lap trinh web"
+    ]
+  },
+  {
+    "id": "intent_0079",
+    "intent": "pentaschool",
+    "query_accented": "Có thể làm bài tập database SQL giúp tôi được không",
+    "query_unaccented": "co the lam bai tap database sql giup toi duoc khong",
+    "keyword_signals": [
+      "lam bai tap",
+      "database sql"
+    ]
+  },
+  {
+    "id": "intent_0080",
+    "intent": "pentaschool",
+    "query_accented": "Hướng dẫn tôi làm bài tập hệ điều hành Linux này nhé",
+    "query_unaccented": "huong dan toi lam bai tap he dieu hanh linux nay nhe",
+    "keyword_signals": [
+      "lam bai tap",
+      "he dieu hanh linux"
+    ]
+  },
+  {
+    "id": "intent_0081",
+    "intent": "pentaschool",
+    "query_accented": "Làm ơn mở bài cho tôi về thuật toán cây nhị phân",
+    "query_unaccented": "lam on mo bai cho toi ve thuat toan cay nhi phan",
+    "keyword_signals": [
+      "mo bai",
+      "thuat toan cay nhi phan"
+    ]
+  },
+  {
+    "id": "intent_0082",
+    "intent": "pentaschool",
+    "query_accented": "Cho mình hỏi cách mở bài cấu trúc dữ liệu với",
+    "query_unaccented": "cho minh hoi cach mo bai cau truc du lieu voi",
+    "keyword_signals": [
+      "mo bai",
+      "cau truc du lieu"
+    ]
+  },
+  {
+    "id": "intent_0083",
+    "intent": "pentaschool",
+    "query_accented": "Tôi muốn mở bài lập trình Python ngay bây giờ",
+    "query_unaccented": "toi muon mo bai lap trinh python ngay bay gio",
+    "keyword_signals": [
+      "mo bai",
+      "lap trinh python"
+    ]
+  },
+  {
+    "id": "intent_0084",
+    "intent": "pentaschool",
+    "query_accented": "Có thể mở bài ngôn ngữ Golang giúp tôi được không",
+    "query_unaccented": "co the mo bai ngon ngu golang giup toi duoc khong",
+    "keyword_signals": [
+      "mo bai",
+      "ngon ngu golang"
+    ]
+  },
+  {
+    "id": "intent_0085",
+    "intent": "pentaschool",
+    "query_accented": "Hướng dẫn tôi mở bài toán rời rạc này nhé",
+    "query_unaccented": "huong dan toi mo bai toan roi rac nay nhe",
+    "keyword_signals": [
+      "mo bai",
+      "toan roi rac"
+    ]
+  },
+  {
+    "id": "intent_0086",
+    "intent": "pentaschool",
+    "query_accented": "Làm ơn mở bài cho tôi về machine learning",
+    "query_unaccented": "lam on mo bai cho toi ve machine learning",
+    "keyword_signals": [
+      "mo bai",
+      "machine learning"
+    ]
+  },
+  {
+    "id": "intent_0087",
+    "intent": "pentaschool",
+    "query_accented": "Cho mình hỏi cách mở bài kiến trúc vi dịch vụ với",
+    "query_unaccented": "cho minh hoi cach mo bai kien truc vi dich vu voi",
+    "keyword_signals": [
+      "mo bai",
+      "kien truc vi dich vu"
+    ]
+  },
+  {
+    "id": "intent_0088",
+    "intent": "pentaschool",
+    "query_accented": "Tôi muốn mở bài lập trình web ngay bây giờ",
+    "query_unaccented": "toi muon mo bai lap trinh web ngay bay gio",
+    "keyword_signals": [
+      "mo bai",
+      "lap trinh web"
+    ]
+  },
+  {
+    "id": "intent_0089",
+    "intent": "pentaschool",
+    "query_accented": "Có thể mở bài database SQL giúp tôi được không",
+    "query_unaccented": "co the mo bai database sql giup toi duoc khong",
+    "keyword_signals": [
+      "mo bai",
+      "database sql"
+    ]
+  },
+  {
+    "id": "intent_0090",
+    "intent": "pentaschool",
+    "query_accented": "Hướng dẫn tôi mở bài hệ điều hành Linux này nhé",
+    "query_unaccented": "huong dan toi mo bai he dieu hanh linux nay nhe",
+    "keyword_signals": [
+      "mo bai",
+      "he dieu hanh linux"
+    ]
+  },
+  {
+    "id": "intent_0091",
+    "intent": "pentaschool",
+    "query_accented": "Làm ơn tìm khóa học cho tôi về thuật toán cây nhị phân",
+    "query_unaccented": "lam on tim khoa hoc cho toi ve thuat toan cay nhi phan",
+    "keyword_signals": [
+      "tim khoa hoc",
+      "thuat toan cay nhi phan"
+    ]
+  },
+  {
+    "id": "intent_0092",
+    "intent": "pentaschool",
+    "query_accented": "Cho mình hỏi cách tìm khóa học cấu trúc dữ liệu với",
+    "query_unaccented": "cho minh hoi cach tim khoa hoc cau truc du lieu voi",
+    "keyword_signals": [
+      "tim khoa hoc",
+      "cau truc du lieu"
+    ]
+  },
+  {
+    "id": "intent_0093",
+    "intent": "pentaschool",
+    "query_accented": "Tôi muốn tìm khóa học lập trình Python ngay bây giờ",
+    "query_unaccented": "toi muon tim khoa hoc lap trinh python ngay bay gio",
+    "keyword_signals": [
+      "tim khoa hoc",
+      "lap trinh python"
+    ]
+  },
+  {
+    "id": "intent_0094",
+    "intent": "pentaschool",
+    "query_accented": "Có thể tìm khóa học ngôn ngữ Golang giúp tôi được không",
+    "query_unaccented": "co the tim khoa hoc ngon ngu golang giup toi duoc khong",
+    "keyword_signals": [
+      "tim khoa hoc",
+      "ngon ngu golang"
+    ]
+  },
+  {
+    "id": "intent_0095",
+    "intent": "pentaschool",
+    "query_accented": "Hướng dẫn tôi tìm khóa học toán rời rạc này nhé",
+    "query_unaccented": "huong dan toi tim khoa hoc toan roi rac nay nhe",
+    "keyword_signals": [
+      "tim khoa hoc",
+      "toan roi rac"
+    ]
+  },
+  {
+    "id": "intent_0096",
+    "intent": "pentaschool",
+    "query_accented": "Làm ơn tìm khóa học cho tôi về machine learning",
+    "query_unaccented": "lam on tim khoa hoc cho toi ve machine learning",
+    "keyword_signals": [
+      "tim khoa hoc",
+      "machine learning"
+    ]
+  },
+  {
+    "id": "intent_0097",
+    "intent": "pentaschool",
+    "query_accented": "Cho mình hỏi cách tìm khóa học kiến trúc vi dịch vụ với",
+    "query_unaccented": "cho minh hoi cach tim khoa hoc kien truc vi dich vu voi",
+    "keyword_signals": [
+      "tim khoa hoc",
+      "kien truc vi dich vu"
+    ]
+  },
+  {
+    "id": "intent_0098",
+    "intent": "pentaschool",
+    "query_accented": "Tôi muốn tìm khóa học lập trình web ngay bây giờ",
+    "query_unaccented": "toi muon tim khoa hoc lap trinh web ngay bay gio",
+    "keyword_signals": [
+      "tim khoa hoc",
+      "lap trinh web"
+    ]
+  },
+  {
+    "id": "intent_0099",
+    "intent": "pentaschool",
+    "query_accented": "Có thể tìm khóa học database SQL giúp tôi được không",
+    "query_unaccented": "co the tim khoa hoc database sql giup toi duoc khong",
+    "keyword_signals": [
+      "tim khoa hoc",
+      "database sql"
+    ]
+  },
+  {
+    "id": "intent_0100",
+    "intent": "pentaschool",
+    "query_accented": "Hướng dẫn tôi tìm khóa học hệ điều hành Linux này nhé",
+    "query_unaccented": "huong dan toi tim khoa hoc he dieu hanh linux nay nhe",
+    "keyword_signals": [
+      "tim khoa hoc",
+      "he dieu hanh linux"
+    ]
+  },
+  {
+    "id": "intent_0101",
+    "intent": "pentakuru",
+    "query_accented": "Làm ơn tìm file cho tôi về báo cáo tài chính",
+    "query_unaccented": "lam on tim file cho toi ve bao cao tai chinh",
+    "keyword_signals": [
+      "tim file",
+      "bao cao tai chinh"
+    ]
+  },
+  {
+    "id": "intent_0102",
+    "intent": "pentakuru",
+    "query_accented": "Cho mình hỏi cách tìm file hợp đồng dự án với",
+    "query_unaccented": "cho minh hoi cach tim file hop dong du an voi",
+    "keyword_signals": [
+      "tim file",
+      "hop dong du an"
+    ]
+  },
+  {
+    "id": "intent_0103",
+    "intent": "pentakuru",
+    "query_accented": "Tôi muốn tìm file file PDF bài giảng ngay bây giờ",
+    "query_unaccented": "toi muon tim file file pdf bai giang ngay bay gio",
+    "keyword_signals": [
+      "tim file",
+      "file pdf bai giang"
+    ]
+  },
+  {
+    "id": "intent_0104",
+    "intent": "pentakuru",
+    "query_accented": "Có thể tìm file code nguồn cũ giúp tôi được không",
+    "query_unaccented": "co the tim file code nguon cu giup toi duoc khong",
+    "keyword_signals": [
+      "tim file",
+      "code nguon cu"
+    ]
+  },
+  {
+    "id": "intent_0105",
+    "intent": "pentakuru",
+    "query_accented": "Hướng dẫn tôi tìm file file excel thống kê này nhé",
+    "query_unaccented": "huong dan toi tim file file excel thong ke nay nhe",
+    "keyword_signals": [
+      "tim file",
+      "file excel thong ke"
+    ]
+  },
+  {
+    "id": "intent_0106",
+    "intent": "pentakuru",
+    "query_accented": "Làm ơn tìm file cho tôi về ảnh chụp màn hình",
+    "query_unaccented": "lam on tim file cho toi ve anh chup man hinh",
+    "keyword_signals": [
+      "tim file",
+      "anh chup man hinh"
+    ]
+  },
+  {
+    "id": "intent_0107",
+    "intent": "pentakuru",
+    "query_accented": "Cho mình hỏi cách tìm file tài liệu thiết kế với",
+    "query_unaccented": "cho minh hoi cach tim file tai lieu thiet ke voi",
+    "keyword_signals": [
+      "tim file",
+      "tai lieu thiet ke"
+    ]
+  },
+  {
+    "id": "intent_0108",
+    "intent": "pentakuru",
+    "query_accented": "Tôi muốn tìm file file word ghi chú ngay bây giờ",
+    "query_unaccented": "toi muon tim file file word ghi chu ngay bay gio",
+    "keyword_signals": [
+      "tim file",
+      "file word ghi chu"
+    ]
+  },
+  {
+    "id": "intent_0109",
+    "intent": "pentakuru",
+    "query_accented": "Có thể tìm file hóa đơn thanh toán giúp tôi được không",
+    "query_unaccented": "co the tim file hoa don thanh toan giup toi duoc khong",
+    "keyword_signals": [
+      "tim file",
+      "hoa don thanh toan"
+    ]
+  },
+  {
+    "id": "intent_0110",
+    "intent": "pentakuru",
+    "query_accented": "Hướng dẫn tôi tìm file hồ sơ năng lực này nhé",
+    "query_unaccented": "huong dan toi tim file ho so nang luc nay nhe",
+    "keyword_signals": [
+      "tim file",
+      "ho so nang luc"
+    ]
+  },
+  {
+    "id": "intent_0111",
+    "intent": "pentakuru",
+    "query_accented": "Làm ơn quét thư mục cho tôi về báo cáo tài chính",
+    "query_unaccented": "lam on quet thu muc cho toi ve bao cao tai chinh",
+    "keyword_signals": [
+      "quet thu muc",
+      "bao cao tai chinh"
+    ]
+  },
+  {
+    "id": "intent_0112",
+    "intent": "pentakuru",
+    "query_accented": "Cho mình hỏi cách quét thư mục hợp đồng dự án với",
+    "query_unaccented": "cho minh hoi cach quet thu muc hop dong du an voi",
+    "keyword_signals": [
+      "quet thu muc",
+      "hop dong du an"
+    ]
+  },
+  {
+    "id": "intent_0113",
+    "intent": "pentakuru",
+    "query_accented": "Tôi muốn quét thư mục file PDF bài giảng ngay bây giờ",
+    "query_unaccented": "toi muon quet thu muc file pdf bai giang ngay bay gio",
+    "keyword_signals": [
+      "quet thu muc",
+      "file pdf bai giang"
+    ]
+  },
+  {
+    "id": "intent_0114",
+    "intent": "pentakuru",
+    "query_accented": "Có thể quét thư mục code nguồn cũ giúp tôi được không",
+    "query_unaccented": "co the quet thu muc code nguon cu giup toi duoc khong",
+    "keyword_signals": [
+      "quet thu muc",
+      "code nguon cu"
+    ]
+  },
+  {
+    "id": "intent_0115",
+    "intent": "pentakuru",
+    "query_accented": "Hướng dẫn tôi quét thư mục file excel thống kê này nhé",
+    "query_unaccented": "huong dan toi quet thu muc file excel thong ke nay nhe",
+    "keyword_signals": [
+      "quet thu muc",
+      "file excel thong ke"
+    ]
+  },
+  {
+    "id": "intent_0116",
+    "intent": "pentakuru",
+    "query_accented": "Làm ơn quét thư mục cho tôi về ảnh chụp màn hình",
+    "query_unaccented": "lam on quet thu muc cho toi ve anh chup man hinh",
+    "keyword_signals": [
+      "quet thu muc",
+      "anh chup man hinh"
+    ]
+  },
+  {
+    "id": "intent_0117",
+    "intent": "pentakuru",
+    "query_accented": "Cho mình hỏi cách quét thư mục tài liệu thiết kế với",
+    "query_unaccented": "cho minh hoi cach quet thu muc tai lieu thiet ke voi",
+    "keyword_signals": [
+      "quet thu muc",
+      "tai lieu thiet ke"
+    ]
+  },
+  {
+    "id": "intent_0118",
+    "intent": "pentakuru",
+    "query_accented": "Tôi muốn quét thư mục file word ghi chú ngay bây giờ",
+    "query_unaccented": "toi muon quet thu muc file word ghi chu ngay bay gio",
+    "keyword_signals": [
+      "quet thu muc",
+      "file word ghi chu"
+    ]
+  },
+  {
+    "id": "intent_0119",
+    "intent": "pentakuru",
+    "query_accented": "Có thể quét thư mục hóa đơn thanh toán giúp tôi được không",
+    "query_unaccented": "co the quet thu muc hoa don thanh toan giup toi duoc khong",
+    "keyword_signals": [
+      "quet thu muc",
+      "hoa don thanh toan"
+    ]
+  },
+  {
+    "id": "intent_0120",
+    "intent": "pentakuru",
+    "query_accented": "Hướng dẫn tôi quét thư mục hồ sơ năng lực này nhé",
+    "query_unaccented": "huong dan toi quet thu muc ho so nang luc nay nhe",
+    "keyword_signals": [
+      "quet thu muc",
+      "ho so nang luc"
+    ]
+  },
+  {
+    "id": "intent_0121",
+    "intent": "pentakuru",
+    "query_accented": "Làm ơn tóm tắt tài liệu cho tôi về báo cáo tài chính",
+    "query_unaccented": "lam on tom tat tai lieu cho toi ve bao cao tai chinh",
+    "keyword_signals": [
+      "tom tat tai lieu",
+      "bao cao tai chinh"
+    ]
+  },
+  {
+    "id": "intent_0122",
+    "intent": "pentakuru",
+    "query_accented": "Cho mình hỏi cách tóm tắt tài liệu hợp đồng dự án với",
+    "query_unaccented": "cho minh hoi cach tom tat tai lieu hop dong du an voi",
+    "keyword_signals": [
+      "tom tat tai lieu",
+      "hop dong du an"
+    ]
+  },
+  {
+    "id": "intent_0123",
+    "intent": "pentakuru",
+    "query_accented": "Tôi muốn tóm tắt tài liệu file PDF bài giảng ngay bây giờ",
+    "query_unaccented": "toi muon tom tat tai lieu file pdf bai giang ngay bay gio",
+    "keyword_signals": [
+      "tom tat tai lieu",
+      "file pdf bai giang"
+    ]
+  },
+  {
+    "id": "intent_0124",
+    "intent": "pentakuru",
+    "query_accented": "Có thể tóm tắt tài liệu code nguồn cũ giúp tôi được không",
+    "query_unaccented": "co the tom tat tai lieu code nguon cu giup toi duoc khong",
+    "keyword_signals": [
+      "tom tat tai lieu",
+      "code nguon cu"
+    ]
+  },
+  {
+    "id": "intent_0125",
+    "intent": "pentakuru",
+    "query_accented": "Hướng dẫn tôi tóm tắt tài liệu file excel thống kê này nhé",
+    "query_unaccented": "huong dan toi tom tat tai lieu file excel thong ke nay nhe",
+    "keyword_signals": [
+      "tom tat tai lieu",
+      "file excel thong ke"
+    ]
+  },
+  {
+    "id": "intent_0126",
+    "intent": "pentakuru",
+    "query_accented": "Làm ơn tóm tắt tài liệu cho tôi về ảnh chụp màn hình",
+    "query_unaccented": "lam on tom tat tai lieu cho toi ve anh chup man hinh",
+    "keyword_signals": [
+      "tom tat tai lieu",
+      "anh chup man hinh"
+    ]
+  },
+  {
+    "id": "intent_0127",
+    "intent": "pentakuru",
+    "query_accented": "Cho mình hỏi cách tóm tắt tài liệu tài liệu thiết kế với",
+    "query_unaccented": "cho minh hoi cach tom tat tai lieu tai lieu thiet ke voi",
+    "keyword_signals": [
+      "tom tat tai lieu",
+      "tai lieu thiet ke"
+    ]
+  },
+  {
+    "id": "intent_0128",
+    "intent": "pentakuru",
+    "query_accented": "Tôi muốn tóm tắt tài liệu file word ghi chú ngay bây giờ",
+    "query_unaccented": "toi muon tom tat tai lieu file word ghi chu ngay bay gio",
+    "keyword_signals": [
+      "tom tat tai lieu",
+      "file word ghi chu"
+    ]
+  },
+  {
+    "id": "intent_0129",
+    "intent": "pentakuru",
+    "query_accented": "Có thể tóm tắt tài liệu hóa đơn thanh toán giúp tôi được không",
+    "query_unaccented": "co the tom tat tai lieu hoa don thanh toan giup toi duoc khong",
+    "keyword_signals": [
+      "tom tat tai lieu",
+      "hoa don thanh toan"
+    ]
+  },
+  {
+    "id": "intent_0130",
+    "intent": "pentakuru",
+    "query_accented": "Hướng dẫn tôi tóm tắt tài liệu hồ sơ năng lực này nhé",
+    "query_unaccented": "huong dan toi tom tat tai lieu ho so nang luc nay nhe",
+    "keyword_signals": [
+      "tom tat tai lieu",
+      "ho so nang luc"
+    ]
+  },
+  {
+    "id": "intent_0131",
+    "intent": "pentakuru",
+    "query_accented": "Làm ơn lục lại file cho tôi về báo cáo tài chính",
+    "query_unaccented": "lam on luc lai file cho toi ve bao cao tai chinh",
+    "keyword_signals": [
+      "luc lai file",
+      "bao cao tai chinh"
+    ]
+  },
+  {
+    "id": "intent_0132",
+    "intent": "pentakuru",
+    "query_accented": "Cho mình hỏi cách lục lại file hợp đồng dự án với",
+    "query_unaccented": "cho minh hoi cach luc lai file hop dong du an voi",
+    "keyword_signals": [
+      "luc lai file",
+      "hop dong du an"
+    ]
+  },
+  {
+    "id": "intent_0133",
+    "intent": "pentakuru",
+    "query_accented": "Tôi muốn lục lại file file PDF bài giảng ngay bây giờ",
+    "query_unaccented": "toi muon luc lai file file pdf bai giang ngay bay gio",
+    "keyword_signals": [
+      "luc lai file",
+      "file pdf bai giang"
+    ]
+  },
+  {
+    "id": "intent_0134",
+    "intent": "pentakuru",
+    "query_accented": "Có thể lục lại file code nguồn cũ giúp tôi được không",
+    "query_unaccented": "co the luc lai file code nguon cu giup toi duoc khong",
+    "keyword_signals": [
+      "luc lai file",
+      "code nguon cu"
+    ]
+  },
+  {
+    "id": "intent_0135",
+    "intent": "pentakuru",
+    "query_accented": "Hướng dẫn tôi lục lại file file excel thống kê này nhé",
+    "query_unaccented": "huong dan toi luc lai file file excel thong ke nay nhe",
+    "keyword_signals": [
+      "luc lai file",
+      "file excel thong ke"
+    ]
+  },
+  {
+    "id": "intent_0136",
+    "intent": "pentakuru",
+    "query_accented": "Làm ơn lục lại file cho tôi về ảnh chụp màn hình",
+    "query_unaccented": "lam on luc lai file cho toi ve anh chup man hinh",
+    "keyword_signals": [
+      "luc lai file",
+      "anh chup man hinh"
+    ]
+  },
+  {
+    "id": "intent_0137",
+    "intent": "pentakuru",
+    "query_accented": "Cho mình hỏi cách lục lại file tài liệu thiết kế với",
+    "query_unaccented": "cho minh hoi cach luc lai file tai lieu thiet ke voi",
+    "keyword_signals": [
+      "luc lai file",
+      "tai lieu thiet ke"
+    ]
+  },
+  {
+    "id": "intent_0138",
+    "intent": "pentakuru",
+    "query_accented": "Tôi muốn lục lại file file word ghi chú ngay bây giờ",
+    "query_unaccented": "toi muon luc lai file file word ghi chu ngay bay gio",
+    "keyword_signals": [
+      "luc lai file",
+      "file word ghi chu"
+    ]
+  },
+  {
+    "id": "intent_0139",
+    "intent": "pentakuru",
+    "query_accented": "Có thể lục lại file hóa đơn thanh toán giúp tôi được không",
+    "query_unaccented": "co the luc lai file hoa don thanh toan giup toi duoc khong",
+    "keyword_signals": [
+      "luc lai file",
+      "hoa don thanh toan"
+    ]
+  },
+  {
+    "id": "intent_0140",
+    "intent": "pentakuru",
+    "query_accented": "Hướng dẫn tôi lục lại file hồ sơ năng lực này nhé",
+    "query_unaccented": "huong dan toi luc lai file ho so nang luc nay nhe",
+    "keyword_signals": [
+      "luc lai file",
+      "ho so nang luc"
+    ]
+  },
+  {
+    "id": "intent_0141",
+    "intent": "pentakuru",
+    "query_accented": "Làm ơn kiểm tra dung lượng cho tôi về báo cáo tài chính",
+    "query_unaccented": "lam on kiem tra dung luong cho toi ve bao cao tai chinh",
+    "keyword_signals": [
+      "kiem tra dung luong",
+      "bao cao tai chinh"
+    ]
+  },
+  {
+    "id": "intent_0142",
+    "intent": "pentakuru",
+    "query_accented": "Cho mình hỏi cách kiểm tra dung lượng hợp đồng dự án với",
+    "query_unaccented": "cho minh hoi cach kiem tra dung luong hop dong du an voi",
+    "keyword_signals": [
+      "kiem tra dung luong",
+      "hop dong du an"
+    ]
+  },
+  {
+    "id": "intent_0143",
+    "intent": "pentakuru",
+    "query_accented": "Tôi muốn kiểm tra dung lượng file PDF bài giảng ngay bây giờ",
+    "query_unaccented": "toi muon kiem tra dung luong file pdf bai giang ngay bay gio",
+    "keyword_signals": [
+      "kiem tra dung luong",
+      "file pdf bai giang"
+    ]
+  },
+  {
+    "id": "intent_0144",
+    "intent": "pentakuru",
+    "query_accented": "Có thể kiểm tra dung lượng code nguồn cũ giúp tôi được không",
+    "query_unaccented": "co the kiem tra dung luong code nguon cu giup toi duoc khong",
+    "keyword_signals": [
+      "kiem tra dung luong",
+      "code nguon cu"
+    ]
+  },
+  {
+    "id": "intent_0145",
+    "intent": "pentakuru",
+    "query_accented": "Hướng dẫn tôi kiểm tra dung lượng file excel thống kê này nhé",
+    "query_unaccented": "huong dan toi kiem tra dung luong file excel thong ke nay nhe",
+    "keyword_signals": [
+      "kiem tra dung luong",
+      "file excel thong ke"
+    ]
+  },
+  {
+    "id": "intent_0146",
+    "intent": "pentakuru",
+    "query_accented": "Làm ơn kiểm tra dung lượng cho tôi về ảnh chụp màn hình",
+    "query_unaccented": "lam on kiem tra dung luong cho toi ve anh chup man hinh",
+    "keyword_signals": [
+      "kiem tra dung luong",
+      "anh chup man hinh"
+    ]
+  },
+  {
+    "id": "intent_0147",
+    "intent": "pentakuru",
+    "query_accented": "Cho mình hỏi cách kiểm tra dung lượng tài liệu thiết kế với",
+    "query_unaccented": "cho minh hoi cach kiem tra dung luong tai lieu thiet ke voi",
+    "keyword_signals": [
+      "kiem tra dung luong",
+      "tai lieu thiet ke"
+    ]
+  },
+  {
+    "id": "intent_0148",
+    "intent": "pentakuru",
+    "query_accented": "Tôi muốn kiểm tra dung lượng file word ghi chú ngay bây giờ",
+    "query_unaccented": "toi muon kiem tra dung luong file word ghi chu ngay bay gio",
+    "keyword_signals": [
+      "kiem tra dung luong",
+      "file word ghi chu"
+    ]
+  },
+  {
+    "id": "intent_0149",
+    "intent": "pentakuru",
+    "query_accented": "Có thể kiểm tra dung lượng hóa đơn thanh toán giúp tôi được không",
+    "query_unaccented": "co the kiem tra dung luong hoa don thanh toan giup toi duoc khong",
+    "keyword_signals": [
+      "kiem tra dung luong",
+      "hoa don thanh toan"
+    ]
+  },
+  {
+    "id": "intent_0150",
+    "intent": "pentakuru",
+    "query_accented": "Hướng dẫn tôi kiểm tra dung lượng hồ sơ năng lực này nhé",
+    "query_unaccented": "huong dan toi kiem tra dung luong ho so nang luc nay nhe",
+    "keyword_signals": [
+      "kiem tra dung luong",
+      "ho so nang luc"
+    ]
+  },
+  {
+    "id": "intent_0151",
+    "intent": "pentakuru",
+    "query_accented": "Làm ơn dọn dẹp file cho tôi về báo cáo tài chính",
+    "query_unaccented": "lam on don dep file cho toi ve bao cao tai chinh",
+    "keyword_signals": [
+      "don dep file",
+      "bao cao tai chinh"
+    ]
+  },
+  {
+    "id": "intent_0152",
+    "intent": "pentakuru",
+    "query_accented": "Cho mình hỏi cách dọn dẹp file hợp đồng dự án với",
+    "query_unaccented": "cho minh hoi cach don dep file hop dong du an voi",
+    "keyword_signals": [
+      "don dep file",
+      "hop dong du an"
+    ]
+  },
+  {
+    "id": "intent_0153",
+    "intent": "pentakuru",
+    "query_accented": "Tôi muốn dọn dẹp file file PDF bài giảng ngay bây giờ",
+    "query_unaccented": "toi muon don dep file file pdf bai giang ngay bay gio",
+    "keyword_signals": [
+      "don dep file",
+      "file pdf bai giang"
+    ]
+  },
+  {
+    "id": "intent_0154",
+    "intent": "pentakuru",
+    "query_accented": "Có thể dọn dẹp file code nguồn cũ giúp tôi được không",
+    "query_unaccented": "co the don dep file code nguon cu giup toi duoc khong",
+    "keyword_signals": [
+      "don dep file",
+      "code nguon cu"
+    ]
+  },
+  {
+    "id": "intent_0155",
+    "intent": "pentakuru",
+    "query_accented": "Hướng dẫn tôi dọn dẹp file file excel thống kê này nhé",
+    "query_unaccented": "huong dan toi don dep file file excel thong ke nay nhe",
+    "keyword_signals": [
+      "don dep file",
+      "file excel thong ke"
+    ]
+  },
+  {
+    "id": "intent_0156",
+    "intent": "pentakuru",
+    "query_accented": "Làm ơn dọn dẹp file cho tôi về ảnh chụp màn hình",
+    "query_unaccented": "lam on don dep file cho toi ve anh chup man hinh",
+    "keyword_signals": [
+      "don dep file",
+      "anh chup man hinh"
+    ]
+  },
+  {
+    "id": "intent_0157",
+    "intent": "pentakuru",
+    "query_accented": "Cho mình hỏi cách dọn dẹp file tài liệu thiết kế với",
+    "query_unaccented": "cho minh hoi cach don dep file tai lieu thiet ke voi",
+    "keyword_signals": [
+      "don dep file",
+      "tai lieu thiet ke"
+    ]
+  },
+  {
+    "id": "intent_0158",
+    "intent": "pentakuru",
+    "query_accented": "Tôi muốn dọn dẹp file file word ghi chú ngay bây giờ",
+    "query_unaccented": "toi muon don dep file file word ghi chu ngay bay gio",
+    "keyword_signals": [
+      "don dep file",
+      "file word ghi chu"
+    ]
+  },
+  {
+    "id": "intent_0159",
+    "intent": "pentakuru",
+    "query_accented": "Có thể dọn dẹp file hóa đơn thanh toán giúp tôi được không",
+    "query_unaccented": "co the don dep file hoa don thanh toan giup toi duoc khong",
+    "keyword_signals": [
+      "don dep file",
+      "hoa don thanh toan"
+    ]
+  },
+  {
+    "id": "intent_0160",
+    "intent": "pentakuru",
+    "query_accented": "Hướng dẫn tôi dọn dẹp file hồ sơ năng lực này nhé",
+    "query_unaccented": "huong dan toi don dep file ho so nang luc nay nhe",
+    "keyword_signals": [
+      "don dep file",
+      "ho so nang luc"
+    ]
+  },
+  {
+    "id": "intent_0161",
+    "intent": "pentakuru",
+    "query_accented": "Làm ơn đọc nhanh cho tôi về báo cáo tài chính",
+    "query_unaccented": "lam on doc nhanh cho toi ve bao cao tai chinh",
+    "keyword_signals": [
+      "doc nhanh",
+      "bao cao tai chinh"
+    ]
+  },
+  {
+    "id": "intent_0162",
+    "intent": "pentakuru",
+    "query_accented": "Cho mình hỏi cách đọc nhanh hợp đồng dự án với",
+    "query_unaccented": "cho minh hoi cach doc nhanh hop dong du an voi",
+    "keyword_signals": [
+      "doc nhanh",
+      "hop dong du an"
+    ]
+  },
+  {
+    "id": "intent_0163",
+    "intent": "pentakuru",
+    "query_accented": "Tôi muốn đọc nhanh file PDF bài giảng ngay bây giờ",
+    "query_unaccented": "toi muon doc nhanh file pdf bai giang ngay bay gio",
+    "keyword_signals": [
+      "doc nhanh",
+      "file pdf bai giang"
+    ]
+  },
+  {
+    "id": "intent_0164",
+    "intent": "pentakuru",
+    "query_accented": "Có thể đọc nhanh code nguồn cũ giúp tôi được không",
+    "query_unaccented": "co the doc nhanh code nguon cu giup toi duoc khong",
+    "keyword_signals": [
+      "doc nhanh",
+      "code nguon cu"
+    ]
+  },
+  {
+    "id": "intent_0165",
+    "intent": "pentakuru",
+    "query_accented": "Hướng dẫn tôi đọc nhanh file excel thống kê này nhé",
+    "query_unaccented": "huong dan toi doc nhanh file excel thong ke nay nhe",
+    "keyword_signals": [
+      "doc nhanh",
+      "file excel thong ke"
+    ]
+  },
+  {
+    "id": "intent_0166",
+    "intent": "pentakuru",
+    "query_accented": "Làm ơn đọc nhanh cho tôi về ảnh chụp màn hình",
+    "query_unaccented": "lam on doc nhanh cho toi ve anh chup man hinh",
+    "keyword_signals": [
+      "doc nhanh",
+      "anh chup man hinh"
+    ]
+  },
+  {
+    "id": "intent_0167",
+    "intent": "pentakuru",
+    "query_accented": "Cho mình hỏi cách đọc nhanh tài liệu thiết kế với",
+    "query_unaccented": "cho minh hoi cach doc nhanh tai lieu thiet ke voi",
+    "keyword_signals": [
+      "doc nhanh",
+      "tai lieu thiet ke"
+    ]
+  },
+  {
+    "id": "intent_0168",
+    "intent": "pentakuru",
+    "query_accented": "Tôi muốn đọc nhanh file word ghi chú ngay bây giờ",
+    "query_unaccented": "toi muon doc nhanh file word ghi chu ngay bay gio",
+    "keyword_signals": [
+      "doc nhanh",
+      "file word ghi chu"
+    ]
+  },
+  {
+    "id": "intent_0169",
+    "intent": "pentakuru",
+    "query_accented": "Có thể đọc nhanh hóa đơn thanh toán giúp tôi được không",
+    "query_unaccented": "co the doc nhanh hoa don thanh toan giup toi duoc khong",
+    "keyword_signals": [
+      "doc nhanh",
+      "hoa don thanh toan"
+    ]
+  },
+  {
+    "id": "intent_0170",
+    "intent": "pentakuru",
+    "query_accented": "Hướng dẫn tôi đọc nhanh hồ sơ năng lực này nhé",
+    "query_unaccented": "huong dan toi doc nhanh ho so nang luc nay nhe",
+    "keyword_signals": [
+      "doc nhanh",
+      "ho so nang luc"
+    ]
+  },
+  {
+    "id": "intent_0171",
+    "intent": "pentakuru",
+    "query_accented": "Làm ơn trích xuất ghi chú cho tôi về báo cáo tài chính",
+    "query_unaccented": "lam on trich xuat ghi chu cho toi ve bao cao tai chinh",
+    "keyword_signals": [
+      "trich xuat ghi chu",
+      "bao cao tai chinh"
+    ]
+  },
+  {
+    "id": "intent_0172",
+    "intent": "pentakuru",
+    "query_accented": "Cho mình hỏi cách trích xuất ghi chú hợp đồng dự án với",
+    "query_unaccented": "cho minh hoi cach trich xuat ghi chu hop dong du an voi",
+    "keyword_signals": [
+      "trich xuat ghi chu",
+      "hop dong du an"
+    ]
+  },
+  {
+    "id": "intent_0173",
+    "intent": "pentakuru",
+    "query_accented": "Tôi muốn trích xuất ghi chú file PDF bài giảng ngay bây giờ",
+    "query_unaccented": "toi muon trich xuat ghi chu file pdf bai giang ngay bay gio",
+    "keyword_signals": [
+      "trich xuat ghi chu",
+      "file pdf bai giang"
+    ]
+  },
+  {
+    "id": "intent_0174",
+    "intent": "pentakuru",
+    "query_accented": "Có thể trích xuất ghi chú code nguồn cũ giúp tôi được không",
+    "query_unaccented": "co the trich xuat ghi chu code nguon cu giup toi duoc khong",
+    "keyword_signals": [
+      "trich xuat ghi chu",
+      "code nguon cu"
+    ]
+  },
+  {
+    "id": "intent_0175",
+    "intent": "pentakuru",
+    "query_accented": "Hướng dẫn tôi trích xuất ghi chú file excel thống kê này nhé",
+    "query_unaccented": "huong dan toi trich xuat ghi chu file excel thong ke nay nhe",
+    "keyword_signals": [
+      "trich xuat ghi chu",
+      "file excel thong ke"
+    ]
+  },
+  {
+    "id": "intent_0176",
+    "intent": "pentakuru",
+    "query_accented": "Làm ơn trích xuất ghi chú cho tôi về ảnh chụp màn hình",
+    "query_unaccented": "lam on trich xuat ghi chu cho toi ve anh chup man hinh",
+    "keyword_signals": [
+      "trich xuat ghi chu",
+      "anh chup man hinh"
+    ]
+  },
+  {
+    "id": "intent_0177",
+    "intent": "pentakuru",
+    "query_accented": "Cho mình hỏi cách trích xuất ghi chú tài liệu thiết kế với",
+    "query_unaccented": "cho minh hoi cach trich xuat ghi chu tai lieu thiet ke voi",
+    "keyword_signals": [
+      "trich xuat ghi chu",
+      "tai lieu thiet ke"
+    ]
+  },
+  {
+    "id": "intent_0178",
+    "intent": "pentakuru",
+    "query_accented": "Tôi muốn trích xuất ghi chú file word ghi chú ngay bây giờ",
+    "query_unaccented": "toi muon trich xuat ghi chu file word ghi chu ngay bay gio",
+    "keyword_signals": [
+      "trich xuat ghi chu",
+      "file word ghi chu"
+    ]
+  },
+  {
+    "id": "intent_0179",
+    "intent": "pentakuru",
+    "query_accented": "Có thể trích xuất ghi chú hóa đơn thanh toán giúp tôi được không",
+    "query_unaccented": "co the trich xuat ghi chu hoa don thanh toan giup toi duoc khong",
+    "keyword_signals": [
+      "trich xuat ghi chu",
+      "hoa don thanh toan"
+    ]
+  },
+  {
+    "id": "intent_0180",
+    "intent": "pentakuru",
+    "query_accented": "Hướng dẫn tôi trích xuất ghi chú hồ sơ năng lực này nhé",
+    "query_unaccented": "huong dan toi trich xuat ghi chu ho so nang luc nay nhe",
+    "keyword_signals": [
+      "trich xuat ghi chu",
+      "ho so nang luc"
+    ]
+  },
+  {
+    "id": "intent_0181",
+    "intent": "pentakuru",
+    "query_accented": "Làm ơn mở tệp cho tôi về báo cáo tài chính",
+    "query_unaccented": "lam on mo tep cho toi ve bao cao tai chinh",
+    "keyword_signals": [
+      "mo tep",
+      "bao cao tai chinh"
+    ]
+  },
+  {
+    "id": "intent_0182",
+    "intent": "pentakuru",
+    "query_accented": "Cho mình hỏi cách mở tệp hợp đồng dự án với",
+    "query_unaccented": "cho minh hoi cach mo tep hop dong du an voi",
+    "keyword_signals": [
+      "mo tep",
+      "hop dong du an"
+    ]
+  },
+  {
+    "id": "intent_0183",
+    "intent": "pentakuru",
+    "query_accented": "Tôi muốn mở tệp file PDF bài giảng ngay bây giờ",
+    "query_unaccented": "toi muon mo tep file pdf bai giang ngay bay gio",
+    "keyword_signals": [
+      "mo tep",
+      "file pdf bai giang"
+    ]
+  },
+  {
+    "id": "intent_0184",
+    "intent": "pentakuru",
+    "query_accented": "Có thể mở tệp code nguồn cũ giúp tôi được không",
+    "query_unaccented": "co the mo tep code nguon cu giup toi duoc khong",
+    "keyword_signals": [
+      "mo tep",
+      "code nguon cu"
+    ]
+  },
+  {
+    "id": "intent_0185",
+    "intent": "pentakuru",
+    "query_accented": "Hướng dẫn tôi mở tệp file excel thống kê này nhé",
+    "query_unaccented": "huong dan toi mo tep file excel thong ke nay nhe",
+    "keyword_signals": [
+      "mo tep",
+      "file excel thong ke"
+    ]
+  },
+  {
+    "id": "intent_0186",
+    "intent": "pentakuru",
+    "query_accented": "Làm ơn mở tệp cho tôi về ảnh chụp màn hình",
+    "query_unaccented": "lam on mo tep cho toi ve anh chup man hinh",
+    "keyword_signals": [
+      "mo tep",
+      "anh chup man hinh"
+    ]
+  },
+  {
+    "id": "intent_0187",
+    "intent": "pentakuru",
+    "query_accented": "Cho mình hỏi cách mở tệp tài liệu thiết kế với",
+    "query_unaccented": "cho minh hoi cach mo tep tai lieu thiet ke voi",
+    "keyword_signals": [
+      "mo tep",
+      "tai lieu thiet ke"
+    ]
+  },
+  {
+    "id": "intent_0188",
+    "intent": "pentakuru",
+    "query_accented": "Tôi muốn mở tệp file word ghi chú ngay bây giờ",
+    "query_unaccented": "toi muon mo tep file word ghi chu ngay bay gio",
+    "keyword_signals": [
+      "mo tep",
+      "file word ghi chu"
+    ]
+  },
+  {
+    "id": "intent_0189",
+    "intent": "pentakuru",
+    "query_accented": "Có thể mở tệp hóa đơn thanh toán giúp tôi được không",
+    "query_unaccented": "co the mo tep hoa don thanh toan giup toi duoc khong",
+    "keyword_signals": [
+      "mo tep",
+      "hoa don thanh toan"
+    ]
+  },
+  {
+    "id": "intent_0190",
+    "intent": "pentakuru",
+    "query_accented": "Hướng dẫn tôi mở tệp hồ sơ năng lực này nhé",
+    "query_unaccented": "huong dan toi mo tep ho so nang luc nay nhe",
+    "keyword_signals": [
+      "mo tep",
+      "ho so nang luc"
+    ]
+  },
+  {
+    "id": "intent_0191",
+    "intent": "pentakuru",
+    "query_accented": "Làm ơn tìm ghi chú cho tôi về báo cáo tài chính",
+    "query_unaccented": "lam on tim ghi chu cho toi ve bao cao tai chinh",
+    "keyword_signals": [
+      "tim ghi chu",
+      "bao cao tai chinh"
+    ]
+  },
+  {
+    "id": "intent_0192",
+    "intent": "pentakuru",
+    "query_accented": "Cho mình hỏi cách tìm ghi chú hợp đồng dự án với",
+    "query_unaccented": "cho minh hoi cach tim ghi chu hop dong du an voi",
+    "keyword_signals": [
+      "tim ghi chu",
+      "hop dong du an"
+    ]
+  },
+  {
+    "id": "intent_0193",
+    "intent": "pentakuru",
+    "query_accented": "Tôi muốn tìm ghi chú file PDF bài giảng ngay bây giờ",
+    "query_unaccented": "toi muon tim ghi chu file pdf bai giang ngay bay gio",
+    "keyword_signals": [
+      "tim ghi chu",
+      "file pdf bai giang"
+    ]
+  },
+  {
+    "id": "intent_0194",
+    "intent": "pentakuru",
+    "query_accented": "Có thể tìm ghi chú code nguồn cũ giúp tôi được không",
+    "query_unaccented": "co the tim ghi chu code nguon cu giup toi duoc khong",
+    "keyword_signals": [
+      "tim ghi chu",
+      "code nguon cu"
+    ]
+  },
+  {
+    "id": "intent_0195",
+    "intent": "pentakuru",
+    "query_accented": "Hướng dẫn tôi tìm ghi chú file excel thống kê này nhé",
+    "query_unaccented": "huong dan toi tim ghi chu file excel thong ke nay nhe",
+    "keyword_signals": [
+      "tim ghi chu",
+      "file excel thong ke"
+    ]
+  },
+  {
+    "id": "intent_0196",
+    "intent": "pentakuru",
+    "query_accented": "Làm ơn tìm ghi chú cho tôi về ảnh chụp màn hình",
+    "query_unaccented": "lam on tim ghi chu cho toi ve anh chup man hinh",
+    "keyword_signals": [
+      "tim ghi chu",
+      "anh chup man hinh"
+    ]
+  },
+  {
+    "id": "intent_0197",
+    "intent": "pentakuru",
+    "query_accented": "Cho mình hỏi cách tìm ghi chú tài liệu thiết kế với",
+    "query_unaccented": "cho minh hoi cach tim ghi chu tai lieu thiet ke voi",
+    "keyword_signals": [
+      "tim ghi chu",
+      "tai lieu thiet ke"
+    ]
+  },
+  {
+    "id": "intent_0198",
+    "intent": "pentakuru",
+    "query_accented": "Tôi muốn tìm ghi chú file word ghi chú ngay bây giờ",
+    "query_unaccented": "toi muon tim ghi chu file word ghi chu ngay bay gio",
+    "keyword_signals": [
+      "tim ghi chu",
+      "file word ghi chu"
+    ]
+  },
+  {
+    "id": "intent_0199",
+    "intent": "pentakuru",
+    "query_accented": "Có thể tìm ghi chú hóa đơn thanh toán giúp tôi được không",
+    "query_unaccented": "co the tim ghi chu hoa don thanh toan giup toi duoc khong",
+    "keyword_signals": [
+      "tim ghi chu",
+      "hoa don thanh toan"
+    ]
+  },
+  {
+    "id": "intent_0200",
+    "intent": "pentakuru",
+    "query_accented": "Hướng dẫn tôi tìm ghi chú hồ sơ năng lực này nhé",
+    "query_unaccented": "huong dan toi tim ghi chu ho so nang luc nay nhe",
+    "keyword_signals": [
+      "tim ghi chu",
+      "ho so nang luc"
+    ]
+  },
+  {
+    "id": "intent_0201",
+    "intent": "pentamarket",
+    "query_accented": "Làm ơn mua cho tôi về sổ tay thông minh",
+    "query_unaccented": "lam on mua cho toi ve so tay thong minh",
+    "keyword_signals": [
+      "mua",
+      "so tay thong minh"
+    ]
+  },
+  {
+    "id": "intent_0202",
+    "intent": "pentamarket",
+    "query_accented": "Cho mình hỏi cách mua khóa học AI giảm giá với",
+    "query_unaccented": "cho minh hoi cach mua khoa hoc ai giam gia voi",
+    "keyword_signals": [
+      "mua",
+      "khoa hoc ai giam gia"
+    ]
+  },
+  {
+    "id": "intent_0203",
+    "intent": "pentamarket",
+    "query_accented": "Tôi muốn mua tai nghe chống ồn ngay bây giờ",
+    "query_unaccented": "toi muon mua tai nghe chong on ngay bay gio",
+    "keyword_signals": [
+      "mua",
+      "tai nghe chong on"
+    ]
+  },
+  {
+    "id": "intent_0204",
+    "intent": "pentamarket",
+    "query_accented": "Có thể mua chuột không dây giúp tôi được không",
+    "query_unaccented": "co the mua chuot khong day giup toi duoc khong",
+    "keyword_signals": [
+      "mua",
+      "chuot khong day"
+    ]
+  },
+  {
+    "id": "intent_0205",
+    "intent": "pentamarket",
+    "query_accented": "Hướng dẫn tôi mua bàn phím cơ này nhé",
+    "query_unaccented": "huong dan toi mua ban phim co nay nhe",
+    "keyword_signals": [
+      "mua",
+      "ban phim co"
+    ]
+  },
+  {
+    "id": "intent_0206",
+    "intent": "pentamarket",
+    "query_accented": "Làm ơn mua cho tôi về màn hình lập trình",
+    "query_unaccented": "lam on mua cho toi ve man hinh lap trinh",
+    "keyword_signals": [
+      "mua",
+      "man hinh lap trinh"
+    ]
+  },
+  {
+    "id": "intent_0207",
+    "intent": "pentamarket",
+    "query_accented": "Cho mình hỏi cách mua sách lập trình với",
+    "query_unaccented": "cho minh hoi cach mua sach lap trinh voi",
+    "keyword_signals": [
+      "mua",
+      "sach lap trinh"
+    ]
+  },
+  {
+    "id": "intent_0208",
+    "intent": "pentamarket",
+    "query_accented": "Tôi muốn mua áo thun penta ngay bây giờ",
+    "query_unaccented": "toi muon mua ao thun penta ngay bay gio",
+    "keyword_signals": [
+      "mua",
+      "ao thun penta"
+    ]
+  },
+  {
+    "id": "intent_0209",
+    "intent": "pentamarket",
+    "query_accented": "Có thể mua balo laptop giúp tôi được không",
+    "query_unaccented": "co the mua balo laptop giup toi duoc khong",
+    "keyword_signals": [
+      "mua",
+      "balo laptop"
+    ]
+  },
+  {
+    "id": "intent_0210",
+    "intent": "pentamarket",
+    "query_accented": "Hướng dẫn tôi mua voucher khóa học này nhé",
+    "query_unaccented": "huong dan toi mua voucher khoa hoc nay nhe",
+    "keyword_signals": [
+      "mua",
+      "voucher khoa hoc"
+    ]
+  },
+  {
+    "id": "intent_0211",
+    "intent": "pentamarket",
+    "query_accented": "Làm ơn tìm mua cho tôi về sổ tay thông minh",
+    "query_unaccented": "lam on tim mua cho toi ve so tay thong minh",
+    "keyword_signals": [
+      "tim mua",
+      "so tay thong minh"
+    ]
+  },
+  {
+    "id": "intent_0212",
+    "intent": "pentamarket",
+    "query_accented": "Cho mình hỏi cách tìm mua khóa học AI giảm giá với",
+    "query_unaccented": "cho minh hoi cach tim mua khoa hoc ai giam gia voi",
+    "keyword_signals": [
+      "tim mua",
+      "khoa hoc ai giam gia"
+    ]
+  },
+  {
+    "id": "intent_0213",
+    "intent": "pentamarket",
+    "query_accented": "Tôi muốn tìm mua tai nghe chống ồn ngay bây giờ",
+    "query_unaccented": "toi muon tim mua tai nghe chong on ngay bay gio",
+    "keyword_signals": [
+      "tim mua",
+      "tai nghe chong on"
+    ]
+  },
+  {
+    "id": "intent_0214",
+    "intent": "pentamarket",
+    "query_accented": "Có thể tìm mua chuột không dây giúp tôi được không",
+    "query_unaccented": "co the tim mua chuot khong day giup toi duoc khong",
+    "keyword_signals": [
+      "tim mua",
+      "chuot khong day"
+    ]
+  },
+  {
+    "id": "intent_0215",
+    "intent": "pentamarket",
+    "query_accented": "Hướng dẫn tôi tìm mua bàn phím cơ này nhé",
+    "query_unaccented": "huong dan toi tim mua ban phim co nay nhe",
+    "keyword_signals": [
+      "tim mua",
+      "ban phim co"
+    ]
+  },
+  {
+    "id": "intent_0216",
+    "intent": "pentamarket",
+    "query_accented": "Làm ơn tìm mua cho tôi về màn hình lập trình",
+    "query_unaccented": "lam on tim mua cho toi ve man hinh lap trinh",
+    "keyword_signals": [
+      "tim mua",
+      "man hinh lap trinh"
+    ]
+  },
+  {
+    "id": "intent_0217",
+    "intent": "pentamarket",
+    "query_accented": "Cho mình hỏi cách tìm mua sách lập trình với",
+    "query_unaccented": "cho minh hoi cach tim mua sach lap trinh voi",
+    "keyword_signals": [
+      "tim mua",
+      "sach lap trinh"
+    ]
+  },
+  {
+    "id": "intent_0218",
+    "intent": "pentamarket",
+    "query_accented": "Tôi muốn tìm mua áo thun penta ngay bây giờ",
+    "query_unaccented": "toi muon tim mua ao thun penta ngay bay gio",
+    "keyword_signals": [
+      "tim mua",
+      "ao thun penta"
+    ]
+  },
+  {
+    "id": "intent_0219",
+    "intent": "pentamarket",
+    "query_accented": "Có thể tìm mua balo laptop giúp tôi được không",
+    "query_unaccented": "co the tim mua balo laptop giup toi duoc khong",
+    "keyword_signals": [
+      "tim mua",
+      "balo laptop"
+    ]
+  },
+  {
+    "id": "intent_0220",
+    "intent": "pentamarket",
+    "query_accented": "Hướng dẫn tôi tìm mua voucher khóa học này nhé",
+    "query_unaccented": "huong dan toi tim mua voucher khoa hoc nay nhe",
+    "keyword_signals": [
+      "tim mua",
+      "voucher khoa hoc"
+    ]
+  },
+  {
+    "id": "intent_0221",
+    "intent": "pentamarket",
+    "query_accented": "Làm ơn xem giá cho tôi về sổ tay thông minh",
+    "query_unaccented": "lam on xem gia cho toi ve so tay thong minh",
+    "keyword_signals": [
+      "xem gia",
+      "so tay thong minh"
+    ]
+  },
+  {
+    "id": "intent_0222",
+    "intent": "pentamarket",
+    "query_accented": "Cho mình hỏi cách xem giá khóa học AI giảm giá với",
+    "query_unaccented": "cho minh hoi cach xem gia khoa hoc ai giam gia voi",
+    "keyword_signals": [
+      "xem gia",
+      "khoa hoc ai giam gia"
+    ]
+  },
+  {
+    "id": "intent_0223",
+    "intent": "pentamarket",
+    "query_accented": "Tôi muốn xem giá tai nghe chống ồn ngay bây giờ",
+    "query_unaccented": "toi muon xem gia tai nghe chong on ngay bay gio",
+    "keyword_signals": [
+      "xem gia",
+      "tai nghe chong on"
+    ]
+  },
+  {
+    "id": "intent_0224",
+    "intent": "pentamarket",
+    "query_accented": "Có thể xem giá chuột không dây giúp tôi được không",
+    "query_unaccented": "co the xem gia chuot khong day giup toi duoc khong",
+    "keyword_signals": [
+      "xem gia",
+      "chuot khong day"
+    ]
+  },
+  {
+    "id": "intent_0225",
+    "intent": "pentamarket",
+    "query_accented": "Hướng dẫn tôi xem giá bàn phím cơ này nhé",
+    "query_unaccented": "huong dan toi xem gia ban phim co nay nhe",
+    "keyword_signals": [
+      "xem gia",
+      "ban phim co"
+    ]
+  },
+  {
+    "id": "intent_0226",
+    "intent": "pentamarket",
+    "query_accented": "Làm ơn xem giá cho tôi về màn hình lập trình",
+    "query_unaccented": "lam on xem gia cho toi ve man hinh lap trinh",
+    "keyword_signals": [
+      "xem gia",
+      "man hinh lap trinh"
+    ]
+  },
+  {
+    "id": "intent_0227",
+    "intent": "pentamarket",
+    "query_accented": "Cho mình hỏi cách xem giá sách lập trình với",
+    "query_unaccented": "cho minh hoi cach xem gia sach lap trinh voi",
+    "keyword_signals": [
+      "xem gia",
+      "sach lap trinh"
+    ]
+  },
+  {
+    "id": "intent_0228",
+    "intent": "pentamarket",
+    "query_accented": "Tôi muốn xem giá áo thun penta ngay bây giờ",
+    "query_unaccented": "toi muon xem gia ao thun penta ngay bay gio",
+    "keyword_signals": [
+      "xem gia",
+      "ao thun penta"
+    ]
+  },
+  {
+    "id": "intent_0229",
+    "intent": "pentamarket",
+    "query_accented": "Có thể xem giá balo laptop giúp tôi được không",
+    "query_unaccented": "co the xem gia balo laptop giup toi duoc khong",
+    "keyword_signals": [
+      "xem gia",
+      "balo laptop"
+    ]
+  },
+  {
+    "id": "intent_0230",
+    "intent": "pentamarket",
+    "query_accented": "Hướng dẫn tôi xem giá voucher khóa học này nhé",
+    "query_unaccented": "huong dan toi xem gia voucher khoa hoc nay nhe",
+    "keyword_signals": [
+      "xem gia",
+      "voucher khoa hoc"
+    ]
+  },
+  {
+    "id": "intent_0231",
+    "intent": "pentamarket",
+    "query_accented": "Làm ơn tư vấn cho tôi về sổ tay thông minh",
+    "query_unaccented": "lam on tu van cho toi ve so tay thong minh",
+    "keyword_signals": [
+      "tu van",
+      "so tay thong minh"
+    ]
+  },
+  {
+    "id": "intent_0232",
+    "intent": "pentamarket",
+    "query_accented": "Cho mình hỏi cách tư vấn khóa học AI giảm giá với",
+    "query_unaccented": "cho minh hoi cach tu van khoa hoc ai giam gia voi",
+    "keyword_signals": [
+      "tu van",
+      "khoa hoc ai giam gia"
+    ]
+  },
+  {
+    "id": "intent_0233",
+    "intent": "pentamarket",
+    "query_accented": "Tôi muốn tư vấn tai nghe chống ồn ngay bây giờ",
+    "query_unaccented": "toi muon tu van tai nghe chong on ngay bay gio",
+    "keyword_signals": [
+      "tu van",
+      "tai nghe chong on"
+    ]
+  },
+  {
+    "id": "intent_0234",
+    "intent": "pentamarket",
+    "query_accented": "Có thể tư vấn chuột không dây giúp tôi được không",
+    "query_unaccented": "co the tu van chuot khong day giup toi duoc khong",
+    "keyword_signals": [
+      "tu van",
+      "chuot khong day"
+    ]
+  },
+  {
+    "id": "intent_0235",
+    "intent": "pentamarket",
+    "query_accented": "Hướng dẫn tôi tư vấn bàn phím cơ này nhé",
+    "query_unaccented": "huong dan toi tu van ban phim co nay nhe",
+    "keyword_signals": [
+      "tu van",
+      "ban phim co"
+    ]
+  },
+  {
+    "id": "intent_0236",
+    "intent": "pentamarket",
+    "query_accented": "Làm ơn tư vấn cho tôi về màn hình lập trình",
+    "query_unaccented": "lam on tu van cho toi ve man hinh lap trinh",
+    "keyword_signals": [
+      "tu van",
+      "man hinh lap trinh"
+    ]
+  },
+  {
+    "id": "intent_0237",
+    "intent": "pentamarket",
+    "query_accented": "Cho mình hỏi cách tư vấn sách lập trình với",
+    "query_unaccented": "cho minh hoi cach tu van sach lap trinh voi",
+    "keyword_signals": [
+      "tu van",
+      "sach lap trinh"
+    ]
+  },
+  {
+    "id": "intent_0238",
+    "intent": "pentamarket",
+    "query_accented": "Tôi muốn tư vấn áo thun penta ngay bây giờ",
+    "query_unaccented": "toi muon tu van ao thun penta ngay bay gio",
+    "keyword_signals": [
+      "tu van",
+      "ao thun penta"
+    ]
+  },
+  {
+    "id": "intent_0239",
+    "intent": "pentamarket",
+    "query_accented": "Có thể tư vấn balo laptop giúp tôi được không",
+    "query_unaccented": "co the tu van balo laptop giup toi duoc khong",
+    "keyword_signals": [
+      "tu van",
+      "balo laptop"
+    ]
+  },
+  {
+    "id": "intent_0240",
+    "intent": "pentamarket",
+    "query_accented": "Hướng dẫn tôi tư vấn voucher khóa học này nhé",
+    "query_unaccented": "huong dan toi tu van voucher khoa hoc nay nhe",
+    "keyword_signals": [
+      "tu van",
+      "voucher khoa hoc"
+    ]
+  },
+  {
+    "id": "intent_0241",
+    "intent": "pentamarket",
+    "query_accented": "Làm ơn thêm vào giỏ cho tôi về sổ tay thông minh",
+    "query_unaccented": "lam on them vao gio cho toi ve so tay thong minh",
+    "keyword_signals": [
+      "them vao gio",
+      "so tay thong minh"
+    ]
+  },
+  {
+    "id": "intent_0242",
+    "intent": "pentamarket",
+    "query_accented": "Cho mình hỏi cách thêm vào giỏ khóa học AI giảm giá với",
+    "query_unaccented": "cho minh hoi cach them vao gio khoa hoc ai giam gia voi",
+    "keyword_signals": [
+      "them vao gio",
+      "khoa hoc ai giam gia"
+    ]
+  },
+  {
+    "id": "intent_0243",
+    "intent": "pentamarket",
+    "query_accented": "Tôi muốn thêm vào giỏ tai nghe chống ồn ngay bây giờ",
+    "query_unaccented": "toi muon them vao gio tai nghe chong on ngay bay gio",
+    "keyword_signals": [
+      "them vao gio",
+      "tai nghe chong on"
+    ]
+  },
+  {
+    "id": "intent_0244",
+    "intent": "pentamarket",
+    "query_accented": "Có thể thêm vào giỏ chuột không dây giúp tôi được không",
+    "query_unaccented": "co the them vao gio chuot khong day giup toi duoc khong",
+    "keyword_signals": [
+      "them vao gio",
+      "chuot khong day"
+    ]
+  },
+  {
+    "id": "intent_0245",
+    "intent": "pentamarket",
+    "query_accented": "Hướng dẫn tôi thêm vào giỏ bàn phím cơ này nhé",
+    "query_unaccented": "huong dan toi them vao gio ban phim co nay nhe",
+    "keyword_signals": [
+      "them vao gio",
+      "ban phim co"
+    ]
+  },
+  {
+    "id": "intent_0246",
+    "intent": "pentamarket",
+    "query_accented": "Làm ơn thêm vào giỏ cho tôi về màn hình lập trình",
+    "query_unaccented": "lam on them vao gio cho toi ve man hinh lap trinh",
+    "keyword_signals": [
+      "them vao gio",
+      "man hinh lap trinh"
+    ]
+  },
+  {
+    "id": "intent_0247",
+    "intent": "pentamarket",
+    "query_accented": "Cho mình hỏi cách thêm vào giỏ sách lập trình với",
+    "query_unaccented": "cho minh hoi cach them vao gio sach lap trinh voi",
+    "keyword_signals": [
+      "them vao gio",
+      "sach lap trinh"
+    ]
+  },
+  {
+    "id": "intent_0248",
+    "intent": "pentamarket",
+    "query_accented": "Tôi muốn thêm vào giỏ áo thun penta ngay bây giờ",
+    "query_unaccented": "toi muon them vao gio ao thun penta ngay bay gio",
+    "keyword_signals": [
+      "them vao gio",
+      "ao thun penta"
+    ]
+  },
+  {
+    "id": "intent_0249",
+    "intent": "pentamarket",
+    "query_accented": "Có thể thêm vào giỏ balo laptop giúp tôi được không",
+    "query_unaccented": "co the them vao gio balo laptop giup toi duoc khong",
+    "keyword_signals": [
+      "them vao gio",
+      "balo laptop"
+    ]
+  },
+  {
+    "id": "intent_0250",
+    "intent": "pentamarket",
+    "query_accented": "Hướng dẫn tôi thêm vào giỏ voucher khóa học này nhé",
+    "query_unaccented": "huong dan toi them vao gio voucher khoa hoc nay nhe",
+    "keyword_signals": [
+      "them vao gio",
+      "voucher khoa hoc"
+    ]
+  },
+  {
+    "id": "intent_0251",
+    "intent": "pentamarket",
+    "query_accented": "Làm ơn kiểm tra khuyến mãi cho tôi về sổ tay thông minh",
+    "query_unaccented": "lam on kiem tra khuyen mai cho toi ve so tay thong minh",
+    "keyword_signals": [
+      "kiem tra khuyen mai",
+      "so tay thong minh"
+    ]
+  },
+  {
+    "id": "intent_0252",
+    "intent": "pentamarket",
+    "query_accented": "Cho mình hỏi cách kiểm tra khuyến mãi khóa học AI giảm giá với",
+    "query_unaccented": "cho minh hoi cach kiem tra khuyen mai khoa hoc ai giam gia voi",
+    "keyword_signals": [
+      "kiem tra khuyen mai",
+      "khoa hoc ai giam gia"
+    ]
+  },
+  {
+    "id": "intent_0253",
+    "intent": "pentamarket",
+    "query_accented": "Tôi muốn kiểm tra khuyến mãi tai nghe chống ồn ngay bây giờ",
+    "query_unaccented": "toi muon kiem tra khuyen mai tai nghe chong on ngay bay gio",
+    "keyword_signals": [
+      "kiem tra khuyen mai",
+      "tai nghe chong on"
+    ]
+  },
+  {
+    "id": "intent_0254",
+    "intent": "pentamarket",
+    "query_accented": "Có thể kiểm tra khuyến mãi chuột không dây giúp tôi được không",
+    "query_unaccented": "co the kiem tra khuyen mai chuot khong day giup toi duoc khong",
+    "keyword_signals": [
+      "kiem tra khuyen mai",
+      "chuot khong day"
+    ]
+  },
+  {
+    "id": "intent_0255",
+    "intent": "pentamarket",
+    "query_accented": "Hướng dẫn tôi kiểm tra khuyến mãi bàn phím cơ này nhé",
+    "query_unaccented": "huong dan toi kiem tra khuyen mai ban phim co nay nhe",
+    "keyword_signals": [
+      "kiem tra khuyen mai",
+      "ban phim co"
+    ]
+  },
+  {
+    "id": "intent_0256",
+    "intent": "pentamarket",
+    "query_accented": "Làm ơn kiểm tra khuyến mãi cho tôi về màn hình lập trình",
+    "query_unaccented": "lam on kiem tra khuyen mai cho toi ve man hinh lap trinh",
+    "keyword_signals": [
+      "kiem tra khuyen mai",
+      "man hinh lap trinh"
+    ]
+  },
+  {
+    "id": "intent_0257",
+    "intent": "pentamarket",
+    "query_accented": "Cho mình hỏi cách kiểm tra khuyến mãi sách lập trình với",
+    "query_unaccented": "cho minh hoi cach kiem tra khuyen mai sach lap trinh voi",
+    "keyword_signals": [
+      "kiem tra khuyen mai",
+      "sach lap trinh"
+    ]
+  },
+  {
+    "id": "intent_0258",
+    "intent": "pentamarket",
+    "query_accented": "Tôi muốn kiểm tra khuyến mãi áo thun penta ngay bây giờ",
+    "query_unaccented": "toi muon kiem tra khuyen mai ao thun penta ngay bay gio",
+    "keyword_signals": [
+      "kiem tra khuyen mai",
+      "ao thun penta"
+    ]
+  },
+  {
+    "id": "intent_0259",
+    "intent": "pentamarket",
+    "query_accented": "Có thể kiểm tra khuyến mãi balo laptop giúp tôi được không",
+    "query_unaccented": "co the kiem tra khuyen mai balo laptop giup toi duoc khong",
+    "keyword_signals": [
+      "kiem tra khuyen mai",
+      "balo laptop"
+    ]
+  },
+  {
+    "id": "intent_0260",
+    "intent": "pentamarket",
+    "query_accented": "Hướng dẫn tôi kiểm tra khuyến mãi voucher khóa học này nhé",
+    "query_unaccented": "huong dan toi kiem tra khuyen mai voucher khoa hoc nay nhe",
+    "keyword_signals": [
+      "kiem tra khuyen mai",
+      "voucher khoa hoc"
+    ]
+  },
+  {
+    "id": "intent_0261",
+    "intent": "pentamarket",
+    "query_accented": "Làm ơn so sánh giá cho tôi về sổ tay thông minh",
+    "query_unaccented": "lam on so sanh gia cho toi ve so tay thong minh",
+    "keyword_signals": [
+      "so sanh gia",
+      "so tay thong minh"
+    ]
+  },
+  {
+    "id": "intent_0262",
+    "intent": "pentamarket",
+    "query_accented": "Cho mình hỏi cách so sánh giá khóa học AI giảm giá với",
+    "query_unaccented": "cho minh hoi cach so sanh gia khoa hoc ai giam gia voi",
+    "keyword_signals": [
+      "so sanh gia",
+      "khoa hoc ai giam gia"
+    ]
+  },
+  {
+    "id": "intent_0263",
+    "intent": "pentamarket",
+    "query_accented": "Tôi muốn so sánh giá tai nghe chống ồn ngay bây giờ",
+    "query_unaccented": "toi muon so sanh gia tai nghe chong on ngay bay gio",
+    "keyword_signals": [
+      "so sanh gia",
+      "tai nghe chong on"
+    ]
+  },
+  {
+    "id": "intent_0264",
+    "intent": "pentamarket",
+    "query_accented": "Có thể so sánh giá chuột không dây giúp tôi được không",
+    "query_unaccented": "co the so sanh gia chuot khong day giup toi duoc khong",
+    "keyword_signals": [
+      "so sanh gia",
+      "chuot khong day"
+    ]
+  },
+  {
+    "id": "intent_0265",
+    "intent": "pentamarket",
+    "query_accented": "Hướng dẫn tôi so sánh giá bàn phím cơ này nhé",
+    "query_unaccented": "huong dan toi so sanh gia ban phim co nay nhe",
+    "keyword_signals": [
+      "so sanh gia",
+      "ban phim co"
+    ]
+  },
+  {
+    "id": "intent_0266",
+    "intent": "pentamarket",
+    "query_accented": "Làm ơn so sánh giá cho tôi về màn hình lập trình",
+    "query_unaccented": "lam on so sanh gia cho toi ve man hinh lap trinh",
+    "keyword_signals": [
+      "so sanh gia",
+      "man hinh lap trinh"
+    ]
+  },
+  {
+    "id": "intent_0267",
+    "intent": "pentamarket",
+    "query_accented": "Cho mình hỏi cách so sánh giá sách lập trình với",
+    "query_unaccented": "cho minh hoi cach so sanh gia sach lap trinh voi",
+    "keyword_signals": [
+      "so sanh gia",
+      "sach lap trinh"
+    ]
+  },
+  {
+    "id": "intent_0268",
+    "intent": "pentamarket",
+    "query_accented": "Tôi muốn so sánh giá áo thun penta ngay bây giờ",
+    "query_unaccented": "toi muon so sanh gia ao thun penta ngay bay gio",
+    "keyword_signals": [
+      "so sanh gia",
+      "ao thun penta"
+    ]
+  },
+  {
+    "id": "intent_0269",
+    "intent": "pentamarket",
+    "query_accented": "Có thể so sánh giá balo laptop giúp tôi được không",
+    "query_unaccented": "co the so sanh gia balo laptop giup toi duoc khong",
+    "keyword_signals": [
+      "so sanh gia",
+      "balo laptop"
+    ]
+  },
+  {
+    "id": "intent_0270",
+    "intent": "pentamarket",
+    "query_accented": "Hướng dẫn tôi so sánh giá voucher khóa học này nhé",
+    "query_unaccented": "huong dan toi so sanh gia voucher khoa hoc nay nhe",
+    "keyword_signals": [
+      "so sanh gia",
+      "voucher khoa hoc"
+    ]
+  },
+  {
+    "id": "intent_0271",
+    "intent": "pentamarket",
+    "query_accented": "Làm ơn hỏi thông số cho tôi về sổ tay thông minh",
+    "query_unaccented": "lam on hoi thong so cho toi ve so tay thong minh",
+    "keyword_signals": [
+      "hoi thong so",
+      "so tay thong minh"
+    ]
+  },
+  {
+    "id": "intent_0272",
+    "intent": "pentamarket",
+    "query_accented": "Cho mình hỏi cách hỏi thông số khóa học AI giảm giá với",
+    "query_unaccented": "cho minh hoi cach hoi thong so khoa hoc ai giam gia voi",
+    "keyword_signals": [
+      "hoi thong so",
+      "khoa hoc ai giam gia"
+    ]
+  },
+  {
+    "id": "intent_0273",
+    "intent": "pentamarket",
+    "query_accented": "Tôi muốn hỏi thông số tai nghe chống ồn ngay bây giờ",
+    "query_unaccented": "toi muon hoi thong so tai nghe chong on ngay bay gio",
+    "keyword_signals": [
+      "hoi thong so",
+      "tai nghe chong on"
+    ]
+  },
+  {
+    "id": "intent_0274",
+    "intent": "pentamarket",
+    "query_accented": "Có thể hỏi thông số chuột không dây giúp tôi được không",
+    "query_unaccented": "co the hoi thong so chuot khong day giup toi duoc khong",
+    "keyword_signals": [
+      "hoi thong so",
+      "chuot khong day"
+    ]
+  },
+  {
+    "id": "intent_0275",
+    "intent": "pentamarket",
+    "query_accented": "Hướng dẫn tôi hỏi thông số bàn phím cơ này nhé",
+    "query_unaccented": "huong dan toi hoi thong so ban phim co nay nhe",
+    "keyword_signals": [
+      "hoi thong so",
+      "ban phim co"
+    ]
+  },
+  {
+    "id": "intent_0276",
+    "intent": "pentamarket",
+    "query_accented": "Làm ơn hỏi thông số cho tôi về màn hình lập trình",
+    "query_unaccented": "lam on hoi thong so cho toi ve man hinh lap trinh",
+    "keyword_signals": [
+      "hoi thong so",
+      "man hinh lap trinh"
+    ]
+  },
+  {
+    "id": "intent_0277",
+    "intent": "pentamarket",
+    "query_accented": "Cho mình hỏi cách hỏi thông số sách lập trình với",
+    "query_unaccented": "cho minh hoi cach hoi thong so sach lap trinh voi",
+    "keyword_signals": [
+      "hoi thong so",
+      "sach lap trinh"
+    ]
+  },
+  {
+    "id": "intent_0278",
+    "intent": "pentamarket",
+    "query_accented": "Tôi muốn hỏi thông số áo thun penta ngay bây giờ",
+    "query_unaccented": "toi muon hoi thong so ao thun penta ngay bay gio",
+    "keyword_signals": [
+      "hoi thong so",
+      "ao thun penta"
+    ]
+  },
+  {
+    "id": "intent_0279",
+    "intent": "pentamarket",
+    "query_accented": "Có thể hỏi thông số balo laptop giúp tôi được không",
+    "query_unaccented": "co the hoi thong so balo laptop giup toi duoc khong",
+    "keyword_signals": [
+      "hoi thong so",
+      "balo laptop"
+    ]
+  },
+  {
+    "id": "intent_0280",
+    "intent": "pentamarket",
+    "query_accented": "Hướng dẫn tôi hỏi thông số voucher khóa học này nhé",
+    "query_unaccented": "huong dan toi hoi thong so voucher khoa hoc nay nhe",
+    "keyword_signals": [
+      "hoi thong so",
+      "voucher khoa hoc"
+    ]
+  },
+  {
+    "id": "intent_0281",
+    "intent": "pentamarket",
+    "query_accented": "Làm ơn đặt hàng cho tôi về sổ tay thông minh",
+    "query_unaccented": "lam on dat hang cho toi ve so tay thong minh",
+    "keyword_signals": [
+      "dat hang",
+      "so tay thong minh"
+    ]
+  },
+  {
+    "id": "intent_0282",
+    "intent": "pentamarket",
+    "query_accented": "Cho mình hỏi cách đặt hàng khóa học AI giảm giá với",
+    "query_unaccented": "cho minh hoi cach dat hang khoa hoc ai giam gia voi",
+    "keyword_signals": [
+      "dat hang",
+      "khoa hoc ai giam gia"
+    ]
+  },
+  {
+    "id": "intent_0283",
+    "intent": "pentamarket",
+    "query_accented": "Tôi muốn đặt hàng tai nghe chống ồn ngay bây giờ",
+    "query_unaccented": "toi muon dat hang tai nghe chong on ngay bay gio",
+    "keyword_signals": [
+      "dat hang",
+      "tai nghe chong on"
+    ]
+  },
+  {
+    "id": "intent_0284",
+    "intent": "pentamarket",
+    "query_accented": "Có thể đặt hàng chuột không dây giúp tôi được không",
+    "query_unaccented": "co the dat hang chuot khong day giup toi duoc khong",
+    "keyword_signals": [
+      "dat hang",
+      "chuot khong day"
+    ]
+  },
+  {
+    "id": "intent_0285",
+    "intent": "pentamarket",
+    "query_accented": "Hướng dẫn tôi đặt hàng bàn phím cơ này nhé",
+    "query_unaccented": "huong dan toi dat hang ban phim co nay nhe",
+    "keyword_signals": [
+      "dat hang",
+      "ban phim co"
+    ]
+  },
+  {
+    "id": "intent_0286",
+    "intent": "pentamarket",
+    "query_accented": "Làm ơn đặt hàng cho tôi về màn hình lập trình",
+    "query_unaccented": "lam on dat hang cho toi ve man hinh lap trinh",
+    "keyword_signals": [
+      "dat hang",
+      "man hinh lap trinh"
+    ]
+  },
+  {
+    "id": "intent_0287",
+    "intent": "pentamarket",
+    "query_accented": "Cho mình hỏi cách đặt hàng sách lập trình với",
+    "query_unaccented": "cho minh hoi cach dat hang sach lap trinh voi",
+    "keyword_signals": [
+      "dat hang",
+      "sach lap trinh"
+    ]
+  },
+  {
+    "id": "intent_0288",
+    "intent": "pentamarket",
+    "query_accented": "Tôi muốn đặt hàng áo thun penta ngay bây giờ",
+    "query_unaccented": "toi muon dat hang ao thun penta ngay bay gio",
+    "keyword_signals": [
+      "dat hang",
+      "ao thun penta"
+    ]
+  },
+  {
+    "id": "intent_0289",
+    "intent": "pentamarket",
+    "query_accented": "Có thể đặt hàng balo laptop giúp tôi được không",
+    "query_unaccented": "co the dat hang balo laptop giup toi duoc khong",
+    "keyword_signals": [
+      "dat hang",
+      "balo laptop"
+    ]
+  },
+  {
+    "id": "intent_0290",
+    "intent": "pentamarket",
+    "query_accented": "Hướng dẫn tôi đặt hàng voucher khóa học này nhé",
+    "query_unaccented": "huong dan toi dat hang voucher khoa hoc nay nhe",
+    "keyword_signals": [
+      "dat hang",
+      "voucher khoa hoc"
+    ]
+  },
+  {
+    "id": "intent_0291",
+    "intent": "pentamarket",
+    "query_accented": "Làm ơn xem giỏ hàng cho tôi về sổ tay thông minh",
+    "query_unaccented": "lam on xem gio hang cho toi ve so tay thong minh",
+    "keyword_signals": [
+      "xem gio hang",
+      "so tay thong minh"
+    ]
+  },
+  {
+    "id": "intent_0292",
+    "intent": "pentamarket",
+    "query_accented": "Cho mình hỏi cách xem giỏ hàng khóa học AI giảm giá với",
+    "query_unaccented": "cho minh hoi cach xem gio hang khoa hoc ai giam gia voi",
+    "keyword_signals": [
+      "xem gio hang",
+      "khoa hoc ai giam gia"
+    ]
+  },
+  {
+    "id": "intent_0293",
+    "intent": "pentamarket",
+    "query_accented": "Tôi muốn xem giỏ hàng tai nghe chống ồn ngay bây giờ",
+    "query_unaccented": "toi muon xem gio hang tai nghe chong on ngay bay gio",
+    "keyword_signals": [
+      "xem gio hang",
+      "tai nghe chong on"
+    ]
+  },
+  {
+    "id": "intent_0294",
+    "intent": "pentamarket",
+    "query_accented": "Có thể xem giỏ hàng chuột không dây giúp tôi được không",
+    "query_unaccented": "co the xem gio hang chuot khong day giup toi duoc khong",
+    "keyword_signals": [
+      "xem gio hang",
+      "chuot khong day"
+    ]
+  },
+  {
+    "id": "intent_0295",
+    "intent": "pentamarket",
+    "query_accented": "Hướng dẫn tôi xem giỏ hàng bàn phím cơ này nhé",
+    "query_unaccented": "huong dan toi xem gio hang ban phim co nay nhe",
+    "keyword_signals": [
+      "xem gio hang",
+      "ban phim co"
+    ]
+  },
+  {
+    "id": "intent_0296",
+    "intent": "pentamarket",
+    "query_accented": "Làm ơn xem giỏ hàng cho tôi về màn hình lập trình",
+    "query_unaccented": "lam on xem gio hang cho toi ve man hinh lap trinh",
+    "keyword_signals": [
+      "xem gio hang",
+      "man hinh lap trinh"
+    ]
+  },
+  {
+    "id": "intent_0297",
+    "intent": "pentamarket",
+    "query_accented": "Cho mình hỏi cách xem giỏ hàng sách lập trình với",
+    "query_unaccented": "cho minh hoi cach xem gio hang sach lap trinh voi",
+    "keyword_signals": [
+      "xem gio hang",
+      "sach lap trinh"
+    ]
+  },
+  {
+    "id": "intent_0298",
+    "intent": "pentamarket",
+    "query_accented": "Tôi muốn xem giỏ hàng áo thun penta ngay bây giờ",
+    "query_unaccented": "toi muon xem gio hang ao thun penta ngay bay gio",
+    "keyword_signals": [
+      "xem gio hang",
+      "ao thun penta"
+    ]
+  },
+  {
+    "id": "intent_0299",
+    "intent": "pentamarket",
+    "query_accented": "Có thể xem giỏ hàng balo laptop giúp tôi được không",
+    "query_unaccented": "co the xem gio hang balo laptop giup toi duoc khong",
+    "keyword_signals": [
+      "xem gio hang",
+      "balo laptop"
+    ]
+  },
+  {
+    "id": "intent_0300",
+    "intent": "pentamarket",
+    "query_accented": "Hướng dẫn tôi xem giỏ hàng voucher khóa học này nhé",
+    "query_unaccented": "huong dan toi xem gio hang voucher khoa hoc nay nhe",
+    "keyword_signals": [
+      "xem gio hang",
+      "voucher khoa hoc"
+    ]
+  },
+  {
+    "id": "intent_0301",
+    "intent": "pentajob",
+    "query_accented": "Làm ơn tìm việc cho tôi về Backend Golang",
+    "query_unaccented": "lam on tim viec cho toi ve backend golang",
+    "keyword_signals": [
+      "tim viec",
+      "backend golang"
+    ]
+  },
+  {
+    "id": "intent_0302",
+    "intent": "pentajob",
+    "query_accented": "Cho mình hỏi cách tìm việc Frontend React với",
+    "query_unaccented": "cho minh hoi cach tim viec frontend react voi",
+    "keyword_signals": [
+      "tim viec",
+      "frontend react"
+    ]
+  },
+  {
+    "id": "intent_0303",
+    "intent": "pentajob",
+    "query_accented": "Tôi muốn tìm việc Kỹ sư AI Engineer ngay bây giờ",
+    "query_unaccented": "toi muon tim viec ky su ai engineer ngay bay gio",
+    "keyword_signals": [
+      "tim viec",
+      "ky su ai engineer"
+    ]
+  },
+  {
+    "id": "intent_0304",
+    "intent": "pentajob",
+    "query_accented": "Có thể tìm việc Fresher Data Analyst giúp tôi được không",
+    "query_unaccented": "co the tim viec fresher data analyst giup toi duoc khong",
+    "keyword_signals": [
+      "tim viec",
+      "fresher data analyst"
+    ]
+  },
+  {
+    "id": "intent_0305",
+    "intent": "pentajob",
+    "query_accented": "Hướng dẫn tôi tìm việc DevOps Cloud này nhé",
+    "query_unaccented": "huong dan toi tim viec devops cloud nay nhe",
+    "keyword_signals": [
+      "tim viec",
+      "devops cloud"
+    ]
+  },
+  {
+    "id": "intent_0306",
+    "intent": "pentajob",
+    "query_accented": "Làm ơn tìm việc cho tôi về Lập trình viên Mobile",
+    "query_unaccented": "lam on tim viec cho toi ve lap trinh vien mobile",
+    "keyword_signals": [
+      "tim viec",
+      "lap trinh vien mobile"
+    ]
+  },
+  {
+    "id": "intent_0307",
+    "intent": "pentajob",
+    "query_accented": "Cho mình hỏi cách tìm việc Product Manager với",
+    "query_unaccented": "cho minh hoi cach tim viec product manager voi",
+    "keyword_signals": [
+      "tim viec",
+      "product manager"
+    ]
+  },
+  {
+    "id": "intent_0308",
+    "intent": "pentajob",
+    "query_accented": "Tôi muốn tìm việc Tester QA ngay bây giờ",
+    "query_unaccented": "toi muon tim viec tester qa ngay bay gio",
+    "keyword_signals": [
+      "tim viec",
+      "tester qa"
+    ]
+  },
+  {
+    "id": "intent_0309",
+    "intent": "pentajob",
+    "query_accented": "Có thể tìm việc System Architect giúp tôi được không",
+    "query_unaccented": "co the tim viec system architect giup toi duoc khong",
+    "keyword_signals": [
+      "tim viec",
+      "system architect"
+    ]
+  },
+  {
+    "id": "intent_0310",
+    "intent": "pentajob",
+    "query_accented": "Hướng dẫn tôi tìm việc Thực tập sinh phần mềm này nhé",
+    "query_unaccented": "huong dan toi tim viec thuc tap sinh phan mem nay nhe",
+    "keyword_signals": [
+      "tim viec",
+      "thuc tap sinh phan mem"
+    ]
+  },
+  {
+    "id": "intent_0311",
+    "intent": "pentajob",
+    "query_accented": "Làm ơn nộp CV cho tôi về Backend Golang",
+    "query_unaccented": "lam on nop cv cho toi ve backend golang",
+    "keyword_signals": [
+      "nop cv",
+      "backend golang"
+    ]
+  },
+  {
+    "id": "intent_0312",
+    "intent": "pentajob",
+    "query_accented": "Cho mình hỏi cách nộp CV Frontend React với",
+    "query_unaccented": "cho minh hoi cach nop cv frontend react voi",
+    "keyword_signals": [
+      "nop cv",
+      "frontend react"
+    ]
+  },
+  {
+    "id": "intent_0313",
+    "intent": "pentajob",
+    "query_accented": "Tôi muốn nộp CV Kỹ sư AI Engineer ngay bây giờ",
+    "query_unaccented": "toi muon nop cv ky su ai engineer ngay bay gio",
+    "keyword_signals": [
+      "nop cv",
+      "ky su ai engineer"
+    ]
+  },
+  {
+    "id": "intent_0314",
+    "intent": "pentajob",
+    "query_accented": "Có thể nộp CV Fresher Data Analyst giúp tôi được không",
+    "query_unaccented": "co the nop cv fresher data analyst giup toi duoc khong",
+    "keyword_signals": [
+      "nop cv",
+      "fresher data analyst"
+    ]
+  },
+  {
+    "id": "intent_0315",
+    "intent": "pentajob",
+    "query_accented": "Hướng dẫn tôi nộp CV DevOps Cloud này nhé",
+    "query_unaccented": "huong dan toi nop cv devops cloud nay nhe",
+    "keyword_signals": [
+      "nop cv",
+      "devops cloud"
+    ]
+  },
+  {
+    "id": "intent_0316",
+    "intent": "pentajob",
+    "query_accented": "Làm ơn nộp CV cho tôi về Lập trình viên Mobile",
+    "query_unaccented": "lam on nop cv cho toi ve lap trinh vien mobile",
+    "keyword_signals": [
+      "nop cv",
+      "lap trinh vien mobile"
+    ]
+  },
+  {
+    "id": "intent_0317",
+    "intent": "pentajob",
+    "query_accented": "Cho mình hỏi cách nộp CV Product Manager với",
+    "query_unaccented": "cho minh hoi cach nop cv product manager voi",
+    "keyword_signals": [
+      "nop cv",
+      "product manager"
+    ]
+  },
+  {
+    "id": "intent_0318",
+    "intent": "pentajob",
+    "query_accented": "Tôi muốn nộp CV Tester QA ngay bây giờ",
+    "query_unaccented": "toi muon nop cv tester qa ngay bay gio",
+    "keyword_signals": [
+      "nop cv",
+      "tester qa"
+    ]
+  },
+  {
+    "id": "intent_0319",
+    "intent": "pentajob",
+    "query_accented": "Có thể nộp CV System Architect giúp tôi được không",
+    "query_unaccented": "co the nop cv system architect giup toi duoc khong",
+    "keyword_signals": [
+      "nop cv",
+      "system architect"
+    ]
+  },
+  {
+    "id": "intent_0320",
+    "intent": "pentajob",
+    "query_accented": "Hướng dẫn tôi nộp CV Thực tập sinh phần mềm này nhé",
+    "query_unaccented": "huong dan toi nop cv thuc tap sinh phan mem nay nhe",
+    "keyword_signals": [
+      "nop cv",
+      "thuc tap sinh phan mem"
+    ]
+  },
+  {
+    "id": "intent_0321",
+    "intent": "pentajob",
+    "query_accented": "Làm ơn ứng tuyển cho tôi về Backend Golang",
+    "query_unaccented": "lam on ung tuyen cho toi ve backend golang",
+    "keyword_signals": [
+      "ung tuyen",
+      "backend golang"
+    ]
+  },
+  {
+    "id": "intent_0322",
+    "intent": "pentajob",
+    "query_accented": "Cho mình hỏi cách ứng tuyển Frontend React với",
+    "query_unaccented": "cho minh hoi cach ung tuyen frontend react voi",
+    "keyword_signals": [
+      "ung tuyen",
+      "frontend react"
+    ]
+  },
+  {
+    "id": "intent_0323",
+    "intent": "pentajob",
+    "query_accented": "Tôi muốn ứng tuyển Kỹ sư AI Engineer ngay bây giờ",
+    "query_unaccented": "toi muon ung tuyen ky su ai engineer ngay bay gio",
+    "keyword_signals": [
+      "ung tuyen",
+      "ky su ai engineer"
+    ]
+  },
+  {
+    "id": "intent_0324",
+    "intent": "pentajob",
+    "query_accented": "Có thể ứng tuyển Fresher Data Analyst giúp tôi được không",
+    "query_unaccented": "co the ung tuyen fresher data analyst giup toi duoc khong",
+    "keyword_signals": [
+      "ung tuyen",
+      "fresher data analyst"
+    ]
+  },
+  {
+    "id": "intent_0325",
+    "intent": "pentajob",
+    "query_accented": "Hướng dẫn tôi ứng tuyển DevOps Cloud này nhé",
+    "query_unaccented": "huong dan toi ung tuyen devops cloud nay nhe",
+    "keyword_signals": [
+      "ung tuyen",
+      "devops cloud"
+    ]
+  },
+  {
+    "id": "intent_0326",
+    "intent": "pentajob",
+    "query_accented": "Làm ơn ứng tuyển cho tôi về Lập trình viên Mobile",
+    "query_unaccented": "lam on ung tuyen cho toi ve lap trinh vien mobile",
+    "keyword_signals": [
+      "ung tuyen",
+      "lap trinh vien mobile"
+    ]
+  },
+  {
+    "id": "intent_0327",
+    "intent": "pentajob",
+    "query_accented": "Cho mình hỏi cách ứng tuyển Product Manager với",
+    "query_unaccented": "cho minh hoi cach ung tuyen product manager voi",
+    "keyword_signals": [
+      "ung tuyen",
+      "product manager"
+    ]
+  },
+  {
+    "id": "intent_0328",
+    "intent": "pentajob",
+    "query_accented": "Tôi muốn ứng tuyển Tester QA ngay bây giờ",
+    "query_unaccented": "toi muon ung tuyen tester qa ngay bay gio",
+    "keyword_signals": [
+      "ung tuyen",
+      "tester qa"
+    ]
+  },
+  {
+    "id": "intent_0329",
+    "intent": "pentajob",
+    "query_accented": "Có thể ứng tuyển System Architect giúp tôi được không",
+    "query_unaccented": "co the ung tuyen system architect giup toi duoc khong",
+    "keyword_signals": [
+      "ung tuyen",
+      "system architect"
+    ]
+  },
+  {
+    "id": "intent_0330",
+    "intent": "pentajob",
+    "query_accented": "Hướng dẫn tôi ứng tuyển Thực tập sinh phần mềm này nhé",
+    "query_unaccented": "huong dan toi ung tuyen thuc tap sinh phan mem nay nhe",
+    "keyword_signals": [
+      "ung tuyen",
+      "thuc tap sinh phan mem"
+    ]
+  },
+  {
+    "id": "intent_0331",
+    "intent": "pentajob",
+    "query_accented": "Làm ơn phỏng vấn thử cho tôi về Backend Golang",
+    "query_unaccented": "lam on phong van thu cho toi ve backend golang",
+    "keyword_signals": [
+      "phong van thu",
+      "backend golang"
+    ]
+  },
+  {
+    "id": "intent_0332",
+    "intent": "pentajob",
+    "query_accented": "Cho mình hỏi cách phỏng vấn thử Frontend React với",
+    "query_unaccented": "cho minh hoi cach phong van thu frontend react voi",
+    "keyword_signals": [
+      "phong van thu",
+      "frontend react"
+    ]
+  },
+  {
+    "id": "intent_0333",
+    "intent": "pentajob",
+    "query_accented": "Tôi muốn phỏng vấn thử Kỹ sư AI Engineer ngay bây giờ",
+    "query_unaccented": "toi muon phong van thu ky su ai engineer ngay bay gio",
+    "keyword_signals": [
+      "phong van thu",
+      "ky su ai engineer"
+    ]
+  },
+  {
+    "id": "intent_0334",
+    "intent": "pentajob",
+    "query_accented": "Có thể phỏng vấn thử Fresher Data Analyst giúp tôi được không",
+    "query_unaccented": "co the phong van thu fresher data analyst giup toi duoc khong",
+    "keyword_signals": [
+      "phong van thu",
+      "fresher data analyst"
+    ]
+  },
+  {
+    "id": "intent_0335",
+    "intent": "pentajob",
+    "query_accented": "Hướng dẫn tôi phỏng vấn thử DevOps Cloud này nhé",
+    "query_unaccented": "huong dan toi phong van thu devops cloud nay nhe",
+    "keyword_signals": [
+      "phong van thu",
+      "devops cloud"
+    ]
+  },
+  {
+    "id": "intent_0336",
+    "intent": "pentajob",
+    "query_accented": "Làm ơn phỏng vấn thử cho tôi về Lập trình viên Mobile",
+    "query_unaccented": "lam on phong van thu cho toi ve lap trinh vien mobile",
+    "keyword_signals": [
+      "phong van thu",
+      "lap trinh vien mobile"
+    ]
+  },
+  {
+    "id": "intent_0337",
+    "intent": "pentajob",
+    "query_accented": "Cho mình hỏi cách phỏng vấn thử Product Manager với",
+    "query_unaccented": "cho minh hoi cach phong van thu product manager voi",
+    "keyword_signals": [
+      "phong van thu",
+      "product manager"
+    ]
+  },
+  {
+    "id": "intent_0338",
+    "intent": "pentajob",
+    "query_accented": "Tôi muốn phỏng vấn thử Tester QA ngay bây giờ",
+    "query_unaccented": "toi muon phong van thu tester qa ngay bay gio",
+    "keyword_signals": [
+      "phong van thu",
+      "tester qa"
+    ]
+  },
+  {
+    "id": "intent_0339",
+    "intent": "pentajob",
+    "query_accented": "Có thể phỏng vấn thử System Architect giúp tôi được không",
+    "query_unaccented": "co the phong van thu system architect giup toi duoc khong",
+    "keyword_signals": [
+      "phong van thu",
+      "system architect"
+    ]
+  },
+  {
+    "id": "intent_0340",
+    "intent": "pentajob",
+    "query_accented": "Hướng dẫn tôi phỏng vấn thử Thực tập sinh phần mềm này nhé",
+    "query_unaccented": "huong dan toi phong van thu thuc tap sinh phan mem nay nhe",
+    "keyword_signals": [
+      "phong van thu",
+      "thuc tap sinh phan mem"
+    ]
+  },
+  {
+    "id": "intent_0341",
+    "intent": "pentajob",
+    "query_accented": "Làm ơn xem mức lương cho tôi về Backend Golang",
+    "query_unaccented": "lam on xem muc luong cho toi ve backend golang",
+    "keyword_signals": [
+      "xem muc luong",
+      "backend golang"
+    ]
+  },
+  {
+    "id": "intent_0342",
+    "intent": "pentajob",
+    "query_accented": "Cho mình hỏi cách xem mức lương Frontend React với",
+    "query_unaccented": "cho minh hoi cach xem muc luong frontend react voi",
+    "keyword_signals": [
+      "xem muc luong",
+      "frontend react"
+    ]
+  },
+  {
+    "id": "intent_0343",
+    "intent": "pentajob",
+    "query_accented": "Tôi muốn xem mức lương Kỹ sư AI Engineer ngay bây giờ",
+    "query_unaccented": "toi muon xem muc luong ky su ai engineer ngay bay gio",
+    "keyword_signals": [
+      "xem muc luong",
+      "ky su ai engineer"
+    ]
+  },
+  {
+    "id": "intent_0344",
+    "intent": "pentajob",
+    "query_accented": "Có thể xem mức lương Fresher Data Analyst giúp tôi được không",
+    "query_unaccented": "co the xem muc luong fresher data analyst giup toi duoc khong",
+    "keyword_signals": [
+      "xem muc luong",
+      "fresher data analyst"
+    ]
+  },
+  {
+    "id": "intent_0345",
+    "intent": "pentajob",
+    "query_accented": "Hướng dẫn tôi xem mức lương DevOps Cloud này nhé",
+    "query_unaccented": "huong dan toi xem muc luong devops cloud nay nhe",
+    "keyword_signals": [
+      "xem muc luong",
+      "devops cloud"
+    ]
+  },
+  {
+    "id": "intent_0346",
+    "intent": "pentajob",
+    "query_accented": "Làm ơn xem mức lương cho tôi về Lập trình viên Mobile",
+    "query_unaccented": "lam on xem muc luong cho toi ve lap trinh vien mobile",
+    "keyword_signals": [
+      "xem muc luong",
+      "lap trinh vien mobile"
+    ]
+  },
+  {
+    "id": "intent_0347",
+    "intent": "pentajob",
+    "query_accented": "Cho mình hỏi cách xem mức lương Product Manager với",
+    "query_unaccented": "cho minh hoi cach xem muc luong product manager voi",
+    "keyword_signals": [
+      "xem muc luong",
+      "product manager"
+    ]
+  },
+  {
+    "id": "intent_0348",
+    "intent": "pentajob",
+    "query_accented": "Tôi muốn xem mức lương Tester QA ngay bây giờ",
+    "query_unaccented": "toi muon xem muc luong tester qa ngay bay gio",
+    "keyword_signals": [
+      "xem muc luong",
+      "tester qa"
+    ]
+  },
+  {
+    "id": "intent_0349",
+    "intent": "pentajob",
+    "query_accented": "Có thể xem mức lương System Architect giúp tôi được không",
+    "query_unaccented": "co the xem muc luong system architect giup toi duoc khong",
+    "keyword_signals": [
+      "xem muc luong",
+      "system architect"
+    ]
+  },
+  {
+    "id": "intent_0350",
+    "intent": "pentajob",
+    "query_accented": "Hướng dẫn tôi xem mức lương Thực tập sinh phần mềm này nhé",
+    "query_unaccented": "huong dan toi xem muc luong thuc tap sinh phan mem nay nhe",
+    "keyword_signals": [
+      "xem muc luong",
+      "thuc tap sinh phan mem"
+    ]
+  },
+  {
+    "id": "intent_0351",
+    "intent": "pentajob",
+    "query_accented": "Làm ơn tìm công ty cho tôi về Backend Golang",
+    "query_unaccented": "lam on tim cong ty cho toi ve backend golang",
+    "keyword_signals": [
+      "tim cong ty",
+      "backend golang"
+    ]
+  },
+  {
+    "id": "intent_0352",
+    "intent": "pentajob",
+    "query_accented": "Cho mình hỏi cách tìm công ty Frontend React với",
+    "query_unaccented": "cho minh hoi cach tim cong ty frontend react voi",
+    "keyword_signals": [
+      "tim cong ty",
+      "frontend react"
+    ]
+  },
+  {
+    "id": "intent_0353",
+    "intent": "pentajob",
+    "query_accented": "Tôi muốn tìm công ty Kỹ sư AI Engineer ngay bây giờ",
+    "query_unaccented": "toi muon tim cong ty ky su ai engineer ngay bay gio",
+    "keyword_signals": [
+      "tim cong ty",
+      "ky su ai engineer"
+    ]
+  },
+  {
+    "id": "intent_0354",
+    "intent": "pentajob",
+    "query_accented": "Có thể tìm công ty Fresher Data Analyst giúp tôi được không",
+    "query_unaccented": "co the tim cong ty fresher data analyst giup toi duoc khong",
+    "keyword_signals": [
+      "tim cong ty",
+      "fresher data analyst"
+    ]
+  },
+  {
+    "id": "intent_0355",
+    "intent": "pentajob",
+    "query_accented": "Hướng dẫn tôi tìm công ty DevOps Cloud này nhé",
+    "query_unaccented": "huong dan toi tim cong ty devops cloud nay nhe",
+    "keyword_signals": [
+      "tim cong ty",
+      "devops cloud"
+    ]
+  },
+  {
+    "id": "intent_0356",
+    "intent": "pentajob",
+    "query_accented": "Làm ơn tìm công ty cho tôi về Lập trình viên Mobile",
+    "query_unaccented": "lam on tim cong ty cho toi ve lap trinh vien mobile",
+    "keyword_signals": [
+      "tim cong ty",
+      "lap trinh vien mobile"
+    ]
+  },
+  {
+    "id": "intent_0357",
+    "intent": "pentajob",
+    "query_accented": "Cho mình hỏi cách tìm công ty Product Manager với",
+    "query_unaccented": "cho minh hoi cach tim cong ty product manager voi",
+    "keyword_signals": [
+      "tim cong ty",
+      "product manager"
+    ]
+  },
+  {
+    "id": "intent_0358",
+    "intent": "pentajob",
+    "query_accented": "Tôi muốn tìm công ty Tester QA ngay bây giờ",
+    "query_unaccented": "toi muon tim cong ty tester qa ngay bay gio",
+    "keyword_signals": [
+      "tim cong ty",
+      "tester qa"
+    ]
+  },
+  {
+    "id": "intent_0359",
+    "intent": "pentajob",
+    "query_accented": "Có thể tìm công ty System Architect giúp tôi được không",
+    "query_unaccented": "co the tim cong ty system architect giup toi duoc khong",
+    "keyword_signals": [
+      "tim cong ty",
+      "system architect"
+    ]
+  },
+  {
+    "id": "intent_0360",
+    "intent": "pentajob",
+    "query_accented": "Hướng dẫn tôi tìm công ty Thực tập sinh phần mềm này nhé",
+    "query_unaccented": "huong dan toi tim cong ty thuc tap sinh phan mem nay nhe",
+    "keyword_signals": [
+      "tim cong ty",
+      "thuc tap sinh phan mem"
+    ]
+  },
+  {
+    "id": "intent_0361",
+    "intent": "pentajob",
+    "query_accented": "Làm ơn luyện phỏng vấn cho tôi về Backend Golang",
+    "query_unaccented": "lam on luyen phong van cho toi ve backend golang",
+    "keyword_signals": [
+      "luyen phong van",
+      "backend golang"
+    ]
+  },
+  {
+    "id": "intent_0362",
+    "intent": "pentajob",
+    "query_accented": "Cho mình hỏi cách luyện phỏng vấn Frontend React với",
+    "query_unaccented": "cho minh hoi cach luyen phong van frontend react voi",
+    "keyword_signals": [
+      "luyen phong van",
+      "frontend react"
+    ]
+  },
+  {
+    "id": "intent_0363",
+    "intent": "pentajob",
+    "query_accented": "Tôi muốn luyện phỏng vấn Kỹ sư AI Engineer ngay bây giờ",
+    "query_unaccented": "toi muon luyen phong van ky su ai engineer ngay bay gio",
+    "keyword_signals": [
+      "luyen phong van",
+      "ky su ai engineer"
+    ]
+  },
+  {
+    "id": "intent_0364",
+    "intent": "pentajob",
+    "query_accented": "Có thể luyện phỏng vấn Fresher Data Analyst giúp tôi được không",
+    "query_unaccented": "co the luyen phong van fresher data analyst giup toi duoc khong",
+    "keyword_signals": [
+      "luyen phong van",
+      "fresher data analyst"
+    ]
+  },
+  {
+    "id": "intent_0365",
+    "intent": "pentajob",
+    "query_accented": "Hướng dẫn tôi luyện phỏng vấn DevOps Cloud này nhé",
+    "query_unaccented": "huong dan toi luyen phong van devops cloud nay nhe",
+    "keyword_signals": [
+      "luyen phong van",
+      "devops cloud"
+    ]
+  },
+  {
+    "id": "intent_0366",
+    "intent": "pentajob",
+    "query_accented": "Làm ơn luyện phỏng vấn cho tôi về Lập trình viên Mobile",
+    "query_unaccented": "lam on luyen phong van cho toi ve lap trinh vien mobile",
+    "keyword_signals": [
+      "luyen phong van",
+      "lap trinh vien mobile"
+    ]
+  },
+  {
+    "id": "intent_0367",
+    "intent": "pentajob",
+    "query_accented": "Cho mình hỏi cách luyện phỏng vấn Product Manager với",
+    "query_unaccented": "cho minh hoi cach luyen phong van product manager voi",
+    "keyword_signals": [
+      "luyen phong van",
+      "product manager"
+    ]
+  },
+  {
+    "id": "intent_0368",
+    "intent": "pentajob",
+    "query_accented": "Tôi muốn luyện phỏng vấn Tester QA ngay bây giờ",
+    "query_unaccented": "toi muon luyen phong van tester qa ngay bay gio",
+    "keyword_signals": [
+      "luyen phong van",
+      "tester qa"
+    ]
+  },
+  {
+    "id": "intent_0369",
+    "intent": "pentajob",
+    "query_accented": "Có thể luyện phỏng vấn System Architect giúp tôi được không",
+    "query_unaccented": "co the luyen phong van system architect giup toi duoc khong",
+    "keyword_signals": [
+      "luyen phong van",
+      "system architect"
+    ]
+  },
+  {
+    "id": "intent_0370",
+    "intent": "pentajob",
+    "query_accented": "Hướng dẫn tôi luyện phỏng vấn Thực tập sinh phần mềm này nhé",
+    "query_unaccented": "huong dan toi luyen phong van thuc tap sinh phan mem nay nhe",
+    "keyword_signals": [
+      "luyen phong van",
+      "thuc tap sinh phan mem"
+    ]
+  },
+  {
+    "id": "intent_0371",
+    "intent": "pentajob",
+    "query_accented": "Làm ơn đánh giá CV cho tôi về Backend Golang",
+    "query_unaccented": "lam on danh gia cv cho toi ve backend golang",
+    "keyword_signals": [
+      "danh gia cv",
+      "backend golang"
+    ]
+  },
+  {
+    "id": "intent_0372",
+    "intent": "pentajob",
+    "query_accented": "Cho mình hỏi cách đánh giá CV Frontend React với",
+    "query_unaccented": "cho minh hoi cach danh gia cv frontend react voi",
+    "keyword_signals": [
+      "danh gia cv",
+      "frontend react"
+    ]
+  },
+  {
+    "id": "intent_0373",
+    "intent": "pentajob",
+    "query_accented": "Tôi muốn đánh giá CV Kỹ sư AI Engineer ngay bây giờ",
+    "query_unaccented": "toi muon danh gia cv ky su ai engineer ngay bay gio",
+    "keyword_signals": [
+      "danh gia cv",
+      "ky su ai engineer"
+    ]
+  },
+  {
+    "id": "intent_0374",
+    "intent": "pentajob",
+    "query_accented": "Có thể đánh giá CV Fresher Data Analyst giúp tôi được không",
+    "query_unaccented": "co the danh gia cv fresher data analyst giup toi duoc khong",
+    "keyword_signals": [
+      "danh gia cv",
+      "fresher data analyst"
+    ]
+  },
+  {
+    "id": "intent_0375",
+    "intent": "pentajob",
+    "query_accented": "Hướng dẫn tôi đánh giá CV DevOps Cloud này nhé",
+    "query_unaccented": "huong dan toi danh gia cv devops cloud nay nhe",
+    "keyword_signals": [
+      "danh gia cv",
+      "devops cloud"
+    ]
+  },
+  {
+    "id": "intent_0376",
+    "intent": "pentajob",
+    "query_accented": "Làm ơn đánh giá CV cho tôi về Lập trình viên Mobile",
+    "query_unaccented": "lam on danh gia cv cho toi ve lap trinh vien mobile",
+    "keyword_signals": [
+      "danh gia cv",
+      "lap trinh vien mobile"
+    ]
+  },
+  {
+    "id": "intent_0377",
+    "intent": "pentajob",
+    "query_accented": "Cho mình hỏi cách đánh giá CV Product Manager với",
+    "query_unaccented": "cho minh hoi cach danh gia cv product manager voi",
+    "keyword_signals": [
+      "danh gia cv",
+      "product manager"
+    ]
+  },
+  {
+    "id": "intent_0378",
+    "intent": "pentajob",
+    "query_accented": "Tôi muốn đánh giá CV Tester QA ngay bây giờ",
+    "query_unaccented": "toi muon danh gia cv tester qa ngay bay gio",
+    "keyword_signals": [
+      "danh gia cv",
+      "tester qa"
+    ]
+  },
+  {
+    "id": "intent_0379",
+    "intent": "pentajob",
+    "query_accented": "Có thể đánh giá CV System Architect giúp tôi được không",
+    "query_unaccented": "co the danh gia cv system architect giup toi duoc khong",
+    "keyword_signals": [
+      "danh gia cv",
+      "system architect"
+    ]
+  },
+  {
+    "id": "intent_0380",
+    "intent": "pentajob",
+    "query_accented": "Hướng dẫn tôi đánh giá CV Thực tập sinh phần mềm này nhé",
+    "query_unaccented": "huong dan toi danh gia cv thuc tap sinh phan mem nay nhe",
+    "keyword_signals": [
+      "danh gia cv",
+      "thuc tap sinh phan mem"
+    ]
+  },
+  {
+    "id": "intent_0381",
+    "intent": "pentajob",
+    "query_accented": "Làm ơn sửa hồ sơ cho tôi về Backend Golang",
+    "query_unaccented": "lam on sua ho so cho toi ve backend golang",
+    "keyword_signals": [
+      "sua ho so",
+      "backend golang"
+    ]
+  },
+  {
+    "id": "intent_0382",
+    "intent": "pentajob",
+    "query_accented": "Cho mình hỏi cách sửa hồ sơ Frontend React với",
+    "query_unaccented": "cho minh hoi cach sua ho so frontend react voi",
+    "keyword_signals": [
+      "sua ho so",
+      "frontend react"
+    ]
+  },
+  {
+    "id": "intent_0383",
+    "intent": "pentajob",
+    "query_accented": "Tôi muốn sửa hồ sơ Kỹ sư AI Engineer ngay bây giờ",
+    "query_unaccented": "toi muon sua ho so ky su ai engineer ngay bay gio",
+    "keyword_signals": [
+      "sua ho so",
+      "ky su ai engineer"
+    ]
+  },
+  {
+    "id": "intent_0384",
+    "intent": "pentajob",
+    "query_accented": "Có thể sửa hồ sơ Fresher Data Analyst giúp tôi được không",
+    "query_unaccented": "co the sua ho so fresher data analyst giup toi duoc khong",
+    "keyword_signals": [
+      "sua ho so",
+      "fresher data analyst"
+    ]
+  },
+  {
+    "id": "intent_0385",
+    "intent": "pentajob",
+    "query_accented": "Hướng dẫn tôi sửa hồ sơ DevOps Cloud này nhé",
+    "query_unaccented": "huong dan toi sua ho so devops cloud nay nhe",
+    "keyword_signals": [
+      "sua ho so",
+      "devops cloud"
+    ]
+  },
+  {
+    "id": "intent_0386",
+    "intent": "pentajob",
+    "query_accented": "Làm ơn sửa hồ sơ cho tôi về Lập trình viên Mobile",
+    "query_unaccented": "lam on sua ho so cho toi ve lap trinh vien mobile",
+    "keyword_signals": [
+      "sua ho so",
+      "lap trinh vien mobile"
+    ]
+  },
+  {
+    "id": "intent_0387",
+    "intent": "pentajob",
+    "query_accented": "Cho mình hỏi cách sửa hồ sơ Product Manager với",
+    "query_unaccented": "cho minh hoi cach sua ho so product manager voi",
+    "keyword_signals": [
+      "sua ho so",
+      "product manager"
+    ]
+  },
+  {
+    "id": "intent_0388",
+    "intent": "pentajob",
+    "query_accented": "Tôi muốn sửa hồ sơ Tester QA ngay bây giờ",
+    "query_unaccented": "toi muon sua ho so tester qa ngay bay gio",
+    "keyword_signals": [
+      "sua ho so",
+      "tester qa"
+    ]
+  },
+  {
+    "id": "intent_0389",
+    "intent": "pentajob",
+    "query_accented": "Có thể sửa hồ sơ System Architect giúp tôi được không",
+    "query_unaccented": "co the sua ho so system architect giup toi duoc khong",
+    "keyword_signals": [
+      "sua ho so",
+      "system architect"
+    ]
+  },
+  {
+    "id": "intent_0390",
+    "intent": "pentajob",
+    "query_accented": "Hướng dẫn tôi sửa hồ sơ Thực tập sinh phần mềm này nhé",
+    "query_unaccented": "huong dan toi sua ho so thuc tap sinh phan mem nay nhe",
+    "keyword_signals": [
+      "sua ho so",
+      "thuc tap sinh phan mem"
+    ]
+  },
+  {
+    "id": "intent_0391",
+    "intent": "pentajob",
+    "query_accented": "Làm ơn tìm vị trí cho tôi về Backend Golang",
+    "query_unaccented": "lam on tim vi tri cho toi ve backend golang",
+    "keyword_signals": [
+      "tim vi tri",
+      "backend golang"
+    ]
+  },
+  {
+    "id": "intent_0392",
+    "intent": "pentajob",
+    "query_accented": "Cho mình hỏi cách tìm vị trí Frontend React với",
+    "query_unaccented": "cho minh hoi cach tim vi tri frontend react voi",
+    "keyword_signals": [
+      "tim vi tri",
+      "frontend react"
+    ]
+  },
+  {
+    "id": "intent_0393",
+    "intent": "pentajob",
+    "query_accented": "Tôi muốn tìm vị trí Kỹ sư AI Engineer ngay bây giờ",
+    "query_unaccented": "toi muon tim vi tri ky su ai engineer ngay bay gio",
+    "keyword_signals": [
+      "tim vi tri",
+      "ky su ai engineer"
+    ]
+  },
+  {
+    "id": "intent_0394",
+    "intent": "pentajob",
+    "query_accented": "Có thể tìm vị trí Fresher Data Analyst giúp tôi được không",
+    "query_unaccented": "co the tim vi tri fresher data analyst giup toi duoc khong",
+    "keyword_signals": [
+      "tim vi tri",
+      "fresher data analyst"
+    ]
+  },
+  {
+    "id": "intent_0395",
+    "intent": "pentajob",
+    "query_accented": "Hướng dẫn tôi tìm vị trí DevOps Cloud này nhé",
+    "query_unaccented": "huong dan toi tim vi tri devops cloud nay nhe",
+    "keyword_signals": [
+      "tim vi tri",
+      "devops cloud"
+    ]
+  },
+  {
+    "id": "intent_0396",
+    "intent": "pentajob",
+    "query_accented": "Làm ơn tìm vị trí cho tôi về Lập trình viên Mobile",
+    "query_unaccented": "lam on tim vi tri cho toi ve lap trinh vien mobile",
+    "keyword_signals": [
+      "tim vi tri",
+      "lap trinh vien mobile"
+    ]
+  },
+  {
+    "id": "intent_0397",
+    "intent": "pentajob",
+    "query_accented": "Cho mình hỏi cách tìm vị trí Product Manager với",
+    "query_unaccented": "cho minh hoi cach tim vi tri product manager voi",
+    "keyword_signals": [
+      "tim vi tri",
+      "product manager"
+    ]
+  },
+  {
+    "id": "intent_0398",
+    "intent": "pentajob",
+    "query_accented": "Tôi muốn tìm vị trí Tester QA ngay bây giờ",
+    "query_unaccented": "toi muon tim vi tri tester qa ngay bay gio",
+    "keyword_signals": [
+      "tim vi tri",
+      "tester qa"
+    ]
+  },
+  {
+    "id": "intent_0399",
+    "intent": "pentajob",
+    "query_accented": "Có thể tìm vị trí System Architect giúp tôi được không",
+    "query_unaccented": "co the tim vi tri system architect giup toi duoc khong",
+    "keyword_signals": [
+      "tim vi tri",
+      "system architect"
+    ]
+  },
+  {
+    "id": "intent_0400",
+    "intent": "pentajob",
+    "query_accented": "Hướng dẫn tôi tìm vị trí Thực tập sinh phần mềm này nhé",
+    "query_unaccented": "huong dan toi tim vi tri thuc tap sinh phan mem nay nhe",
+    "keyword_signals": [
+      "tim vi tri",
+      "thuc tap sinh phan mem"
+    ]
+  },
+  {
+    "id": "intent_0401",
+    "intent": "general_chat",
+    "query_accented": "Làm ơn chào cho tôi về bạn có khỏe không",
+    "query_unaccented": "lam on chao cho toi ve ban co khoe khong",
+    "keyword_signals": [
+      "chao",
+      "ban co khoe khong"
+    ]
+  },
+  {
+    "id": "intent_0402",
+    "intent": "general_chat",
+    "query_accented": "Cho mình hỏi cách chào hệ thống penta là gì với",
+    "query_unaccented": "cho minh hoi cach chao he thong penta la gi voi",
+    "keyword_signals": [
+      "chao",
+      "he thong penta la gi"
+    ]
+  },
+  {
+    "id": "intent_0403",
+    "intent": "general_chat",
+    "query_accented": "Tôi muốn chào chế độ dễ thương ngay bây giờ",
+    "query_unaccented": "toi muon chao che do de thuong ngay bay gio",
+    "keyword_signals": [
+      "chao",
+      "che do de thuong"
+    ]
+  },
+  {
+    "id": "intent_0404",
+    "intent": "general_chat",
+    "query_accented": "Có thể chào chế độ nghiêm túc giúp tôi được không",
+    "query_unaccented": "co the chao che do nghiem tuc giup toi duoc khong",
+    "keyword_signals": [
+      "chao",
+      "che do nghiem tuc"
+    ]
+  },
+  {
+    "id": "intent_0405",
+    "intent": "general_chat",
+    "query_accented": "Hướng dẫn tôi chào chế độ yandere này nhé",
+    "query_unaccented": "huong dan toi chao che do yandere nay nhe",
+    "keyword_signals": [
+      "chao",
+      "che do yandere"
+    ]
+  },
+  {
+    "id": "intent_0406",
+    "intent": "general_chat",
+    "query_accented": "Làm ơn chào cho tôi về trò chuyện xíu nhé",
+    "query_unaccented": "lam on chao cho toi ve tro chuyen xiu nhe",
+    "keyword_signals": [
+      "chao",
+      "tro chuyen xiu nhe"
+    ]
+  },
+  {
+    "id": "intent_0407",
+    "intent": "general_chat",
+    "query_accented": "Cho mình hỏi cách chào tôi mệt quá với",
+    "query_unaccented": "cho minh hoi cach chao toi met qua voi",
+    "keyword_signals": [
+      "chao",
+      "toi met qua"
+    ]
+  },
+  {
+    "id": "intent_0408",
+    "intent": "general_chat",
+    "query_accented": "Tôi muốn chào bạn làm được gì ngay bây giờ",
+    "query_unaccented": "toi muon chao ban lam duoc gi ngay bay gio",
+    "keyword_signals": [
+      "chao",
+      "ban lam duoc gi"
+    ]
+  },
+  {
+    "id": "intent_0409",
+    "intent": "general_chat",
+    "query_accented": "Có thể chào cài đặt hệ thống giúp tôi được không",
+    "query_unaccented": "co the chao cai dat he thong giup toi duoc khong",
+    "keyword_signals": [
+      "chao",
+      "cai dat he thong"
+    ]
+  },
+  {
+    "id": "intent_0410",
+    "intent": "general_chat",
+    "query_accented": "Hướng dẫn tôi chào tạm biệt này nhé",
+    "query_unaccented": "huong dan toi chao tam biet nay nhe",
+    "keyword_signals": [
+      "chao",
+      "tam biet"
+    ]
+  },
+  {
+    "id": "intent_0411",
+    "intent": "general_chat",
+    "query_accented": "Làm ơn bạn là ai cho tôi về bạn có khỏe không",
+    "query_unaccented": "lam on ban la ai cho toi ve ban co khoe khong",
+    "keyword_signals": [
+      "ban la ai",
+      "ban co khoe khong"
+    ]
+  },
+  {
+    "id": "intent_0412",
+    "intent": "general_chat",
+    "query_accented": "Cho mình hỏi cách bạn là ai hệ thống penta là gì với",
+    "query_unaccented": "cho minh hoi cach ban la ai he thong penta la gi voi",
+    "keyword_signals": [
+      "ban la ai",
+      "he thong penta la gi"
+    ]
+  },
+  {
+    "id": "intent_0413",
+    "intent": "general_chat",
+    "query_accented": "Tôi muốn bạn là ai chế độ dễ thương ngay bây giờ",
+    "query_unaccented": "toi muon ban la ai che do de thuong ngay bay gio",
+    "keyword_signals": [
+      "ban la ai",
+      "che do de thuong"
+    ]
+  },
+  {
+    "id": "intent_0414",
+    "intent": "general_chat",
+    "query_accented": "Có thể bạn là ai chế độ nghiêm túc giúp tôi được không",
+    "query_unaccented": "co the ban la ai che do nghiem tuc giup toi duoc khong",
+    "keyword_signals": [
+      "ban la ai",
+      "che do nghiem tuc"
+    ]
+  },
+  {
+    "id": "intent_0415",
+    "intent": "general_chat",
+    "query_accented": "Hướng dẫn tôi bạn là ai chế độ yandere này nhé",
+    "query_unaccented": "huong dan toi ban la ai che do yandere nay nhe",
+    "keyword_signals": [
+      "ban la ai",
+      "che do yandere"
+    ]
+  },
+  {
+    "id": "intent_0416",
+    "intent": "general_chat",
+    "query_accented": "Làm ơn bạn là ai cho tôi về trò chuyện xíu nhé",
+    "query_unaccented": "lam on ban la ai cho toi ve tro chuyen xiu nhe",
+    "keyword_signals": [
+      "ban la ai",
+      "tro chuyen xiu nhe"
+    ]
+  },
+  {
+    "id": "intent_0417",
+    "intent": "general_chat",
+    "query_accented": "Cho mình hỏi cách bạn là ai tôi mệt quá với",
+    "query_unaccented": "cho minh hoi cach ban la ai toi met qua voi",
+    "keyword_signals": [
+      "ban la ai",
+      "toi met qua"
+    ]
+  },
+  {
+    "id": "intent_0418",
+    "intent": "general_chat",
+    "query_accented": "Tôi muốn bạn là ai bạn làm được gì ngay bây giờ",
+    "query_unaccented": "toi muon ban la ai ban lam duoc gi ngay bay gio",
+    "keyword_signals": [
+      "ban la ai",
+      "ban lam duoc gi"
+    ]
+  },
+  {
+    "id": "intent_0419",
+    "intent": "general_chat",
+    "query_accented": "Có thể bạn là ai cài đặt hệ thống giúp tôi được không",
+    "query_unaccented": "co the ban la ai cai dat he thong giup toi duoc khong",
+    "keyword_signals": [
+      "ban la ai",
+      "cai dat he thong"
+    ]
+  },
+  {
+    "id": "intent_0420",
+    "intent": "general_chat",
+    "query_accented": "Hướng dẫn tôi bạn là ai tạm biệt này nhé",
+    "query_unaccented": "huong dan toi ban la ai tam biet nay nhe",
+    "keyword_signals": [
+      "ban la ai",
+      "tam biet"
+    ]
+  },
+  {
+    "id": "intent_0421",
+    "intent": "general_chat",
+    "query_accented": "Làm ơn hôm nay thế nào cho tôi về bạn có khỏe không",
+    "query_unaccented": "lam on hom nay the nao cho toi ve ban co khoe khong",
+    "keyword_signals": [
+      "hom nay the nao",
+      "ban co khoe khong"
+    ]
+  },
+  {
+    "id": "intent_0422",
+    "intent": "general_chat",
+    "query_accented": "Cho mình hỏi cách hôm nay thế nào hệ thống penta là gì với",
+    "query_unaccented": "cho minh hoi cach hom nay the nao he thong penta la gi voi",
+    "keyword_signals": [
+      "hom nay the nao",
+      "he thong penta la gi"
+    ]
+  },
+  {
+    "id": "intent_0423",
+    "intent": "general_chat",
+    "query_accented": "Tôi muốn hôm nay thế nào chế độ dễ thương ngay bây giờ",
+    "query_unaccented": "toi muon hom nay the nao che do de thuong ngay bay gio",
+    "keyword_signals": [
+      "hom nay the nao",
+      "che do de thuong"
+    ]
+  },
+  {
+    "id": "intent_0424",
+    "intent": "general_chat",
+    "query_accented": "Có thể hôm nay thế nào chế độ nghiêm túc giúp tôi được không",
+    "query_unaccented": "co the hom nay the nao che do nghiem tuc giup toi duoc khong",
+    "keyword_signals": [
+      "hom nay the nao",
+      "che do nghiem tuc"
+    ]
+  },
+  {
+    "id": "intent_0425",
+    "intent": "general_chat",
+    "query_accented": "Hướng dẫn tôi hôm nay thế nào chế độ yandere này nhé",
+    "query_unaccented": "huong dan toi hom nay the nao che do yandere nay nhe",
+    "keyword_signals": [
+      "hom nay the nao",
+      "che do yandere"
+    ]
+  },
+  {
+    "id": "intent_0426",
+    "intent": "general_chat",
+    "query_accented": "Làm ơn hôm nay thế nào cho tôi về trò chuyện xíu nhé",
+    "query_unaccented": "lam on hom nay the nao cho toi ve tro chuyen xiu nhe",
+    "keyword_signals": [
+      "hom nay the nao",
+      "tro chuyen xiu nhe"
+    ]
+  },
+  {
+    "id": "intent_0427",
+    "intent": "general_chat",
+    "query_accented": "Cho mình hỏi cách hôm nay thế nào tôi mệt quá với",
+    "query_unaccented": "cho minh hoi cach hom nay the nao toi met qua voi",
+    "keyword_signals": [
+      "hom nay the nao",
+      "toi met qua"
+    ]
+  },
+  {
+    "id": "intent_0428",
+    "intent": "general_chat",
+    "query_accented": "Tôi muốn hôm nay thế nào bạn làm được gì ngay bây giờ",
+    "query_unaccented": "toi muon hom nay the nao ban lam duoc gi ngay bay gio",
+    "keyword_signals": [
+      "hom nay the nao",
+      "ban lam duoc gi"
+    ]
+  },
+  {
+    "id": "intent_0429",
+    "intent": "general_chat",
+    "query_accented": "Có thể hôm nay thế nào cài đặt hệ thống giúp tôi được không",
+    "query_unaccented": "co the hom nay the nao cai dat he thong giup toi duoc khong",
+    "keyword_signals": [
+      "hom nay the nao",
+      "cai dat he thong"
+    ]
+  },
+  {
+    "id": "intent_0430",
+    "intent": "general_chat",
+    "query_accented": "Hướng dẫn tôi hôm nay thế nào tạm biệt này nhé",
+    "query_unaccented": "huong dan toi hom nay the nao tam biet nay nhe",
+    "keyword_signals": [
+      "hom nay the nao",
+      "tam biet"
+    ]
+  },
+  {
+    "id": "intent_0431",
+    "intent": "general_chat",
+    "query_accented": "Làm ơn giúp tôi cho tôi về bạn có khỏe không",
+    "query_unaccented": "lam on giup toi cho toi ve ban co khoe khong",
+    "keyword_signals": [
+      "giup toi",
+      "ban co khoe khong"
+    ]
+  },
+  {
+    "id": "intent_0432",
+    "intent": "general_chat",
+    "query_accented": "Cho mình hỏi cách giúp tôi hệ thống penta là gì với",
+    "query_unaccented": "cho minh hoi cach giup toi he thong penta la gi voi",
+    "keyword_signals": [
+      "giup toi",
+      "he thong penta la gi"
+    ]
+  },
+  {
+    "id": "intent_0433",
+    "intent": "general_chat",
+    "query_accented": "Tôi muốn giúp tôi chế độ dễ thương ngay bây giờ",
+    "query_unaccented": "toi muon giup toi che do de thuong ngay bay gio",
+    "keyword_signals": [
+      "giup toi",
+      "che do de thuong"
+    ]
+  },
+  {
+    "id": "intent_0434",
+    "intent": "general_chat",
+    "query_accented": "Có thể giúp tôi chế độ nghiêm túc giúp tôi được không",
+    "query_unaccented": "co the giup toi che do nghiem tuc giup toi duoc khong",
+    "keyword_signals": [
+      "giup toi",
+      "che do nghiem tuc"
+    ]
+  },
+  {
+    "id": "intent_0435",
+    "intent": "general_chat",
+    "query_accented": "Hướng dẫn tôi giúp tôi chế độ yandere này nhé",
+    "query_unaccented": "huong dan toi giup toi che do yandere nay nhe",
+    "keyword_signals": [
+      "giup toi",
+      "che do yandere"
+    ]
+  },
+  {
+    "id": "intent_0436",
+    "intent": "general_chat",
+    "query_accented": "Làm ơn giúp tôi cho tôi về trò chuyện xíu nhé",
+    "query_unaccented": "lam on giup toi cho toi ve tro chuyen xiu nhe",
+    "keyword_signals": [
+      "giup toi",
+      "tro chuyen xiu nhe"
+    ]
+  },
+  {
+    "id": "intent_0437",
+    "intent": "general_chat",
+    "query_accented": "Cho mình hỏi cách giúp tôi tôi mệt quá với",
+    "query_unaccented": "cho minh hoi cach giup toi toi met qua voi",
+    "keyword_signals": [
+      "giup toi",
+      "toi met qua"
+    ]
+  },
+  {
+    "id": "intent_0438",
+    "intent": "general_chat",
+    "query_accented": "Tôi muốn giúp tôi bạn làm được gì ngay bây giờ",
+    "query_unaccented": "toi muon giup toi ban lam duoc gi ngay bay gio",
+    "keyword_signals": [
+      "giup toi",
+      "ban lam duoc gi"
+    ]
+  },
+  {
+    "id": "intent_0439",
+    "intent": "general_chat",
+    "query_accented": "Có thể giúp tôi cài đặt hệ thống giúp tôi được không",
+    "query_unaccented": "co the giup toi cai dat he thong giup toi duoc khong",
+    "keyword_signals": [
+      "giup toi",
+      "cai dat he thong"
+    ]
+  },
+  {
+    "id": "intent_0440",
+    "intent": "general_chat",
+    "query_accented": "Hướng dẫn tôi giúp tôi tạm biệt này nhé",
+    "query_unaccented": "huong dan toi giup toi tam biet nay nhe",
+    "keyword_signals": [
+      "giup toi",
+      "tam biet"
+    ]
+  },
+  {
+    "id": "intent_0441",
+    "intent": "general_chat",
+    "query_accented": "Làm ơn hướng dẫn sử dụng cho tôi về bạn có khỏe không",
+    "query_unaccented": "lam on huong dan su dung cho toi ve ban co khoe khong",
+    "keyword_signals": [
+      "huong dan su dung",
+      "ban co khoe khong"
+    ]
+  },
+  {
+    "id": "intent_0442",
+    "intent": "general_chat",
+    "query_accented": "Cho mình hỏi cách hướng dẫn sử dụng hệ thống penta là gì với",
+    "query_unaccented": "cho minh hoi cach huong dan su dung he thong penta la gi voi",
+    "keyword_signals": [
+      "huong dan su dung",
+      "he thong penta la gi"
+    ]
+  },
+  {
+    "id": "intent_0443",
+    "intent": "general_chat",
+    "query_accented": "Tôi muốn hướng dẫn sử dụng chế độ dễ thương ngay bây giờ",
+    "query_unaccented": "toi muon huong dan su dung che do de thuong ngay bay gio",
+    "keyword_signals": [
+      "huong dan su dung",
+      "che do de thuong"
+    ]
+  },
+  {
+    "id": "intent_0444",
+    "intent": "general_chat",
+    "query_accented": "Có thể hướng dẫn sử dụng chế độ nghiêm túc giúp tôi được không",
+    "query_unaccented": "co the huong dan su dung che do nghiem tuc giup toi duoc khong",
+    "keyword_signals": [
+      "huong dan su dung",
+      "che do nghiem tuc"
+    ]
+  },
+  {
+    "id": "intent_0445",
+    "intent": "general_chat",
+    "query_accented": "Hướng dẫn tôi hướng dẫn sử dụng chế độ yandere này nhé",
+    "query_unaccented": "huong dan toi huong dan su dung che do yandere nay nhe",
+    "keyword_signals": [
+      "huong dan su dung",
+      "che do yandere"
+    ]
+  },
+  {
+    "id": "intent_0446",
+    "intent": "general_chat",
+    "query_accented": "Làm ơn hướng dẫn sử dụng cho tôi về trò chuyện xíu nhé",
+    "query_unaccented": "lam on huong dan su dung cho toi ve tro chuyen xiu nhe",
+    "keyword_signals": [
+      "huong dan su dung",
+      "tro chuyen xiu nhe"
+    ]
+  },
+  {
+    "id": "intent_0447",
+    "intent": "general_chat",
+    "query_accented": "Cho mình hỏi cách hướng dẫn sử dụng tôi mệt quá với",
+    "query_unaccented": "cho minh hoi cach huong dan su dung toi met qua voi",
+    "keyword_signals": [
+      "huong dan su dung",
+      "toi met qua"
+    ]
+  },
+  {
+    "id": "intent_0448",
+    "intent": "general_chat",
+    "query_accented": "Tôi muốn hướng dẫn sử dụng bạn làm được gì ngay bây giờ",
+    "query_unaccented": "toi muon huong dan su dung ban lam duoc gi ngay bay gio",
+    "keyword_signals": [
+      "huong dan su dung",
+      "ban lam duoc gi"
+    ]
+  },
+  {
+    "id": "intent_0449",
+    "intent": "general_chat",
+    "query_accented": "Có thể hướng dẫn sử dụng cài đặt hệ thống giúp tôi được không",
+    "query_unaccented": "co the huong dan su dung cai dat he thong giup toi duoc khong",
+    "keyword_signals": [
+      "huong dan su dung",
+      "cai dat he thong"
+    ]
+  },
+  {
+    "id": "intent_0450",
+    "intent": "general_chat",
+    "query_accented": "Hướng dẫn tôi hướng dẫn sử dụng tạm biệt này nhé",
+    "query_unaccented": "huong dan toi huong dan su dung tam biet nay nhe",
+    "keyword_signals": [
+      "huong dan su dung",
+      "tam biet"
+    ]
+  },
+  {
+    "id": "intent_0451",
+    "intent": "general_chat",
+    "query_accented": "Làm ơn thời tiết hôm nay cho tôi về bạn có khỏe không",
+    "query_unaccented": "lam on thoi tiet hom nay cho toi ve ban co khoe khong",
+    "keyword_signals": [
+      "thoi tiet hom nay",
+      "ban co khoe khong"
+    ]
+  },
+  {
+    "id": "intent_0452",
+    "intent": "general_chat",
+    "query_accented": "Cho mình hỏi cách thời tiết hôm nay hệ thống penta là gì với",
+    "query_unaccented": "cho minh hoi cach thoi tiet hom nay he thong penta la gi voi",
+    "keyword_signals": [
+      "thoi tiet hom nay",
+      "he thong penta la gi"
+    ]
+  },
+  {
+    "id": "intent_0453",
+    "intent": "general_chat",
+    "query_accented": "Tôi muốn thời tiết hôm nay chế độ dễ thương ngay bây giờ",
+    "query_unaccented": "toi muon thoi tiet hom nay che do de thuong ngay bay gio",
+    "keyword_signals": [
+      "thoi tiet hom nay",
+      "che do de thuong"
+    ]
+  },
+  {
+    "id": "intent_0454",
+    "intent": "general_chat",
+    "query_accented": "Có thể thời tiết hôm nay chế độ nghiêm túc giúp tôi được không",
+    "query_unaccented": "co the thoi tiet hom nay che do nghiem tuc giup toi duoc khong",
+    "keyword_signals": [
+      "thoi tiet hom nay",
+      "che do nghiem tuc"
+    ]
+  },
+  {
+    "id": "intent_0455",
+    "intent": "general_chat",
+    "query_accented": "Hướng dẫn tôi thời tiết hôm nay chế độ yandere này nhé",
+    "query_unaccented": "huong dan toi thoi tiet hom nay che do yandere nay nhe",
+    "keyword_signals": [
+      "thoi tiet hom nay",
+      "che do yandere"
+    ]
+  },
+  {
+    "id": "intent_0456",
+    "intent": "general_chat",
+    "query_accented": "Làm ơn thời tiết hôm nay cho tôi về trò chuyện xíu nhé",
+    "query_unaccented": "lam on thoi tiet hom nay cho toi ve tro chuyen xiu nhe",
+    "keyword_signals": [
+      "thoi tiet hom nay",
+      "tro chuyen xiu nhe"
+    ]
+  },
+  {
+    "id": "intent_0457",
+    "intent": "general_chat",
+    "query_accented": "Cho mình hỏi cách thời tiết hôm nay tôi mệt quá với",
+    "query_unaccented": "cho minh hoi cach thoi tiet hom nay toi met qua voi",
+    "keyword_signals": [
+      "thoi tiet hom nay",
+      "toi met qua"
+    ]
+  },
+  {
+    "id": "intent_0458",
+    "intent": "general_chat",
+    "query_accented": "Tôi muốn thời tiết hôm nay bạn làm được gì ngay bây giờ",
+    "query_unaccented": "toi muon thoi tiet hom nay ban lam duoc gi ngay bay gio",
+    "keyword_signals": [
+      "thoi tiet hom nay",
+      "ban lam duoc gi"
+    ]
+  },
+  {
+    "id": "intent_0459",
+    "intent": "general_chat",
+    "query_accented": "Có thể thời tiết hôm nay cài đặt hệ thống giúp tôi được không",
+    "query_unaccented": "co the thoi tiet hom nay cai dat he thong giup toi duoc khong",
+    "keyword_signals": [
+      "thoi tiet hom nay",
+      "cai dat he thong"
+    ]
+  },
+  {
+    "id": "intent_0460",
+    "intent": "general_chat",
+    "query_accented": "Hướng dẫn tôi thời tiết hôm nay tạm biệt này nhé",
+    "query_unaccented": "huong dan toi thoi tiet hom nay tam biet nay nhe",
+    "keyword_signals": [
+      "thoi tiet hom nay",
+      "tam biet"
+    ]
+  },
+  {
+    "id": "intent_0461",
+    "intent": "general_chat",
+    "query_accented": "Làm ơn tâm sự chút đi cho tôi về bạn có khỏe không",
+    "query_unaccented": "lam on tam su chut di cho toi ve ban co khoe khong",
+    "keyword_signals": [
+      "tam su chut di",
+      "ban co khoe khong"
+    ]
+  },
+  {
+    "id": "intent_0462",
+    "intent": "general_chat",
+    "query_accented": "Cho mình hỏi cách tâm sự chút đi hệ thống penta là gì với",
+    "query_unaccented": "cho minh hoi cach tam su chut di he thong penta la gi voi",
+    "keyword_signals": [
+      "tam su chut di",
+      "he thong penta la gi"
+    ]
+  },
+  {
+    "id": "intent_0463",
+    "intent": "general_chat",
+    "query_accented": "Tôi muốn tâm sự chút đi chế độ dễ thương ngay bây giờ",
+    "query_unaccented": "toi muon tam su chut di che do de thuong ngay bay gio",
+    "keyword_signals": [
+      "tam su chut di",
+      "che do de thuong"
+    ]
+  },
+  {
+    "id": "intent_0464",
+    "intent": "general_chat",
+    "query_accented": "Có thể tâm sự chút đi chế độ nghiêm túc giúp tôi được không",
+    "query_unaccented": "co the tam su chut di che do nghiem tuc giup toi duoc khong",
+    "keyword_signals": [
+      "tam su chut di",
+      "che do nghiem tuc"
+    ]
+  },
+  {
+    "id": "intent_0465",
+    "intent": "general_chat",
+    "query_accented": "Hướng dẫn tôi tâm sự chút đi chế độ yandere này nhé",
+    "query_unaccented": "huong dan toi tam su chut di che do yandere nay nhe",
+    "keyword_signals": [
+      "tam su chut di",
+      "che do yandere"
+    ]
+  },
+  {
+    "id": "intent_0466",
+    "intent": "general_chat",
+    "query_accented": "Làm ơn tâm sự chút đi cho tôi về trò chuyện xíu nhé",
+    "query_unaccented": "lam on tam su chut di cho toi ve tro chuyen xiu nhe",
+    "keyword_signals": [
+      "tam su chut di",
+      "tro chuyen xiu nhe"
+    ]
+  },
+  {
+    "id": "intent_0467",
+    "intent": "general_chat",
+    "query_accented": "Cho mình hỏi cách tâm sự chút đi tôi mệt quá với",
+    "query_unaccented": "cho minh hoi cach tam su chut di toi met qua voi",
+    "keyword_signals": [
+      "tam su chut di",
+      "toi met qua"
+    ]
+  },
+  {
+    "id": "intent_0468",
+    "intent": "general_chat",
+    "query_accented": "Tôi muốn tâm sự chút đi bạn làm được gì ngay bây giờ",
+    "query_unaccented": "toi muon tam su chut di ban lam duoc gi ngay bay gio",
+    "keyword_signals": [
+      "tam su chut di",
+      "ban lam duoc gi"
+    ]
+  },
+  {
+    "id": "intent_0469",
+    "intent": "general_chat",
+    "query_accented": "Có thể tâm sự chút đi cài đặt hệ thống giúp tôi được không",
+    "query_unaccented": "co the tam su chut di cai dat he thong giup toi duoc khong",
+    "keyword_signals": [
+      "tam su chut di",
+      "cai dat he thong"
+    ]
+  },
+  {
+    "id": "intent_0470",
+    "intent": "general_chat",
+    "query_accented": "Hướng dẫn tôi tâm sự chút đi tạm biệt này nhé",
+    "query_unaccented": "huong dan toi tam su chut di tam biet nay nhe",
+    "keyword_signals": [
+      "tam su chut di",
+      "tam biet"
+    ]
+  },
+  {
+    "id": "intent_0471",
+    "intent": "general_chat",
+    "query_accented": "Làm ơn đổi nhân cách cho tôi về bạn có khỏe không",
+    "query_unaccented": "lam on doi nhan cach cho toi ve ban co khoe khong",
+    "keyword_signals": [
+      "doi nhan cach",
+      "ban co khoe khong"
+    ]
+  },
+  {
+    "id": "intent_0472",
+    "intent": "general_chat",
+    "query_accented": "Cho mình hỏi cách đổi nhân cách hệ thống penta là gì với",
+    "query_unaccented": "cho minh hoi cach doi nhan cach he thong penta la gi voi",
+    "keyword_signals": [
+      "doi nhan cach",
+      "he thong penta la gi"
+    ]
+  },
+  {
+    "id": "intent_0473",
+    "intent": "general_chat",
+    "query_accented": "Tôi muốn đổi nhân cách chế độ dễ thương ngay bây giờ",
+    "query_unaccented": "toi muon doi nhan cach che do de thuong ngay bay gio",
+    "keyword_signals": [
+      "doi nhan cach",
+      "che do de thuong"
+    ]
+  },
+  {
+    "id": "intent_0474",
+    "intent": "general_chat",
+    "query_accented": "Có thể đổi nhân cách chế độ nghiêm túc giúp tôi được không",
+    "query_unaccented": "co the doi nhan cach che do nghiem tuc giup toi duoc khong",
+    "keyword_signals": [
+      "doi nhan cach",
+      "che do nghiem tuc"
+    ]
+  },
+  {
+    "id": "intent_0475",
+    "intent": "general_chat",
+    "query_accented": "Hướng dẫn tôi đổi nhân cách chế độ yandere này nhé",
+    "query_unaccented": "huong dan toi doi nhan cach che do yandere nay nhe",
+    "keyword_signals": [
+      "doi nhan cach",
+      "che do yandere"
+    ]
+  },
+  {
+    "id": "intent_0476",
+    "intent": "general_chat",
+    "query_accented": "Làm ơn đổi nhân cách cho tôi về trò chuyện xíu nhé",
+    "query_unaccented": "lam on doi nhan cach cho toi ve tro chuyen xiu nhe",
+    "keyword_signals": [
+      "doi nhan cach",
+      "tro chuyen xiu nhe"
+    ]
+  },
+  {
+    "id": "intent_0477",
+    "intent": "general_chat",
+    "query_accented": "Cho mình hỏi cách đổi nhân cách tôi mệt quá với",
+    "query_unaccented": "cho minh hoi cach doi nhan cach toi met qua voi",
+    "keyword_signals": [
+      "doi nhan cach",
+      "toi met qua"
+    ]
+  },
+  {
+    "id": "intent_0478",
+    "intent": "general_chat",
+    "query_accented": "Tôi muốn đổi nhân cách bạn làm được gì ngay bây giờ",
+    "query_unaccented": "toi muon doi nhan cach ban lam duoc gi ngay bay gio",
+    "keyword_signals": [
+      "doi nhan cach",
+      "ban lam duoc gi"
+    ]
+  },
+  {
+    "id": "intent_0479",
+    "intent": "general_chat",
+    "query_accented": "Có thể đổi nhân cách cài đặt hệ thống giúp tôi được không",
+    "query_unaccented": "co the doi nhan cach cai dat he thong giup toi duoc khong",
+    "keyword_signals": [
+      "doi nhan cach",
+      "cai dat he thong"
+    ]
+  },
+  {
+    "id": "intent_0480",
+    "intent": "general_chat",
+    "query_accented": "Hướng dẫn tôi đổi nhân cách tạm biệt này nhé",
+    "query_unaccented": "huong dan toi doi nhan cach tam biet nay nhe",
+    "keyword_signals": [
+      "doi nhan cach",
+      "tam biet"
+    ]
+  },
+  {
+    "id": "intent_0481",
+    "intent": "general_chat",
+    "query_accented": "Làm ơn bật chế độ cho tôi về bạn có khỏe không",
+    "query_unaccented": "lam on bat che do cho toi ve ban co khoe khong",
+    "keyword_signals": [
+      "bat che do",
+      "ban co khoe khong"
+    ]
+  },
+  {
+    "id": "intent_0482",
+    "intent": "general_chat",
+    "query_accented": "Cho mình hỏi cách bật chế độ hệ thống penta là gì với",
+    "query_unaccented": "cho minh hoi cach bat che do he thong penta la gi voi",
+    "keyword_signals": [
+      "bat che do",
+      "he thong penta la gi"
+    ]
+  },
+  {
+    "id": "intent_0483",
+    "intent": "general_chat",
+    "query_accented": "Tôi muốn bật chế độ chế độ dễ thương ngay bây giờ",
+    "query_unaccented": "toi muon bat che do che do de thuong ngay bay gio",
+    "keyword_signals": [
+      "bat che do",
+      "che do de thuong"
+    ]
+  },
+  {
+    "id": "intent_0484",
+    "intent": "general_chat",
+    "query_accented": "Có thể bật chế độ chế độ nghiêm túc giúp tôi được không",
+    "query_unaccented": "co the bat che do che do nghiem tuc giup toi duoc khong",
+    "keyword_signals": [
+      "bat che do",
+      "che do nghiem tuc"
+    ]
+  },
+  {
+    "id": "intent_0485",
+    "intent": "general_chat",
+    "query_accented": "Hướng dẫn tôi bật chế độ chế độ yandere này nhé",
+    "query_unaccented": "huong dan toi bat che do che do yandere nay nhe",
+    "keyword_signals": [
+      "bat che do",
+      "che do yandere"
+    ]
+  },
+  {
+    "id": "intent_0486",
+    "intent": "general_chat",
+    "query_accented": "Làm ơn bật chế độ cho tôi về trò chuyện xíu nhé",
+    "query_unaccented": "lam on bat che do cho toi ve tro chuyen xiu nhe",
+    "keyword_signals": [
+      "bat che do",
+      "tro chuyen xiu nhe"
+    ]
+  },
+  {
+    "id": "intent_0487",
+    "intent": "general_chat",
+    "query_accented": "Cho mình hỏi cách bật chế độ tôi mệt quá với",
+    "query_unaccented": "cho minh hoi cach bat che do toi met qua voi",
+    "keyword_signals": [
+      "bat che do",
+      "toi met qua"
+    ]
+  },
+  {
+    "id": "intent_0488",
+    "intent": "general_chat",
+    "query_accented": "Tôi muốn bật chế độ bạn làm được gì ngay bây giờ",
+    "query_unaccented": "toi muon bat che do ban lam duoc gi ngay bay gio",
+    "keyword_signals": [
+      "bat che do",
+      "ban lam duoc gi"
+    ]
+  },
+  {
+    "id": "intent_0489",
+    "intent": "general_chat",
+    "query_accented": "Có thể bật chế độ cài đặt hệ thống giúp tôi được không",
+    "query_unaccented": "co the bat che do cai dat he thong giup toi duoc khong",
+    "keyword_signals": [
+      "bat che do",
+      "cai dat he thong"
+    ]
+  },
+  {
+    "id": "intent_0490",
+    "intent": "general_chat",
+    "query_accented": "Hướng dẫn tôi bật chế độ tạm biệt này nhé",
+    "query_unaccented": "huong dan toi bat che do tam biet nay nhe",
+    "keyword_signals": [
+      "bat che do",
+      "tam biet"
+    ]
+  },
+  {
+    "id": "intent_0491",
+    "intent": "general_chat",
+    "query_accented": "Làm ơn nghỉ ngơi thôi cho tôi về bạn có khỏe không",
+    "query_unaccented": "lam on nghi ngoi thoi cho toi ve ban co khoe khong",
+    "keyword_signals": [
+      "nghi ngoi thoi",
+      "ban co khoe khong"
+    ]
+  },
+  {
+    "id": "intent_0492",
+    "intent": "general_chat",
+    "query_accented": "Cho mình hỏi cách nghỉ ngơi thôi hệ thống penta là gì với",
+    "query_unaccented": "cho minh hoi cach nghi ngoi thoi he thong penta la gi voi",
+    "keyword_signals": [
+      "nghi ngoi thoi",
+      "he thong penta la gi"
+    ]
+  },
+  {
+    "id": "intent_0493",
+    "intent": "general_chat",
+    "query_accented": "Tôi muốn nghỉ ngơi thôi chế độ dễ thương ngay bây giờ",
+    "query_unaccented": "toi muon nghi ngoi thoi che do de thuong ngay bay gio",
+    "keyword_signals": [
+      "nghi ngoi thoi",
+      "che do de thuong"
+    ]
+  },
+  {
+    "id": "intent_0494",
+    "intent": "general_chat",
+    "query_accented": "Có thể nghỉ ngơi thôi chế độ nghiêm túc giúp tôi được không",
+    "query_unaccented": "co the nghi ngoi thoi che do nghiem tuc giup toi duoc khong",
+    "keyword_signals": [
+      "nghi ngoi thoi",
+      "che do nghiem tuc"
+    ]
+  },
+  {
+    "id": "intent_0495",
+    "intent": "general_chat",
+    "query_accented": "Hướng dẫn tôi nghỉ ngơi thôi chế độ yandere này nhé",
+    "query_unaccented": "huong dan toi nghi ngoi thoi che do yandere nay nhe",
+    "keyword_signals": [
+      "nghi ngoi thoi",
+      "che do yandere"
+    ]
+  },
+  {
+    "id": "intent_0496",
+    "intent": "general_chat",
+    "query_accented": "Làm ơn nghỉ ngơi thôi cho tôi về trò chuyện xíu nhé",
+    "query_unaccented": "lam on nghi ngoi thoi cho toi ve tro chuyen xiu nhe",
+    "keyword_signals": [
+      "nghi ngoi thoi",
+      "tro chuyen xiu nhe"
+    ]
+  },
+  {
+    "id": "intent_0497",
+    "intent": "general_chat",
+    "query_accented": "Cho mình hỏi cách nghỉ ngơi thôi tôi mệt quá với",
+    "query_unaccented": "cho minh hoi cach nghi ngoi thoi toi met qua voi",
+    "keyword_signals": [
+      "nghi ngoi thoi",
+      "toi met qua"
+    ]
+  },
+  {
+    "id": "intent_0498",
+    "intent": "general_chat",
+    "query_accented": "Tôi muốn nghỉ ngơi thôi bạn làm được gì ngay bây giờ",
+    "query_unaccented": "toi muon nghi ngoi thoi ban lam duoc gi ngay bay gio",
+    "keyword_signals": [
+      "nghi ngoi thoi",
+      "ban lam duoc gi"
+    ]
+  },
+  {
+    "id": "intent_0499",
+    "intent": "general_chat",
+    "query_accented": "Có thể nghỉ ngơi thôi cài đặt hệ thống giúp tôi được không",
+    "query_unaccented": "co the nghi ngoi thoi cai dat he thong giup toi duoc khong",
+    "keyword_signals": [
+      "nghi ngoi thoi",
+      "cai dat he thong"
+    ]
+  },
+  {
+    "id": "intent_0500",
+    "intent": "general_chat",
+    "query_accented": "Hướng dẫn tôi nghỉ ngơi thôi tạm biệt này nhé",
+    "query_unaccented": "huong dan toi nghi ngoi thoi tam biet nay nhe",
+    "keyword_signals": [
+      "nghi ngoi thoi",
+      "tam biet"
+    ]
+  }
+]

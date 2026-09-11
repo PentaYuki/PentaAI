@@ -1,0 +1,75 @@
+{
+  "version": "1.0.0",
+  "description": "Kho Tri Thức Công Thức Lớn Tập Trung của Pentaschool (Centralized Computational Knowledge Base) từ Lớp 1 đến Lớp 12",
+  "formulas": [
+    {
+      "formula_id": "MATH_ADD_01",
+      "subject": "toan",
+      "grade_range": "lop_1_den_lop_5",
+      "name": "Phép cộng hai số học căn bản",
+      "symbolic": "x + y = z",
+      "variables": ["x", "y"],
+      "solver_code": "return float(x) + float(y)",
+      "steps_template": [
+        "Bước 1: Xác định số hạng thứ nhất là {x} và số hạng thứ hai là {y}",
+        "Bước 2: Thực hiện phép cộng gộp: {x} + {y} = {result}"
+      ]
+    },
+    {
+      "formula_id": "MATH_PYTHAGORAS_01",
+      "subject": "toan",
+      "grade_range": "lop_7_den_lop_9",
+      "name": "Định lý Pitago trong tam giác vuông",
+      "symbolic": "c = sqrt(a^2 + b^2)",
+      "variables": ["a", "b"],
+      "solver_code": "import math; return math.sqrt(float(a)**2 + float(b)**2)",
+      "steps_template": [
+        "Bước 1: Áp dụng định lý Pitago cho tam giác vuông: c^2 = a^2 + b^2",
+        "Bước 2: Thay số: c^2 = {a}^2 + {b}^2 = {a_sq} + {b_sq} = {sum_sq}",
+        "Bước 3: Căn bậc hai hai vế: c = sqrt({sum_sq}) = {result}"
+      ]
+    },
+    {
+      "formula_id": "MATH_QUADRATIC_EQ_01",
+      "subject": "toan",
+      "grade_range": "lop_9_den_lop_12",
+      "name": "Giải phương trình bậc hai một ẩn ax^2 + bx + c = 0",
+      "symbolic": "Delta = b^2 - 4ac",
+      "variables": ["a", "b", "c"],
+      "solver_code": "import math; d = float(b)**2 - 4*float(a)*float(c); return {'delta': d, 'x1': (-float(b) + math.sqrt(d))/(2*float(a)) if d>=0 else None, 'x2': (-float(b) - math.sqrt(d))/(2*float(a)) if d>=0 else None}",
+      "steps_template": [
+        "Bước 1: Xác định các hệ số a = {a}, b = {b}, c = {c}",
+        "Bước 2: Tính biệt thức Delta = b^2 - 4ac = {b}^2 - 4*{a}*{c} = {delta}",
+        "Bước 3: Biện luận nghiệm: Nếu Delta > 0 phương trình có 2 nghiệm phân biệt x1 = {x1}, x2 = {x2}"
+      ]
+    },
+    {
+      "formula_id": "PHYS_ACCEL_01",
+      "subject": "vat_ly",
+      "grade_range": "lop_10_den_lop_12",
+      "name": "Phương trình vận tốc chuyển động biến đổi đều",
+      "symbolic": "v = v0 + a * t",
+      "variables": ["v0", "a", "t"],
+      "solver_code": "return float(v0) + float(a) * float(t)",
+      "steps_template": [
+        "Bước 1: Liệt kê các đại lượng: vận tốc ban đầu v0 = {v0} m/s, gia tốc a = {a} m/s^2, thời gian t = {t} s",
+        "Bước 2: Áp dụng công thức: v = v0 + a * t",
+        "Bước 3: Thay số: v = {v0} + {a} * {t} = {result} m/s"
+      ]
+    },
+    {
+      "formula_id": "CHEM_MOLE_01",
+      "subject": "hoa_hoc",
+      "grade_range": "lop_8_den_lop_12",
+      "name": "Công thức tính số mol chất theo khối lượng",
+      "symbolic": "n = m / M",
+      "variables": ["m", "M"],
+      "solver_code": "return float(m) / float(M)",
+      "steps_template": [
+        "Bước 1: Khối lượng chất m = {m} g, khối lượng mol M = {M} g/mol",
+        "Bước 2: Áp dụng công thức số mol: n = m / M",
+        "Bước 3: Kết quả: n = {m} / {M} = {result} mol"
+      ]
+    }
+  ]
+}
