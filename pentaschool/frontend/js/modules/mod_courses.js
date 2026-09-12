@@ -1,8 +1,8 @@
 // ===== courses.js — MODULE 2: KHOA HOC (thu vien bai hoc) =====
-import { state, monInfo, khoLabel } from "./store.js";
-import { SchoolAPI } from "./api.js";
-import { toast } from "./ui.js";
-import { moBai } from "./classroom.js";
+import { state, monInfo, khoLabel } from "../core/ps_store.js";
+import { SchoolAPI } from "../core/ps_api.js";
+import { toast } from "../core/ps_ui.js";
+import { moBai } from "./mod_classroom.js";
 
 export async function taiMonHoc() {
   try {

@@ -1,0 +1,15 @@
+/* ===== theme_tieu_hoc.css — CAP 1 (lop 1-5): DE THUONG =====
+   Hong/vang pastel, bo goc to, bong mem, icon to, hover nay. */
+body[data-cap="tieu_hoc"]{
+  --nen:#FFF7F0; --the:#FFFFFF; --chu:#5A4A5A; --mo:#A89BA8;
+  --chinh:#F4738C; --chinh-nhat:#FFE9EE; --phu:#FFD97D;
+  --vien:22px; --bong:0 6px 24px rgba(244,115,140,.16);
+}
+body[data-cap="tieu_hoc"] .sidebar{background:linear-gradient(180deg,#fff,#FFF4E8)}
+body[data-cap="tieu_hoc"] .logo{font-size:26px;border-radius:18px}
+body[data-cap="tieu_hoc"] .nav-mod button{font-size:15px;border-radius:16px}
+body[data-cap="tieu_hoc"] .the{border-width:3px}
+body[data-cap="tieu_hoc"] .the:hover{transform:translateY(-4px) rotate(-.4deg)}
+body[data-cap="tieu_hoc"] .btn{font-size:16px;padding:13px 26px}
+body[data-cap="tieu_hoc"] .mascot{font-size:56px}
+body[data-cap="tieu_hoc"] .panel h2{font-size:18px}

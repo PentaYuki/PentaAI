@@ -1,5 +1,4 @@
-// ===== video.js — MODULE VIDEO: chi render LINK tu DB, khong upload file =====
-import { SchoolAPI } from "./api.js";
+// ===== ps_video.js — CORE: render LINK video tu DB (khong upload file) =====
 
 export async function taiVideo(lessonId) {
   try {

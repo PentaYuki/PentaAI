@@ -1,9 +1,9 @@
-// ===== classroom.js — MODULE 3: LOP HOC (video link + bai + quiz + nop bai) =====
-import { state, monInfo } from "./store.js";
-import { SchoolAPI } from "./api.js";
-import { toast, showModule } from "./ui.js";
-import { taiTienDo } from "./home.js";
-import { taiVideo, videoEmbedHTML, phutGiay } from "./video.js";
+// ===== mod_classroom.js — MODULE LOP HOC (video + bai + quiz, o hoc-thuat o cap3) =====
+import { state, monInfo } from "../core/ps_store.js";
+import { SchoolAPI } from "../core/ps_api.js";
+import { toast, showModule } from "../core/ps_ui.js";
+import { taiTienDo } from "./mod_home.js";
+import { taiVideo, videoEmbedHTML, phutGiay } from "../core/ps_video.js";
 
 export async function moBai(id) {
   try {
@@ -12,22 +12,23 @@ export async function moBai(id) {
     state.baiDangMo = d.bai;
     state.dapAn = {};
     const m = monInfo(d.bai.mon);
-    // video link tu DB (co the rong)
     const videos = await taiVideo(id);
     let htmlVideo = "";
     if (videos.length) {
       htmlVideo = `<div id="videoBox">${videoEmbedHTML(videos[0])}</div>
         <div class="video-list">` + videos.map((v, i) =>
-          `<button data-vid="${i}" class="${i === 0 ? "active" : ""}">🎬 ${v.tieu_de_video || "Video " + (i + 1)} (${phutGiay(v.thoi_luong_giay)})</button>`
-        ).join("") + `</div><p class="video-note">📺 Video stream từ link (YouTube/CDN) — DB chỉ lưu URL, không lưu file.</p>`;
+          `<button data-vid="${i}" class="${i === 0 ? "active" : ""}">${state.cap === "thpt" ? "" : "🎬 "}${v.tieu_de_video || "Video " + (i + 1)} (${phutGiay(v.thoi_luong_giay)})</button>`
+        ).join("") + `</div>`;
     } else if (d.bai.video_url) {
       htmlVideo = videoEmbedHTML({ video_url: d.bai.video_url, video_provider: "youtube", tieu_de_video: d.bai.tieu_de });
     }
+    // cap3: muc tieu + noi dung boc trong o hoc-thuat xanh navy
+    const khoiBai = state.cap === "thpt"
+      ? `<div class="hoc-thuat"><b class="tieu-de">Muc tieu · Lop ${d.bai.lop} · ${m.ten}</b>${d.bai.muc_tieu || ""}</div>`
+        + htmlVideo + `<div class="nd">${d.bai.noi_dung || ""}</div>`
+      : `<h3>${d.bai.tieu_de}</h3><p>Muc tieu: ${d.bai.muc_tieu || ""}</p>` + htmlVideo + `<div class="nd">${d.bai.noi_dung || ""}</div>`;
     document.getElementById("ctBai").innerHTML =
-      `<span class="tag">${m.icon} ${m.ten} · Lớp ${d.bai.lop}</span>` +
-      `<h3>${d.bai.tieu_de}</h3><p>🎯 Mục tiêu: ${d.bai.muc_tieu || ""}</p>` +
-      htmlVideo +
-      `<div class="nd">${d.bai.noi_dung || ""}</div>`;
+      `<span class="tag">${state.cap === "thpt" ? "" : m.icon + " "}${m.ten} · Lop ${d.bai.lop}</span>` + khoiBai;
     if (videos.length > 1) {
       document.querySelectorAll("#ctBai .video-list button").forEach((b) => {
         b.onclick = () => {
@@ -72,7 +73,7 @@ export async function nopBai() {
         `📌 <b>${g.cau}</b> → Đáp án: <b>${g.dap_an}</b><br><span>${g.giai_thich}</span>`
       ).join("<br><br>");
     await taiTienDo();
-    const { taiBaiHoc } = await import("./courses.js");
+    const { taiBaiHoc } = await import("./mod_courses.js");
     await taiBaiHoc();
     toast(k.sao_thuong >= 2 ? "Giỏi quá! +sao nè! 🌟" : "Cố lên, mình tiến bộ rồi! 🌱");
   } catch (e) { toast("Nộp bài lỗi, thử lại nhé!"); }

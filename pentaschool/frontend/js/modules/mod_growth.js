@@ -1,5 +1,5 @@
 // ===== growth.js — MODULE 5: TIEN BO (sao + huy hieu) =====
-import { state } from "./store.js";
+import { state } from "../core/ps_store.js";
 
 export function renderGrowth() {
   document.getElementById("saoTo").textContent = "⭐ " + state.tongSao;

@@ -1,20 +1,16 @@
-// ===== home.js — MODULE 1: TRANG CHU =====
-import { state, setLop } from "./store.js";
-import { SchoolAPI } from "./api.js";
-import { showModule } from "./ui.js";
-import { taiBaiHoc } from "./courses.js";
+// ===== mod_home.js — MODULE TRANG CHU (card cap + tien do + goi y) =====
+import { state, setLop, capCuaLop } from "../core/ps_store.js";
+import { SchoolAPI } from "../core/ps_api.js";
+import { showModule } from "../core/ps_ui.js";
+import { applyTheme, currentTheme } from "../core/ps_theme.js";
+import { renderCapFeatures } from "./mod_cap.js";
+import { taiBaiHoc } from "./mod_courses.js";
 
 const CAPS = [
-  { id: "tieu_hoc", icon: "🌱", ten: "Tiểu học", mo: "Lớp 1–5 · Vui + hình ảnh", lopMacDinh: 3 },
-  { id: "thcs", icon: "🚀", ten: "THCS", mo: "Lớp 6–9 · Vững căn bản", lopMacDinh: 7 },
-  { id: "thpt", icon: "🎯", ten: "THPT", mo: "Lớp 10–12 · Luyện thi", lopMacDinh: 11 },
+  { id: "tieu_hoc", icon: "🦊", ten: "Tieu hoc", mo: "Lop 1-5 · Vui + hinh anh", lopMacDinh: 3 },
+  { id: "thcs", icon: "🌿", ten: "THCS", mo: "Lop 6-9 · Vung can ban", lopMacDinh: 7 },
+  { id: "thpt", icon: "◈", ten: "THPT", mo: "Lop 10-12 · Luyen thi", lopMacDinh: 11 },
 ];
-
-function capCuaLop(lop) {
-  if (lop <= 5) return "tieu_hoc";
-  if (lop <= 9) return "thcs";
-  return "thpt";
-}
 
 export function renderCap() {
   const box = document.getElementById("capRow");
@@ -24,12 +20,14 @@ export function renderCap() {
     const b = document.createElement("button");
     b.className = "cap" + (c.id === cur ? " active" : "");
     b.innerHTML = `<b>${c.icon} ${c.ten}</b><small>${c.mo}</small>`;
-    b.onclick = () => {
+    b.onclick = async () => {
       setLop(c.lopMacDinh);
       document.getElementById("chonLop").value = String(state.lop);
+      applyTheme();
       renderCap();
-      taiBaiHoc();
-      taiGoiY();
+      renderCapFeatures();
+      await taiBaiHoc();
+      await taiGoiY();
       showModule("courses");
     };
     box.appendChild(b);
@@ -46,23 +44,26 @@ export async function taiTienDo() {
     document.getElementById("statBai").textContent = state.tienDo.length;
     const pct = Math.min(100, state.tienDo.length * 10);
     document.getElementById("homeProgress").style.width = pct + "%";
+    const t = currentTheme();
     document.getElementById("homeProgressTxt").textContent =
-      state.tienDo.length === 0 ? "Bắt đầu bài đầu tiên nào! 🌱" : `Đã học ${state.tienDo.length} bài — giỏi lắm!`;
-  } catch (e) { /* offline: giu 0 */ }
+      state.tienDo.length === 0
+        ? (state.cap === "thpt" ? "Bat dau ke hoach luyen thi nao!" : "Bat dau bai dau tien nao!")
+        : `Da hoc ${state.tienDo.length} bai — ${state.cap === "tieu_hoc" ? "gioi lam! 🌟" : "tiep tuc nhe!"}`;
+  } catch (e) { /* offline */ }
 }
 
 export async function taiGoiY() {
   try {
     const d = await SchoolAPI.goiY(state.hocSinh, state.lop);
-    if (d.loi_chao) document.getElementById("loiChao").textContent = d.loi_chao;
+    // loi chao theo theme, khong de backend ghi de theme cap1/cap3
     const box = document.getElementById("goiY");
-    box.innerHTML = (d.goi_y || []).length ? "" : "<p>Chưa có gợi ý, em chọn lớp khác nhé! 🦊</p>";
+    box.innerHTML = (d.goi_y || []).length ? "" : "<p>Chua co goi y, chon lop khac nhe!</p>";
     (d.goi_y || []).forEach((b) => {
       const el = document.createElement("div");
       el.className = "the";
-      el.innerHTML = `<h3>💡 ${b.tieu_de}</h3><p>Lớp ${b.lop} · ${b.thoi_luong_phut} phút</p>`;
+      el.innerHTML = `<h3>${b.tieu_de}</h3><p>Lop ${b.lop} · ${b.thoi_luong_phut} phut</p>`;
       el.onclick = async () => {
-        const { moBai } = await import("./classroom.js");
+        const { moBai } = await import("./mod_classroom.js");
         moBai(b.id);
       };
       box.appendChild(el);

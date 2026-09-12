@@ -1,0 +1,30 @@
+/* ===== theme_thpt.css — CAP 3 (lop 10-12): NGHIEM TUC + HIEN DAI + HOC THUAT =====
+   Xanh navy + anh kim, nen xam sang, vien 1px, o hoc-thuat: cong thuc, muc tieu, tai lieu. */
+body[data-cap="thpt"]{
+  --nen:#F1F4F9; --the:#FFFFFF; --chu:#1E2A3B; --mo:#64748B;
+  --chinh:#1D4ED8; --chinh-nhat:#E3EBFB; --phu:#38BDF8;
+  --vien:10px; --bong:0 1px 8px rgba(29,78,216,.10);
+}
+body[data-cap="thpt"]{font-size:15px}
+body[data-cap="thpt"] .sidebar{background:#0F2040;color:#DCE6F5;border-right:none}
+body[data-cap="thpt"] .brand b,body[data-cap="thpt"] .brand span{color:#DCE6F5}
+body[data-cap="thpt"] .logo{background:linear-gradient(135deg,#38BDF8,#1D4ED8);border-radius:8px;font-size:18px}
+body[data-cap="thpt"] .nav-mod button{color:#9FB3CC;border-radius:8px;font-weight:600}
+body[data-cap="thpt"] .nav-mod button:hover{background:#1A3358}
+body[data-cap="thpt"] .nav-mod button.active{background:#1D4ED8;color:#fff;border-color:#1D4ED8}
+body[data-cap="thpt"] .side-card{background:#15294F;border-color:#243B63;color:#C9D7EA}
+body[data-cap="thpt"] .topbar{background:rgba(241,244,249,.95)}
+body[data-cap="thpt"] .panel{border:1px solid #E2E8F0;border-radius:10px;box-shadow:var(--bong)}
+body[data-cap="thpt"] .panel h2{font-size:16px;letter-spacing:.2px}
+body[data-cap="thpt"] .the{border:1px solid #E2E8F0;border-radius:10px}
+body[data-cap="thpt"] .the:hover{transform:none;border-color:var(--chinh);box-shadow:var(--bong)}
+body[data-cap="thpt"] .btn{background:linear-gradient(135deg,#1D4ED8,#38BDF8);border-radius:8px;font-size:14px}
+body[data-cap="thpt"] .btn.phu{background:#fff;color:var(--chu);border:1px solid #CBD5E1}
+body[data-cap="thpt"] .mascot{font-size:30px;animation:none}
+/* O HOC THUAT rieng cap3: cong thuc / muc tieu / tai lieu */
+body[data-cap="thpt"] .hoc-thuat{background:#F8FAFF;border:1px solid #CBDDF5;border-left:4px solid var(--chinh);
+  border-radius:8px;padding:12px;margin:10px 0;font-size:14px}
+body[data-cap="thpt"] .hoc-thuat b.tieu-de{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.8px;color:var(--chinh);margin-bottom:6px}
+body[data-cap="thpt"] .cong-thuc{font-family:'JetBrains Mono',Consolas,monospace;background:#0F2040;color:#7DD3FC;
+  border-radius:8px;padding:10px 12px;margin:8px 0;font-size:14px;overflow-x:auto}
+body[data-cap="thpt"] .bottomnav button.active{background:var(--chinh-nhat);color:var(--chinh)}

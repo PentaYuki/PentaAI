@@ -3,121 +3,101 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PentaSchool — LMS lớp 1-12</title>
+<title>PentaSchool - LMS lop 1-12</title>
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/base.css">
-<link rel="stylesheet" href="/css/layout.css">
-<link rel="stylesheet" href="/css/home.css">
-<link rel="stylesheet" href="/css/courses.css">
-<link rel="stylesheet" href="/css/classroom.css">
-<link rel="stylesheet" href="/css/video.css">
-<link rel="stylesheet" href="/css/tutor.css">
-<link rel="stylesheet" href="/css/growth.css">
+<link rel="stylesheet" href="/css/core/ps_base.css">
+<link rel="stylesheet" href="/css/core/ps_layout.css">
+<link rel="stylesheet" href="/css/core/ps_video.css">
+<link rel="stylesheet" href="/css/modules/mod_home.css">
+<link rel="stylesheet" href="/css/modules/mod_courses.css">
+<link rel="stylesheet" href="/css/modules/mod_classroom.css">
+<link rel="stylesheet" href="/css/modules/mod_tutor.css">
+<link rel="stylesheet" href="/css/modules/mod_growth.css">
 </head>
-<body>
+<body data-cap="thcs">
 <div class="app-shell">
-  <!-- SIDEBAR: dieu huong module ro rang -->
-  <aside class="sidebar">
-    <div class="brand-row">
-      <div class="logo">🎒</div>
-      <div class="brand"><b>PentaSchool</b><br><span>Lớp 1 – 12</span></div>
-    </div>
-    <nav class="nav-mod" aria-label="Module LMS">
-      <button data-nav="home" class="active"><span class="ic">🏠</span>Trang chủ</button>
-      <button data-nav="courses"><span class="ic">📚</span>Khóa học</button>
-      <button data-nav="classroom"><span class="ic">✏️</span>Lớp học</button>
-      <button data-nav="tutor"><span class="ic">🦊</span>Hỏi cô Cáo</button>
-      <button data-nav="growth"><span class="ic">⭐</span>Tiến bộ</button>
-    </nav>
-    <div class="side-card"><b>🦊 Cô Cáo nhắn</b><span>Học 1 bài nhỏ mỗi ngày là giỏi lắm rồi!</span></div>
-    <div class="side-card"><b>📌 Quy tắc lớp</b><span>Sai không sao · Hỏi thoải mái · Giữ lời lễ phép</span></div>
-  </aside>
-
-  <!-- MAIN -->
-  <div class="main">
-    <div class="topbar">
-      <div><h1 id="tenTrang">🏠 Trang chủ</h1><div class="sub">Học vui mỗi ngày · Dễ thương nhưng nghiêm túc 💛</div></div>
-      <div class="hs-picker">⭐ <span class="sao" id="tongSao">0</span>
-        <select id="chonLop" title="Chọn lớp"></select>
-        <select id="chonTen" title="Tên"><option value="em">Bé</option><option value="An">An</option><option value="Bình">Bình</option><option value="Cún">Cún</option></select>
-      </div>
-    </div>
-
-    <!-- MODULE 1: HOME -->
-    <section class="module" data-module="home">
-      <div class="chao">
-        <div class="mascot">🦊</div>
-        <div><h2 id="loiChao">Chào em! Hôm nay mình học 1 bài nho nhỏ nhé!</h2>
-        <p>Học từng bước, sai cũng không sao — cô Cáo luôn ở đây cùng em. 💛</p></div>
-      </div>
-      <div class="panel"><h2>🎯 Chọn cấp học</h2><p class="desc">Mỗi cấp có cách học riêng cho đúng tuổi.</p><div class="cap-row" id="capRow"></div></div>
-      <div class="panel"><h2>📊 Hôm nay của em</h2><p class="desc" id="homeProgressTxt">Bắt đầu bài đầu tiên nào! 🌱</p>
-        <div class="home-stats">
-          <div class="stat"><b id="statSao">0</b><span>⭐ Sao</span></div>
-          <div class="stat"><b id="statBai">0</b><span>📖 Bài đã học</span></div>
-          <div class="stat"><b>12</b><span>🏫 Lớp phủ</span></div>
-        </div>
-        <div class="progress" style="margin-top:10px"><i id="homeProgress" style="width:0%"></i></div>
-      </div>
-      <div class="panel"><h2>🌟 Gợi ý hôm nay</h2><p class="desc">Cô chọn 3 bài nhẹ nhàng cho em.</p><div class="luoi" id="goiY"></div></div>
-    </section>
-
-    <!-- MODULE 2: COURSES -->
-    <section class="module" data-module="courses">
-      <div class="panel"><h2>📚 Thư viện bài học</h2><p class="desc">Lọc theo môn + tìm kiếm, bấm vào thẻ để vào lớp học.</p>
-        <div class="toolbar">
-          <select id="locMon"><option value="">Tất cả môn</option></select>
-          <input id="timKiem" placeholder="🔍 Tìm bài... (vd: phân số, oxi, present simple)">
-        </div>
-        <div class="luoi" id="luoiBai"></div>
-      </div>
-    </section>
-
-    <!-- MODULE 3: CLASSROOM -->
-    <section class="module" data-module="classroom">
-      <div class="panel"><h2>✏️ Lớp học</h2><p class="desc">Đọc bài → làm quiz → nộp bài nhận sao. Sai cũng được khen cố gắng!</p>
-        <div class="bai-ct" id="ctBai"><p>Em hãy chọn 1 bài ở mục <b>Khóa học</b> trước nhé! 📚</p></div>
-        <div id="quizBox"></div>
-        <div class="step">
-          <button class="btn phu" id="btnVeKhoa">← Về thư viện</button>
-          <button class="btn" id="btnNop" style="flex:1">Nộp bài ✨</button>
-        </div>
-        <div class="kq" id="kqBox" style="display:none"></div>
-      </div>
-    </section>
-
-    <!-- MODULE 4: TUTOR -->
-    <section class="module" data-module="tutor">
-      <div class="panel"><h2>🦊 Hỏi cô Cáo</h2><p class="desc">Cô gợi ý từng bước để em tự nghĩ — không cho đáp án ngay.</p>
-        <div class="tutor-hero"><div class="face">🦊</div><div><b>Cô Cáo trực lớp!</b><br><span style="font-size:13px;color:#8A8496">Toán · Văn · Anh · Lý · Hóa từ lớp 1–12</span></div></div>
-        <div class="tutor-box"><input id="cauHoi" placeholder="vd: giải x^2 - 4 = 0 như thế nào ạ?"><button class="btn" id="btnHoi">Hỏi</button></div>
-        <div class="chips" id="quickAsk"></div>
-        <div class="tl-tutor" id="tlTutor" style="display:none"></div>
-      </div>
-    </section>
-
-    <!-- MODULE 5: GROWTH -->
-    <section class="module" data-module="growth">
-      <div class="panel"><h2>⭐ Tiến bộ của em</h2><p class="desc">Sao + huy hiệu + lịch sử bài đã học.</p>
-        <div class="sao-to" id="saoTo">⭐ 0</div>
-        <h2 style="margin-top:10px">🏅 Huy hiệu</h2>
-        <div class="huy-hieu" id="huyHieu"></div>
-        <h2 style="margin-top:12px">📖 Bài đã học</h2>
-        <div id="dsTienDo"></div>
-      </div>
-    </section>
-  </div>
+<aside class="sidebar">
+<div class="brand-row"><div class="logo">🎒</div>
+<div class="brand"><b>PentaSchool</b><br><span id="capBadge">Cap 2 - Vung vang</span></div></div>
+<nav class="nav-mod" aria-label="Module LMS">
+<button data-nav="home" class="active">Trang chu</button>
+<button data-nav="courses">Khoa hoc</button>
+<button data-nav="classroom">Lop hoc</button>
+<button data-nav="tutor">Hoi dap</button>
+<button data-nav="growth">Tien bo</button>
+<button data-nav="lab">Lab</button>
+</nav>
+<div class="side-card"><b id="sideHi">Chao ban</b><span id="subBrand">Vung can ban</span></div>
+<div class="side-card"><b>Quy tac lop</b><span>Sai khong sao - Hoi thoai mai</span></div>
+</aside>
+<div class="main">
+<div class="topbar"><div><h1 id="tenTrang">Trang chu</h1></div>
+<div class="hs-picker">⭐ <span class="sao" id="tongSao">0</span>
+<select id="chonLop" title="Chon lop"></select>
+<select id="chonTen" title="Ten"><option value="em">Be</option><option value="An">An</option><option value="Binh">Binh</option></select>
+</div></div>
+<section class="module" data-module="home">
+<div class="chao"><div class="mascot" id="mascot">🌿</div>
+<div><h2 id="loiChao">Chao ban! Hom nay on 1 chuyen de nhe!</h2></div></div>
+<div class="panel"><h2>Chon cap hoc</h2><p class="desc">Doi lop la giao dien + tinh nang tu doi.</p><div class="cap-row" id="capRow"></div></div>
+<div class="panel"><h2>Hom nay cua em</h2><p class="desc" id="homeProgressTxt">Bat dau nhe!</p>
+<div class="home-stats"><div class="stat"><b id="statSao">0</b><span>Sao</span></div>
+<div class="stat"><b id="statBai">0</b><span>Bai da hoc</span></div>
+<div class="stat"><b>12</b><span>Lop phu</span></div></div>
+<div class="progress" style="margin-top:10px"><i id="homeProgress" style="width:0%"></i></div></div>
+<div class="panel"><h2>Goi y hom nay</h2><div class="luoi" id="goiY"></div></div>
+</section>
+<section class="module" data-module="courses">
+<div class="panel"><h2>Thu vien bai hoc</h2>
+<div class="toolbar"><select id="locMon"><option value="">Tat ca mon</option></select>
+<input id="timKiem" placeholder="Tim bai...">
+</div><div class="luoi" id="luoiBai"></div></div>
+</section>
+<section class="module" data-module="classroom">
+<div class="panel"><h2>Lop hoc</h2>
+<div class="chips" style="margin-bottom:8px">
+<button data-feature="doc_to">Doc to (Cap 1)</button>
+<button data-feature="to_mau">To mau (Cap 1)</button>
+<button data-feature="so_tay">So tay (Cap 2)</button>
+<button data-feature="thi_dua">Dua top (Cap 2)</button>
+<button data-feature="pomodoro">Pomodoro (Cap 3)</button>
 </div>
-
-<!-- Bottom nav mobile -->
+<div class="bai-ct" id="ctBai"><p>Chon 1 bai o Khoa hoc truoc nhe!</p></div>
+<div id="quizBox"></div>
+<div class="step"><button class="btn phu" id="btnVeKhoa">Ve thu vien</button>
+<button class="btn" id="btnNop" style="flex:1">Nop bai</button></div>
+<div class="kq" id="kqBox" style="display:none"></div></div>
+</section>
+<section class="module" data-module="tutor">
+<div class="panel"><h2>Hoi dap</h2>
+<div class="tutor-hero"><div class="face" id="tutorFace">🌿</div>
+<div><b id="tutorTen">Ban dong hanh</b></div></div>
+<div class="tutor-box"><input id="cauHoi" placeholder="vd: giai x^2-4=0?">
+<button class="btn" id="btnHoi">Hoi</button></div>
+<div class="chips" id="quickAsk"></div>
+<div class="tl-tutor" id="tlTutor" style="display:none"></div></div>
+</section>
+<section class="module" data-module="growth">
+<div class="panel"><h2>Tien bo</h2>
+<div class="sao-to" id="saoTo">0</div>
+<h2 style="margin-top:10px">Huy hieu</h2><div class="huy-hieu" id="huyHieu"></div>
+<h2 style="margin-top:12px">Bai da hoc</h2><div id="dsTienDo"></div></div>
+</section>
+<section class="module" data-module="lab">
+<div class="panel"><h2>Lab hoc thuat</h2>
+<p class="desc">Cong thuc + Pomodoro + de thi (full o cap 3).</p>
+<div id="labBox"></div></div>
+</section>
+</div></div>
 <nav class="bottomnav">
-  <button data-nav="home" class="active">🏠 Chủ</button>
-  <button data-nav="courses">📚 Học</button>
-  <button data-nav="classroom">✏️ Lớp</button>
-  <button data-nav="tutor">🦊 Hỏi</button>
-  <button data-nav="growth">⭐ Sao</button>
+<button data-nav="home" class="active">Chu</button>
+<button data-nav="courses">Hoc</button>
+<button data-nav="classroom">Lop</button>
+<button data-nav="tutor">Hoi</button>
+<button data-nav="growth">Sao</button>
+<button data-nav="lab">Lab</button>
 </nav>
 <div class="toast" id="toast"></div>
-<script type="module" src="/js/app.js"></script>
+<script type="module" src="/js/ps_app.js"></script>
 </body>
 </html>
