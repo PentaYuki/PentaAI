@@ -10,7 +10,7 @@ CUR = Path(__file__).resolve().parent
 ROOT = CUR.parent.parent.parent
 sys.path.insert(0, str(ROOT))
 
-from pentaschool.backend.api import catalog, learning, tutor, videos
+from pentaschool.backend.api import catalog, learning, tutor, videos, teacher
 from pentaschool.backend.infrastructure.db import init_db
 
 app = FastAPI(title="PentaSchool LMS K12", version="0.3.0")
@@ -26,6 +26,7 @@ def health():
 app.include_router(catalog.router, prefix="/api/school")
 app.include_router(learning.router, prefix="/api/school")
 app.include_router(videos.router, prefix="/api/school")
+app.include_router(teacher.router, prefix="/api/school")
 app.include_router(tutor.router, prefix="/api/tutor")
 
 FRONT = CUR.parent / "frontend"
@@ -42,6 +43,15 @@ def index():
     if f.exists():
         return FileResponse(str(f))
     return {"msg": "PentaSchool backend OK"}
+
+
+@app.get("/giao-vien")
+def giao_vien():
+    """Trang giao vien — giao dien radiant dung chung 3 cap."""
+    f = FRONT / "giao-vien.html"
+    if f.exists():
+        return FileResponse(str(f))
+    return {"msg": "Chua co trang giao-vien.html"}
 
 if __name__ == "__main__":
     import uvicorn

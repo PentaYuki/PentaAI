@@ -160,3 +160,29 @@ def get_video_progress(hoc_sinh: str) -> List[dict]:
         return []
     finally:
         con.close()
+
+
+# ====== GIAO VIEN ======
+def list_all_videos(lesson_id: Optional[str] = None) -> List[dict]:
+    """Cho trang giao vien: xem TAT CA video (keo ca trang thai draft)."""
+    con = _get_sqlite()
+    try:
+        if lesson_id:
+            rows = con.execute("SELECT * FROM school_lesson_videos WHERE lesson_id=? ORDER BY thu_tu", (lesson_id,)).fetchall()
+        else:
+            rows = con.execute("SELECT * FROM school_lesson_videos ORDER BY lesson_id, thu_tu").fetchall()
+        return [dict(r) for r in rows]
+    except Exception:
+        return []
+    finally:
+        con.close()
+
+
+def delete_video(video_id: str) -> bool:
+    con = _get_sqlite()
+    try:
+        cur = con.execute("DELETE FROM school_lesson_videos WHERE id=?", (video_id,))
+        con.commit()
+        return cur.rowcount > 0
+    finally:
+        con.close()

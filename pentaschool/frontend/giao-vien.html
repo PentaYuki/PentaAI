@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PentaSchool - Trang giao vien</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/core/ps_base.css">
+<link rel="stylesheet" href="/css/core/ps_layout.css">
+<link rel="stylesheet" href="/css/modules/mod_teacher.css">
+</head>
+<body class="teacher-body">
+<div class="app-shell">
+<aside class="sidebar tv-sidebar">
+  <div class="brand-row"><div class="logo tv-logo">◈</div>
+  <div class="brand"><b>PentaTeacher</b><br><span>Khu vuc giao vien</span></div></div>
+  <nav class="nav-mod" aria-label="Module giao vien">
+    <button data-tv="videos" class="active">Video bai giang</button>
+    <button data-tv="bai">Bai hoc</button>
+    <button data-tv="baocao">Bao cao <span class="ps-badge-soon">sau</span></button>
+  </nav>
+  <div class="side-card"><b>Che do:</b> demo (chua co dang nhap)</div>
+</aside>
+<div class="main">
+  <div class="topbar"><div><h1 id="tvTitle">Video bai giang</h1></div>
+  <a class="tv-link-hs" href="/">← Ve trang hoc sinh</a></div>
+
+  <section class="module active" data-tv-module="videos">
+    <div class="teacher-grid">
+      <div class="panel tv-form-card">
+        <h2>Them video (chi dan link)</h2>
+        <form id="tvVideoForm" class="teacher-form">
+          <div class="teacher-row-form">
+            <div><label>Ma video *</label><input class="ps-input" id="tvId" required placeholder="vid_lop6_pso"></div>
+            <div><label>Bai hoc *</label><select class="ps-input" id="tvLesson" required></select></div>
+          </div>
+          <label>Tieu de</label><input class="ps-input" id="tvTieuDe" placeholder="Cô giảng phân số">
+          <label>Link video (YouTube/MP4/S3...)</label><input class="ps-input" id="tvUrl" placeholder="https://www.youtube.com/watch?v=...">
+          <div class="teacher-row-form">
+            <div><label>Nguon</label><select class="ps-input" id="tvProvider">
+              <option value="youtube">youtube</option><option value="mp4">mp4</option>
+              <option value="s3">s3</option><option value="vimeo">vimeo</option><option value="drive">drive</option>
+            </select></div>
+            <div><label>Thoi luong (giay)</label><input class="ps-input" id="tvDur" type="number" value="0"></div>
+          </div>
+          <div class="step" style="margin-top:12px">
+            <button type="submit" class="tv-btn">Luu video</button>
+            <button type="button" class="tv-btn phu" id="tvRefresh">Tai lai</button>
+          </div>
+        </form>
+      </div>
+      <div class="panel">
+        <h2>Danh sach video</h2>
+        <p class="desc" id="tvVideoCount"></p>
+        <div style="overflow:auto"><table class="teacher-table" id="tvVideoTable"></table></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="module" data-tv-module="bai">
+    <div class="panel">
+      <h2>Thu vien bai hoc</h2>
+      <div class="toolbar"><select class="ps-input" id="tvLocLop" style="max-width:180px"><option value="">Tat ca lop</option></select></div>
+      <div style="overflow:auto"><table class="teacher-table" id="tvBaiTable"></table></div>
+    </div>
+  </section>
+
+  <section class="module" data-tv-module="baocao">
+    <div class="panel"><h2>Bao cao tien do</h2>
+    <p class="desc">Giai doan sau: bieu do tien do theo lop, thong ke quiz sai nhieu, xuat Excel.</p></div>
+  </section>
+</div></div>
+<div class="toast" id="toast"></div>
+<script type="module" src="/js/modules/mod_teacher.js"></script>
+</body>
+</html>
