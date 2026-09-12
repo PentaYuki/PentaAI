@@ -1,0 +1,16 @@
+/* ===== home.css — MODULE 1: Trang chu / Chao + Cap hoc ===== */
+.chao{background:linear-gradient(135deg,#fff,#FFF3D6);border:2px solid #FFE8B8;border-radius:20px;
+  padding:18px;display:flex;gap:14px;align-items:center;box-shadow:var(--bong)}
+.mascot{font-size:50px;animation:lac 2.5s ease-in-out infinite}
+@keyframes lac{0%,100%{transform:rotate(-6deg)}50%{transform:rotate(6deg)}}
+.chao h2{font-size:20px;margin-bottom:4px}.chao p{font-size:14px;color:var(--mo)}
+.cap-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}
+.cap{border:2px solid transparent;cursor:pointer;background:#fff;border-radius:var(--vien);
+  padding:14px;box-shadow:var(--bong);font-size:14px;text-align:left;transition:.15s}
+.cap b{font-size:15px}.cap small{display:block;color:var(--mo);margin-top:4px}
+.cap:hover{transform:translateY(-2px)}
+.cap.active{border-color:var(--hong-dam);background:#FFF0F3}
+.home-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.stat{background:#fff;border:2px solid #FFF0E0;border-radius:16px;padding:12px;text-align:center}
+.stat b{font-size:22px;display:block}.stat span{font-size:12px;color:var(--mo)}
+@media(max-width:640px){.cap-row,.home-stats{grid-template-columns:1fr}.mascot{font-size:38px}}

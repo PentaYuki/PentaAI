@@ -18,3 +18,8 @@ build/
 # Local data and generated vector/index files
 **/.cache/
 **/data/faiss/
+
+# PentaSchool local dev database (SQLite tu tao lai khi chay)
+pentaschool/data/*.db
+pentaschool/data/*.sqlite
+pentaschool/data/*.sqlite3

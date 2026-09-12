@@ -1,0 +1,47 @@
+/* ===== layout.css — MODULE KHUNG: sidebar + main + responsive ===== */
+.app-shell{display:flex;min-height:100vh}
+/* Sidebar trai */
+.sidebar{width:var(--sidebar-w);flex-shrink:0;background:#fff;border-right:2px dashed #FFE0E6;
+  padding:16px 12px;position:sticky;top:0;height:100vh;display:flex;flex-direction:column;gap:14px}
+.brand-row{display:flex;align-items:center;gap:10px}
+.logo{width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,var(--hong),var(--vang));
+  display:grid;place-items:center;font-size:24px;box-shadow:var(--bong)}
+.brand b{font-size:17px}.brand span{font-size:11px;color:var(--mo)}
+.nav-mod{display:flex;flex-direction:column;gap:6px}
+.nav-mod button{border:2px solid transparent;background:transparent;text-align:left;cursor:pointer;
+  padding:10px 12px;border-radius:14px;font-size:14px;font-weight:700;color:var(--mo);transition:.15s}
+.nav-mod button .ic{margin-right:8px}
+.nav-mod button:hover{background:#FFF6F8}
+.nav-mod button.active{background:#FFE9EE;color:var(--hong-dam);border-color:#FFD3DC}
+.side-card{background:linear-gradient(135deg,#FFF7E0,#FFE9EE);border:2px solid #FFE8B8;border-radius:16px;padding:12px;font-size:13px}
+.side-card b{display:block;margin-bottom:4px}
+/* Vung chinh */
+.main{flex:1;min-width:0;max-width:1120px;margin:0 auto;padding:18px 20px 60px;width:100%}
+.topbar{position:sticky;top:0;z-index:20;background:rgba(255,249,242,.94);backdrop-filter:blur(8px);
+  display:flex;align-items:center;gap:10px;padding:12px 0;margin-bottom:14px;flex-wrap:wrap}
+.topbar h1{font-size:19px}
+.topbar .sub{font-size:12px;color:var(--mo)}
+.hs-picker{margin-left:auto;display:flex;gap:8px;align-items:center;background:#fff;border:2px solid #FFE0E6;
+  padding:6px 10px;border-radius:999px;font-size:14px}
+.hs-picker select{border:none;background:transparent;font-weight:700;color:var(--chu);font-size:14px;outline:none}
+.sao{font-weight:800;color:#E8A100}
+/* Moi module la 1 section doc lap */
+.module{display:none;animation:fadeUp .25s ease}
+.module.active{display:block}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.panel{background:#fff;border-radius:var(--vien);padding:16px;margin-top:14px;box-shadow:var(--bong);border:2px solid #FFF0E0}
+.panel h2{font-size:17px;margin-bottom:6px}
+.panel .desc{font-size:13px;color:var(--mo);margin-bottom:10px}
+/* Bottom nav cho mobile */
+.bottomnav{display:none;position:fixed;bottom:12px;left:50%;transform:translateX(-50%);background:#fff;
+  border:2px solid #FFE0E6;border-radius:999px;padding:6px;gap:4px;box-shadow:var(--bong);z-index:30;max-width:94vw;overflow-x:auto}
+.bottomnav button{border:none;background:transparent;padding:9px 12px;border-radius:999px;font-size:13px;font-weight:700;color:var(--mo);cursor:pointer;white-space:nowrap}
+.bottomnav button.active{background:#FFE9EE;color:var(--hong-dam)}
+.toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:#4A4458;color:#fff;
+  padding:10px 18px;border-radius:999px;font-size:14px;opacity:0;transition:.3s;z-index:50;pointer-events:none}
+.toast.show{opacity:1}
+@media(max-width:860px){
+  .sidebar{display:none}
+  .bottomnav{display:flex}
+  .main{padding:12px 12px 110px}
+}

@@ -1,0 +1,7 @@
+/* ===== growth.css — MODULE 5: Tien bo / Sao + Goi y ===== */
+.sao-to{font-size:44px;font-weight:800;color:#E8A100}
+.progress{height:12px;background:#FFF0E0;border-radius:999px;overflow:hidden;margin:8px 0}
+.progress i{display:block;height:100%;background:linear-gradient(90deg,var(--vang),var(--hong-dam));border-radius:999px;transition:width .4s}
+.huy-hieu{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+.huy-hieu .hh{background:#FFFDF4;border:2px solid #FFE8B8;border-radius:14px;padding:10px 14px;font-size:13px;text-align:center;min-width:110px}
+.huy-hieu .hh.lock{opacity:.45;filter:grayscale(1)}

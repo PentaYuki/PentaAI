@@ -1,0 +1,7 @@
+/* ===== video picker trong classroom ===== */
+.video-wrap{background:#1E1B2E;border-radius:14px;overflow:hidden;margin:10px 0}
+.video-wrap iframe,.video-wrap video{width:100%;aspect-ratio:16/9;border:none;display:block;background:#000}
+.video-list{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+.video-list button{border:2px solid #EDE6FF;background:#fff;border-radius:999px;padding:7px 13px;font-size:13px;cursor:pointer}
+.video-list button.active{background:#4A4458;color:#fff;border-color:#4A4458}
+.video-note{font-size:12px;color:var(--mo);margin-top:6px}
