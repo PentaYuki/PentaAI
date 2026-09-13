@@ -1,0 +1,17 @@
+/* ===== theme_thcs.css — CAP 2 (lop 6-9): THIEN NHIEN, TRUONG THANH HON =====
+   Xanh la + xanh duong + kem, vien mong hon, it icon, chu dam vua. */
+body[data-cap="thcs"]{
+  --nen:#F4F7F2; --the:#FFFFFF; --chu:#2F3E3A; --mo:#6E7F7A;
+  --chinh:#2E9E6B; --chinh-nhat:#E4F3EA; --phu:#7FC8A9;
+  --vien:14px; --bong:0 2px 12px rgba(46,158,107,.12);
+}
+body[data-cap="thcs"] .sidebar{background:#fff;border-right:1px solid #DCE8DF}
+body[data-cap="thcs"] .logo{background:linear-gradient(135deg,#2E9E6B,#7FC8A9);font-size:20px;border-radius:10px}
+body[data-cap="thcs"] .nav-mod button{font-weight:600;border-radius:10px}
+body[data-cap="thcs"] .nav-mod button.active{background:var(--chinh-nhat);color:var(--chinh);border-color:#BFE3CE}
+body[data-cap="thcs"] .the{border:1px solid #E2ECE5;border-radius:14px}
+body[data-cap="thcs"] .the:hover{transform:translateY(-2px);border-color:var(--phu)}
+body[data-cap="thcs"] .btn{background:linear-gradient(135deg,#2E9E6B,#3FB97F);border-radius:10px}
+body[data-cap="thcs"] .mascot{font-size:40px;animation:none}
+body[data-cap="thcs"] .chao{background:linear-gradient(135deg,#fff,#EAF5EF);border:1px solid #CFE6D8}
+body[data-cap="thcs"] .bottomnav button.active{background:var(--chinh-nhat);color:var(--chinh)}

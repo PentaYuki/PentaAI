@@ -1,0 +1,30 @@
+openapi: 3.0.0
+info: {title: PentaSchool K12, version: 0.1.0}
+paths:
+  /api/school/bai-hoc:
+    get:
+      parameters:
+        - {name: lop, in: query, schema: {type: integer}}
+        - {name: mon, in: query, schema: {type: string}}
+  /api/school/nop-bai:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                bai_hoc_id: {type: string}
+                hoc_sinh: {type: string}
+                tra_loi: {type: object}
+  /api/tutor/hoi:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                cau_hoi: {type: string}
+                mon: {type: string}
+                lop: {type: integer}

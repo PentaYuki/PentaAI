@@ -1,0 +1,57 @@
+/* ===== mod_teacher.css — TRANG GIAO VIEN =====
+   Giao dien RADIANT (tu sang: navy dam -> tim radiant) DUNG CHUNG cho 3 cap,
+   nen khong phu thuoc body[data-cap]. Icon dang ky tu ◈/▶ nham gach diem. */
+.teacher-body{--tv-1:#1B1240;--tv-2:#2A1B6B;--tv-glow:#8B5CF6;--tv-glow2:#38BDF8;
+  --r-input:10px;--r-btn:10px;--r-card:14px;}
+.teacher-body{background:linear-gradient(135deg,var(--tv-1),var(--tv-2));color:#EDE9FE}
+.teacher-body .main{color:#EDE9FE}
+.tv-sidebar{background:rgba(20,12,50,.72);border-right:1px solid rgba(139,92,246,.35)}
+.tv-logo{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font-size:20px;
+  background:radial-gradient(circle at 30% 30%,var(--tv-glow),var(--tv-2));color:#fff;
+  box-shadow:0 0 18px rgba(139,92,246,.65)}
+/* Topbar mo — radiant, khong nen cam */
+.teacher-body .topbar{background:rgba(27,18,64,.86);color:#EDE9FE;border:1px solid rgba(139,92,246,.35)}
+.teacher-body .brand span{color:#A78BFA}
+/* Nav sidebar — mau radiant thay hong */
+.teacher-body .nav-mod button{color:#C4B5FD}
+.teacher-body .nav-mod button:hover{background:rgba(139,92,246,.16);color:#fff}
+.teacher-body .nav-mod button.active{background:rgba(139,92,246,.28);color:#fff;border-color:rgba(139,92,246,.55)}
+.teacher-body .side-card{background:rgba(139,92,246,.14);border:1px solid rgba(139,92,246,.35);
+  border-radius:14px;color:#DDD6FE}
+.teacher-body .side-card b{color:#fff}
+.teacher-body .panel{background:rgba(255,255,255,.055);border:1px solid rgba(139,92,246,.3);
+  border-radius:var(--r-card);box-shadow:0 0 24px rgba(139,92,246,.12) inset,0 0 14px rgba(56,189,248,.08)}
+.teacher-body h2{color:#fff}
+.teacher-body .desc{color:#C4B5FD}
+/* Grid: form + danh sach 2 liei (moi amend sau vien) */
+.teacher-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.teacher-form label{display:block;font-size:13px;font-weight:700;margin:10px 0 4px;color:#DDD6FE}
+.teacher-form .step{display:flex;gap:8px}
+.tv-btn{border:none;cursor:pointer;border-radius:10px;padding:11px 22px;font-weight:800;color:#fff;
+  background:linear-gradient(135deg,#8B5CF6,#38BDF8);box-shadow:0 0 16px rgba(139,92,246,.5);transition:.2s}
+.tv-btn:hover{box-shadow:0 0 26px rgba(139,92,246,.85);transform:translateY(-1px)}
+.tv-btn.phu{background:transparent;border:1px solid rgba(139,92,246,.6);box-shadow:none;color:#DDD6FE}
+.tv-btn.xoa{background:transparent;border:1px solid rgba(248,113,113,.6);box-shadow:none;color:#FCA5A5;padding:6px 12px;font-size:12px}
+.teacher-body .ps-input{background:rgba(255,255,255,.08);border:1px solid rgba(139,92,246,.4);color:#fff}
+.teacher-body .ps-input::placeholder{color:#A78BFA}
+.teacher-body .ps-input option{color:#1B1240}
+.teacher-table{width:100%;border-collapse:collapse;font-size:13px;margin-top:10px}
+.teacher-table th,.teacher-table td{border:1px solid rgba(139,92,246,.28);padding:8px;text-align:left;vertical-align:top;color:#EDE9FE}
+.teacher-table th{background:rgba(139,92,246,.18)}
+.teacher-table code{color:#7DD3FC;font-size:12px;word-break:break-all}
+.teacher-row-form{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.tv-link-hs{color:#7DD3FC;text-decoration:none;font-weight:700}
+.tv-tag{font-size:11px;font-weight:800;border-radius:999px;padding:2px 8px;background:rgba(56,189,248,.2);color:#7DD3FC}
+/* Nav mobile — radiant */
+.tv-bottomnav{display:none;position:fixed;bottom:12px;left:50%;transform:translateX(-50%);
+  background:rgba(20,12,50,.9);border:1px solid rgba(139,92,246,.5);border-radius:999px;padding:6px;
+  gap:4px;box-shadow:0 0 18px rgba(139,92,246,.5);z-index:30;max-width:94vw}
+.tv-bottomnav button{border:none;background:transparent;padding:9px 13px;border-radius:999px;
+  font-size:13px;font-weight:700;color:#C4B5FD;cursor:pointer;white-space:nowrap}
+.tv-bottomnav button.active{background:rgba(139,92,246,.32);color:#fff}
+@media(max-width:860px){.teacher-grid,.teacher-row-form{grid-template-columns:1fr}}
+@media(max-width:860px){
+  .tv-sidebar,.teacher-body .sidebar{display:none}
+  .tv-bottomnav{display:flex}
+  .teacher-body .topbar .tv-link-hs{display:none}
+}

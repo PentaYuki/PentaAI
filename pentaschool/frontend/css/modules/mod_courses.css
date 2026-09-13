@@ -1,0 +1,14 @@
+/* ===== courses.css — MODULE 2: Khoa hoc / Thu vien bai hoc ===== */
+.toolbar{display:flex;gap:10px;margin:10px 0;flex-wrap:wrap}
+.toolbar select,.toolbar input{padding:10px 12px;border-radius:12px;border:2px solid #FFE0E6;background:#fff;font-size:14px}
+.toolbar input{flex:1;min-width:180px}
+.luoi{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;margin-top:12px}
+.the{background:#fff;border-radius:20px;padding:14px;box-shadow:var(--bong);border:2px solid #FFF0E0;cursor:pointer;transition:.2s}
+.the:hover{transform:translateY(-3px);border-color:var(--hong)}
+.the .mon{display:inline-block;font-size:12px;font-weight:800;padding:4px 10px;border-radius:999px;margin-bottom:8px}
+.the h3{font-size:15px;margin-bottom:6px;line-height:1.35}
+.the p{font-size:13px;color:var(--mo);margin-bottom:8px}
+.meta{display:flex;gap:8px;font-size:12px;color:var(--mo);align-items:center}
+.kho{margin-left:auto;font-weight:800}
+.the.da-hoc{border-color:var(--xanh-la)}
+.tick{font-size:12px;color:#2E9E5B;font-weight:800}

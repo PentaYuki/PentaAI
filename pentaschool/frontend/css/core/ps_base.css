@@ -1,0 +1,14 @@
+/* ===== base.css — MODULE NEN: bien mau + reset + font ===== */
+:root{
+  --nen:#FFF9F2; --the:#FFFFFF; --chu:#4A4458; --mo:#8A8496;
+  --hong:#FFB3C1; --hong-dam:#F4738C; --vang:#FFD97D; --xanh-la:#A8E6B0;
+  --xanh-duong:#A8D8FF; --tim:#D5B8FF; --cam:#FFC89F;
+  --vien:18px; --bong:0 4px 20px rgba(244,115,140,.12);
+  --sidebar-w:228px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Be Vietnam Pro','Segoe UI',system-ui,sans-serif;background:var(--nen);color:var(--chu);min-height:100vh}
+button{font-family:inherit}
+input,select{font-family:inherit}
+::placeholder{color:#B9B3C4}

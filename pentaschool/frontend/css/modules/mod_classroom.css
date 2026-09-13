@@ -1,0 +1,18 @@
+/* ===== classroom.css — MODULE 3: Lop hoc / Bai + Quiz ===== */
+.bai-ct h3{font-size:19px;margin:6px 0;line-height:1.4}
+.bai-ct .tag{display:inline-block;background:#FFF0F3;border-radius:999px;padding:4px 12px;font-size:12px;font-weight:800;margin-bottom:6px}
+.bai-ct .nd{background:#FFF9F2;border-radius:14px;padding:12px;font-size:14px;margin:10px 0;line-height:1.6}
+.cau{border:2px solid #F3EFFF;border-radius:14px;padding:10px;margin:8px 0}
+.cau p{font-weight:700;margin-bottom:8px}
+.cau label{display:block;background:#FAFAFF;border-radius:10px;padding:8px 10px;margin:6px 0;cursor:pointer;font-size:14px;transition:.12s}
+.cau label:hover{background:#F1EBFF}
+.cau input{margin-right:8px}
+.btn{border:none;cursor:pointer;border-radius:999px;padding:11px 22px;font-weight:800;font-size:15px;
+  background:linear-gradient(135deg,var(--hong-dam),#FF9E7D);color:#fff;box-shadow:var(--bong);transition:.15s}
+.btn:hover{filter:brightness(1.05)}
+.btn.phu{background:#fff;color:var(--chu);border:2px solid #FFE0E6}
+.btn:disabled{opacity:.6;cursor:wait}
+.kq{margin-top:10px;padding:12px;border-radius:14px;background:#F0FFF4;border:2px solid var(--xanh-la);font-size:14px;line-height:1.6}
+.kq.sai-nhieu{background:#FFF8F0;border-color:var(--vang)}
+.step{display:flex;gap:10px;margin-top:10px}
+.step .bubble{flex:1;background:#F8F5FF;border-radius:12px;padding:10px;font-size:13px;text-align:center}
