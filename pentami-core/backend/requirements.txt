@@ -1,0 +1,9 @@
+
+fastapi
+uvicorn
+pydantic
+pytest
+httpx
+psycopg2-binary
+redis
+qdrant-client

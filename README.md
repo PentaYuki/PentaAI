@@ -1,8 +1,6 @@
 # Penta AI
 
-Hệ sinh thái AI đa module với `pentami-core` làm lõi điều phối, frontend desktop tĩnh, các contract dùng chung và hạ tầng local cho RAG/ứng dụng tương lai.
-
-> **Trạng thái:** đang phát triển. README này mô tả đúng phần đã chạy được; các capability chưa có integration được ghi rõ trong roadmap.
+> **Trạng thái:** prototype đang phát triển. Backend hiện chạy được ở mức API tối thiểu; các module domain, frontend integration, persistence, RAG và MCP vẫn chưa được nối vào runtime chính.
 
 ## Nội dung
 
@@ -17,12 +15,11 @@ Hệ sinh thái AI đa module với `pentami-core` làm lõi điều phối, fro
 ## Tổng quan
 
 ```text
-Browser
+Client HTTP
   -> pentami-core/backend (FastAPI :8000)
-       -> frontend desktop tĩnh
        -> /api/health
        -> /api/ecosystem/apps
-       -> /api/chat
+       -> /api/chat (echo)
 
 Local infrastructure:
   PostgreSQL :5432 | Redis :6379 | Qdrant :6333/:6334
@@ -32,14 +29,14 @@ Local infrastructure:
 
 | Thành phần | Trạng thái thực tế | Điểm bắt đầu |
 | --- | --- | --- |
-| `pentami-core/backend` | Backend FastAPI chạy được; định tuyến từ khóa, persona, response action và frontend tĩnh | `pentami-core/backend/main.py` |
-| `shared` | Schema, protocol chunk và quản lý API key dùng chung | `shared/` |
+| `pentami-core/backend` | Backend FastAPI tối thiểu với health, app catalog và chat echo | `pentami-core/backend/main.py` |
+| `shared` | Schema/protocol và helper dùng chung; chưa được API chính sử dụng | `shared/` |
 | `deploy` | Compose cho PostgreSQL, Redis và Qdrant | `deploy/docker-compose.yml` |
-| `pentami-core/frontend` | Giao diện tĩnh được FastAPI mount tại `/static` và `/` | `pentami-core/frontend/` |
+| `pentami-core/frontend` | Có static assets/UI riêng, nhưng backend hiện chưa mount hoặc phục vụ thư mục này | `pentami-core/frontend/` |
 | `mcp-playwright` | Controller Playwright Python; chưa có transport MCP/entrypoint server hoàn chỉnh | `mcp-playwright/src/server.py` |
 | `pentaschool`, `pentakuru`, `pentamarket`, `pentajob`, `pentanote` | Dataset/tài liệu và khung module; chưa có service độc lập được Compose khởi chạy | Các thư mục tương ứng |
 
-`/api/chat` hiện phân loại intent bằng từ khóa tiếng Việt/tiếng Anh trong process. Nó chưa gọi LLM, chưa truy vấn Qdrant, chưa lưu hội thoại vào PostgreSQL/Redis và chưa gọi service vệ tinh.
+`/api/chat` hiện chỉ nhận `query` và trả về chuỗi echo. Nó chưa phân loại intent, chưa gọi LLM, chưa truy vấn Qdrant, chưa lưu hội thoại vào PostgreSQL/Redis và chưa gọi service vệ tinh.
 
 ## Quick start
 
@@ -47,23 +44,23 @@ Local infrastructure:
 
 - Python 3.10+ và `pip`
 - Docker Desktop nếu cần chạy hạ tầng
-- Không commit `deploy/.env`; dùng `deploy/.env.example` làm mẫu
+- Không cần file `.env` cho backend prototype hiện tại. Các giá trị trong Compose chỉ dành cho local development.
 
-Backend hiện chưa có `requirements.txt` hoặc `pyproject.toml`. Cài tối thiểu để chạy local:
+Dependency tối thiểu nằm trong `pentami-core/backend/requirements.txt`:
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-python -m pip install fastapi uvicorn pydantic
+python -m pip install -r pentami-core/backend/requirements.txt
 ```
 
-Để chạy test embedding, cần cài thêm dependency mà `pentami-core/rag/embedding.py` sử dụng, sau đó cài `pytest`. Danh sách dependency chính thức nên được bổ sung trước khi đóng gói production.
+Embedding vẫn cần các dependency ML riêng theo implementation và có thể tải model khi test lần đầu.
 
-### Chạy backend và frontend
+### Chạy backend
 
 ```bash
 source .venv/bin/activate
-python pentami-core/backend/main.py
+./run_server.sh
 ```
 
 Kiểm tra:
@@ -73,10 +70,10 @@ curl http://127.0.0.1:8000/api/health
 curl http://127.0.0.1:8000/api/ecosystem/apps
 curl -X POST http://127.0.0.1:8000/api/chat \
   -H 'Content-Type: application/json' \
-  -d '{"query":"tìm file báo cáo tháng 8","persona":"serious"}'
+  -d '{"query":"tìm file báo cáo tháng 8"}'
 ```
 
-Mở `http://127.0.0.1:8000/` để xem frontend và `http://127.0.0.1:8000/docs` để xem OpenAPI.
+Mở `http://127.0.0.1:8000/docs` để xem OpenAPI. Endpoint `/` chưa được backend phục vụ.
 
 ### Chạy hạ tầng tùy chọn
 
@@ -101,7 +98,7 @@ Lệnh trên yêu cầu `pytest` và các dependency của embedding. Nếu môi
 | --- | --- | --- |
 | `GET` | `/api/health` | Trạng thái hiển thị của core |
 | `GET` | `/api/ecosystem/apps` | Catalog ứng dụng |
-| `POST` | `/api/chat` | Keyword intent routing và response action |
+| `POST` | `/api/chat` | Echo nội dung `query` |
 | `GET` | `/docs` | OpenAPI/Swagger |
 
 Ví dụ request chat:
@@ -109,10 +106,10 @@ Ví dụ request chat:
 ```bash
 curl -X POST http://127.0.0.1:8000/api/chat \
   -H 'Content-Type: application/json' \
-  -d '{"query":"học thuật toán","persona":"serious"}'
+  -d '{"query":"học thuật toán"}'
 ```
 
-`persona` hiện hỗ trợ `cute`, `serious`, `yandere`. Response chat là JSON đồng bộ; chưa phải SSE/WebSocket streaming.
+Request chat hiện chỉ có trường bắt buộc `query`. Response là JSON đồng bộ; chưa phải SSE/WebSocket streaming.
 
 ## Cấu trúc repository
 
@@ -131,19 +128,19 @@ docs/               Kiến trúc, roadmap và reality check
 
 ## Trạng thái module
 
-- **Implemented:** FastAPI core, static frontend, API catalog/chat, shared contracts, Docker Compose infrastructure.
-- **Prepared:** embedding/RAG helpers, memory, voice và API key helpers.
+- **Implemented:** FastAPI core tối thiểu, health endpoint, app catalog, chat echo và Docker Compose file.
+- **Prepared:** frontend static, shared contracts, embedding/RAG helpers, memory, voice và API key helpers; chưa được nối vào API runtime.
 - **Prototype:** `mcp-playwright` controller; chưa có MCP transport/entrypoint hoàn chỉnh.
-- **Roadmap:** service độc lập cho các app vệ tinh, persistence, LLM integration, authentication middleware, streaming voice và RAG production.
+- **Roadmap:** mount frontend, chat contract/routing, persistence, LLM integration, authentication middleware, streaming voice, RAG production và service độc lập.
 
 ## Roadmap
 
-1. Thêm `pyproject.toml` hoặc `requirements.txt` có version pin và CI.
-2. Tách cấu hình/secret khỏi code và thêm health probe thật cho dependency.
-3. Kết nối PostgreSQL, Redis và Qdrant vào backend với tenant filtering.
-4. Thay keyword router bằng intent contract có test tiếng Việt có dấu/không dấu.
+1. Pin version dependency và thêm test HTTP cho ba endpoint hiện tại.
+2. Mount frontend hoặc ghi rõ lệnh serve frontend độc lập.
+3. Chốt chat contract rồi mới thêm routing/response envelope.
+4. Kết nối PostgreSQL, Redis và Qdrant với health probe và tenant filtering.
 5. Hoàn thiện MCP transport, URL allowlist, confirmation và audit log.
-6. Tách các domain thành service độc lập khi đã có API contract và test riêng.
+6. Tách các domain thành service độc lập khi đã có API contract, entrypoint và test riêng.
 
 ## Tài liệu liên quan
 
@@ -174,3 +171,7 @@ git push origin v0.1.0
 ```
 
 GitHub Actions sẽ tự tạo GitHub Release từ tag `v*.*.*`. Chi tiết xem [docs/github-release-plan.md](./docs/github-release-plan.md).
+
+## Status Update (18/09/2026)
+
+Repository đã được rà soát lại. Các file trạng thái cũ ghi `100% completed` hoặc `production ready` không phản ánh code hiện tại; trạng thái chuẩn là prototype backend tối thiểu và roadmap chưa hoàn tất.

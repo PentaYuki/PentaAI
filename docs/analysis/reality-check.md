@@ -11,15 +11,17 @@ Dự án có nhiều tài liệu mô tả rất “đẹp” về hệ sinh thá
 ## 2. Những điểm thực tế hiện có
 
 ### Có thật
-- `pentami-core` là module trung tâm và đang có backend FastAPI.
-- `shared` chứa các schema và protocol dùng chung.
-- `deploy/docker-compose.yml` đã định nghĩa các service PostgreSQL, Redis và Qdrant.
-- `mcp-playwright` có cấu trúc server/ folder rõ ràng.
+- `pentami-core/backend/main.py` là FastAPI entrypoint tối thiểu.
+- API hiện có health, app catalog và chat echo.
+- `shared` chứa schema/protocol/helper, nhưng chưa được API chính gọi trong runtime.
+- `deploy/docker-compose.yml` định nghĩa PostgreSQL, Redis và Qdrant cho local development.
+- `mcp-playwright` có controller Python; chưa chứng minh được MCP transport/server hoàn chỉnh.
 
-### Cần kiểm tra lại
-- Một số mô tả trong README/ARCHITECTURE mang tính “vision”, chưa chắc đã có implementation tương ứng 1-1.
-- Nhiều phân hệ được mô tả như đã hoàn thiện, nhưng thực tế thư mục chỉ là khung dự án hoặc tài liệu mẫu.
-- Cần nhấn mạnh phân loại: core / integration / prototype / roadmap.
+### Chưa có trong runtime chính
+- Frontend chưa được FastAPI mount.
+- Chat chưa có keyword/model routing, persona, response action, session hoặc tenant handling.
+- Backend chưa kết nối PostgreSQL, Redis, Qdrant, LLM, RAG, memory, voice hay service domain.
+- Các app vệ tinh chủ yếu là dataset/tài liệu, chưa có service độc lập trong Compose.
 
 ## 3. Khuyến nghị
 

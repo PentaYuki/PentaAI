@@ -54,7 +54,8 @@ Frontend dùng native ES modules (`type="module"`), không cần bundler ở gia
 
 4. **Unified context**:
    - Frontend giữ một `session_id` trong phiên trình duyệt.
-   - Mỗi message gửi kèm `tenant_id` và được backend trả về `target_app`.
+   - UI hiện chuẩn bị gửi `session_id`, `persona` và `tenant_id`, nhưng backend prototype chưa nhận các trường này.
+   - Frontend chưa được `pentami-core/backend/main.py` mount hoặc phục vụ.
    - Context bridge đầy đủ giữa các domain được mô tả tại [`docs/architecture/unified-workspace.md`](../../docs/architecture/unified-workspace.md).
 
 ---

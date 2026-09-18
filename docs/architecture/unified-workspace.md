@@ -4,17 +4,12 @@
 
 AI Kurumi là điểm vào hội thoại chung của toàn bộ hệ sinh thái Penta AI. Người dùng có thể hỏi một lần trong cùng giao diện, còn `pentami-core` sẽ xác định phân hệ phù hợp và giữ ngữ cảnh khi chuyển từ hệ thống này sang hệ thống khác.
 
-AI Kurumi không phải là một app nghiệp vụ riêng. Đây là lớp conversation experience dùng chung cho web shell, desktop shell và sau này là mobile.
+# Unified Workspace (Target Architecture)
+
+> Đây là thiết kế mục tiêu, không phải mô tả runtime hiện tại. Backend hiện chỉ có health, app catalog và chat echo; session, tenant, intent routing và `target_app` vẫn là roadmap.
 
 ## 2. Trải nghiệm người dùng
 
-- Nút nổi cố định ở góc phải.
-- Logo `AI kurumi` làm nhận diện chính.
-- Glow tím nhẹ để người dùng nhận ra nhưng không che nội dung.
-- Bấm nút mở panel chat.
-- Panel hiển thị phân hệ đang được định tuyến.
-- Mỗi phiên có `session_id` ổn định.
-- Người dùng có thể chuyển chủ đề từ School sang Kuru, Market, Job hoặc Note trong cùng cuộc trò chuyện.
 
 UI prototype hiện nằm tại `pentami-core/frontend/` và gọi `POST /api/chat`.
 

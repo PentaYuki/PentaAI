@@ -6,7 +6,7 @@ Tài liệu này là quy tắc làm việc cho code hiện tại. Không mô t�
 
 - Trạng thái code: thư mục và entrypoint thực tế trong repository.
 - Hợp đồng dùng chung: `shared/`.
-- Hạ tầng local: `deploy/docker-compose.yml` và `deploy/.env.example`.
+- Hạ tầng local: `deploy/docker-compose.yml`; backend prototype hiện chưa yêu cầu `.env`.
 - Tài liệu kiến trúc: `ARCHITECTURE.md` và `docs/analysis/reality-check.md`.
 - Khi tài liệu mâu thuẫn với code, ưu tiên code rồi cập nhật tài liệu trong cùng thay đổi.
 
@@ -27,14 +27,14 @@ Backend chạy từ `pentami-core/backend/main.py` với các endpoint:
 
 - `GET /api/health`: health response của core.
 - `GET /api/ecosystem/apps`: catalog app tĩnh.
-- `POST /api/chat`: nhận `query`, `session_id`, `persona`, `tenant_id`; phân loại bằng từ khóa và trả về `target_app`, `reply_text`, `emotion`, `action`.
+- `POST /api/chat`: hiện chỉ nhận `query` và trả về `response` dạng echo.
 - `GET /docs`: OpenAPI do FastAPI sinh.
 
-`/api/chat` hiện không gọi LLM, database, Redis, Qdrant, STT/TTS hoặc service vệ tinh. Không viết tài liệu hoặc test dựa trên hành vi chưa có trong endpoint.
+`/api/chat` hiện không gọi LLM, database, Redis, Qdrant, STT/TTS, memory, routing hoặc service vệ tinh. Không viết tài liệu hoặc test dựa trên hành vi chưa có trong endpoint.
 
 ## 4. Dữ liệu và bảo mật
 
-- Không commit secret thật. `deploy/.env` chỉ dành cho local; dùng `.env.example` khi chia sẻ cấu hình.
+- Không commit secret thật. Credential Compose hiện là giá trị local mẫu; production phải chuyển sang environment/secret manager.
 - API key phải được xử lý qua `shared/auth/key_manager.py`; không log raw key và không lưu plaintext.
 - Schema chung phải đặt trong `shared/` trước khi dùng giữa module.
 - `tenant_id` là trường hợp đồng dữ liệu; chỉ khẳng định isolation khi query layer thực sự áp dụng filter và có test.

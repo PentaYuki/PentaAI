@@ -1,6 +1,6 @@
 # pentami-core
 
-`pentami-core` là lõi FastAPI hiện có của workspace. Backend hiện ở `backend/main.py`; frontend tĩnh ở `frontend/`.
+`pentami-core` là lõi FastAPI tối thiểu hiện có của workspace. Backend ở `backend/main.py`; frontend tĩnh ở `frontend/` nhưng chưa được backend mount.
 
 ## Cấu trúc thực tế
 
@@ -27,11 +27,10 @@ Từ thư mục gốc repository:
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-python -m pip install fastapi uvicorn pydantic
-python pentami-core/backend/main.py
+python -m pip install -r pentami-core/backend/requirements.txt
+./run_server.sh
 ```
 
-- UI: `http://127.0.0.1:8000/`
 - OpenAPI: `http://127.0.0.1:8000/docs`
 - Health: `http://127.0.0.1:8000/api/health`
 - Chat: `POST http://127.0.0.1:8000/api/chat`
@@ -39,15 +38,10 @@ python pentami-core/backend/main.py
 ## Hợp đồng chat hiện tại
 
 ```json
-{
-  "query": "tìm file báo cáo tháng 8",
-  "session_id": "sess_desktop_default",
-  "persona": "serious",
-  "tenant_id": "tenant_penta_default"
-}
+{"query": "tìm file báo cáo tháng 8"}
 ```
 
-Router hiện là keyword matching trong process. Request chưa yêu cầu API key và chưa lưu session. Response là JSON đồng bộ, không phải stream.
+`/api/chat` hiện chỉ echo `query`. Request chưa yêu cầu API key, chưa lưu session và chưa định tuyến intent. Response là JSON đồng bộ, không phải stream.
 
 ## Test
 
@@ -55,4 +49,4 @@ Router hiện là keyword matching trong process. Request chưa yêu cầu API k
 python3 -m pytest pentami-core/tests/test_core_components.py -q
 ```
 
-Test cần `pytest` và dependency embedding tương ứng. Repository hiện chưa có `requirements.txt` hoặc `pyproject.toml`, vì vậy dependency manifest là việc cần làm trước khi CI/production.
+Test cần `pytest` và dependency embedding tương ứng; có thể cài từ `backend/requirements.txt`. Test hiện kiểm tra helper/protocol, chưa phải API integration test.

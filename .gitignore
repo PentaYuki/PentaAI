@@ -14,6 +14,16 @@ dist/
 build/
 *.log
 *.tmp
+*.tar.gz
+*.zip
+APIcontroler/
+output/
+FINAL_*
+COMPLETION_LOCK.txt
+PROJECT_FINAL_REPORT.md
+INTEGRITY_CERTIFICATE.md
+README_FINAL_STATUS.md
+deploy/FINAL_COMPLETION_SIGNAL.md
 
 # Local data and generated vector/index files
 **/.cache/
