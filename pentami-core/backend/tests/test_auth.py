@@ -83,13 +83,13 @@ def test_password_hashing():
 def test_jwt_token_generation_and_decode():
     user_id = "usr_123456"
     penta_id = "PID-2026-TEST"
-    token = create_access_token(user_id=user_id, penta_id=penta_id, role="student")
+    token = create_access_token(user_id=user_id, penta_id=penta_id, role="user")
     
     payload = decode_token(token)
     assert payload is not None
     assert payload["sub"] == user_id
     assert payload["penta_id"] == penta_id
-    assert payload["role"] == "student"
+    assert payload["role"] == "user"
     assert payload["token_type"] == "access"
 
 
@@ -108,7 +108,7 @@ def test_register_and_login_flow():
         "email": "student1@penta.edu.vn",
         "password": "Password123!",
         "full_name": "Nguyễn Văn Học Sinh",
-        "role": "student",
+        "role": "user",
         "primary_learning_style": "visual"
     }
     reg_res = client.post("/api/auth/register", json=register_payload)
@@ -117,6 +117,7 @@ def test_register_and_login_flow():
     assert "access_token" in data
     assert "refresh_token" in data
     assert data["penta_id"].startswith("PID-")
+    assert data["role"] == "user"
     
     # 2. Thử đăng ký lại trùng email -> Báo lỗi 400
     reg_dup = client.post("/api/auth/register", json=register_payload)
@@ -162,6 +163,7 @@ def test_get_my_lifetime_ledger():
     ledger = me_res.json()
     assert ledger["email"] == "lifetime_student@penta.vn"
     assert ledger["full_name"] == "Trần Thị Trọn Đời"
+    assert ledger["role"] == "user"
     assert ledger["ler_profile"]["primary_style"] == "auditory"
     assert len(ledger["milestones"]) >= 1
 
@@ -194,8 +196,10 @@ def test_chat_with_and_without_user_context():
     # 1. Chat dưới danh nghĩa Guest (Không Token)
     guest_chat = client.post("/api/chat", json={"query": "Chiến dịch Điện Biên Phủ diễn ra năm nào?"})
     assert guest_chat.status_code == 200
-    assert "Received:" in guest_chat.json()["response"]
-    assert guest_chat.json()["user_context"] is None
+    guest_data = guest_chat.json()
+    assert "1954" in guest_data["response"]
+    assert guest_data["source"] == "knowledge_base"
+    assert guest_data["user_context"] is None
     
     # 2. Chat dưới danh nghĩa Học sinh đã đăng nhập (Có Token + LER)
     reg_res = client.post("/api/auth/register", json={
@@ -215,6 +219,5 @@ def test_chat_with_and_without_user_context():
     assert user_chat.status_code == 200
     chat_data = user_chat.json()
     assert "Phạm Minh Triết" in chat_data["response"]
-    assert "kinesthetic" in chat_data["response"]
     assert chat_data["user_context"]["learning_style"] == "kinesthetic"
     assert chat_data["user_context"]["total_questions"] == 1

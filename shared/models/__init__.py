@@ -11,6 +11,14 @@ from shared.models.user import (
     UserLoginRequest,
     TokenResponse,
     UserResponse,
+    UpdateLERRequest,
+)
+from shared.models.classroom import (
+    ClassroomRole,
+    Classroom,
+    ClassroomCreateRequest,
+    ClassroomJoinRequest,
+    ClassroomResponse,
 )
 
 __all__ = [
@@ -23,4 +31,10 @@ __all__ = [
     "UserLoginRequest",
     "TokenResponse",
     "UserResponse",
+    "UpdateLERRequest",
+    "ClassroomRole",
+    "Classroom",
+    "ClassroomCreateRequest",
+    "ClassroomJoinRequest",
+    "ClassroomResponse",
 ]

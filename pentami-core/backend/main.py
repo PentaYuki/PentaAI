@@ -26,6 +26,12 @@ from shared.models.user import (
     UserResponse,
     UpdateLERRequest,
 )
+from shared.models.classroom import (
+    Classroom,
+    ClassroomCreateRequest,
+    ClassroomJoinRequest,
+    ClassroomResponse,
+)
 from shared.auth.jwt_auth import (
     hash_password,
     verify_password,
@@ -34,6 +40,7 @@ from shared.auth.jwt_auth import (
     verify_access_token,
     decode_token,
 )
+from qa_engine import qa_engine
 
 # ==========================================
 # In-Memory Database Store (Prototype Lifetime Store)
@@ -44,6 +51,10 @@ USERS_DB: Dict[str, Dict[str, Any]] = {}
 EMAIL_TO_USER_ID: Dict[str, str] = {}
 # Lưu trữ Cuốn sổ học sinh trọn đời: user_id -> UserLifetimeLedger
 LIFETIME_LEDGERS_DB: Dict[str, UserLifetimeLedger] = {}
+# Lưu trữ Lớp học P2P: classroom_id -> Classroom
+CLASSROOMS_DB: Dict[str, Classroom] = {}
+# Lưu mã mời: code -> classroom_id
+CLASSROOM_CODE_TO_ID: Dict[str, str] = {}
 
 
 def generate_penta_id() -> str:
@@ -53,23 +64,32 @@ def generate_penta_id() -> str:
     return f"PID-{year}-{random_part}"
 
 
+def generate_classroom_code() -> str:
+    """Sinh mã mời phòng học ngắn gọn (VD: CLS-8921)"""
+    random_digits = uuid.uuid4().hex[:4].upper()
+    return f"CLS-{random_digits}"
+
+
 # ==========================================
 # FastAPI Application & Dependencies
 # ==========================================
 app = FastAPI(
     title="Penta Core Brain Gateway",
-    description="API Gateway & Lifetime Student Ledger for Penta AI Ecosystem",
-    version="1.0.0"
+    description="API Gateway, P2P Classrooms & Lifetime Student Ledger for Penta AI Ecosystem",
+    version="1.1.0"
 )
 
 
 class ChatRequest(BaseModel):
     query: str
     session_id: Optional[str] = "sess_default"
+    context: Optional[Dict[str, Any]] = None
 
 
 class ChatResponse(BaseModel):
     response: str
+    source: str
+    subject: Optional[str] = None
     user_context: Optional[Dict[str, Any]] = None
 
 
@@ -106,6 +126,8 @@ async def health():
         "status": "ok",
         "system": "Penta Core Brain Gateway",
         "registered_users": len(USERS_DB),
+        "active_classrooms": len(CLASSROOMS_DB),
+        "knowledge_entries": qa_engine.kb.total_entries,
     }
 
 
@@ -119,7 +141,7 @@ async def get_apps():
 # ==========================================
 @app.post("/api/auth/register", response_model=TokenResponse, status_code=status.HTTP_201_CREATED)
 async def register(req: UserRegisterRequest):
-    """Đăng ký tài khoản học sinh mới và khởi tạo Cuốn sổ học tập trọn đời"""
+    """Đăng ký tài khoản người dùng mới và khởi tạo Cuốn sổ học tập trọn đời"""
     if req.email in EMAIL_TO_USER_ID:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
@@ -129,13 +151,14 @@ async def register(req: UserRegisterRequest):
     user_id = f"usr_{uuid.uuid4().hex[:12]}"
     penta_id = generate_penta_id()
     hashed_pwd = hash_password(req.password)
+    assigned_role = req.role or UserRole.USER
     
     # 1. Lưu thông tin xác thực
     USERS_DB[user_id] = {
         "user_id": user_id,
         "email": req.email,
         "hashed_password": hashed_pwd,
-        "role": req.role.value if req.role else UserRole.STUDENT.value,
+        "role": assigned_role.value,
         "penta_id": penta_id,
         "full_name": req.full_name,
     }
@@ -159,10 +182,12 @@ async def register(req: UserRegisterRequest):
         penta_id=penta_id,
         email=req.email,
         full_name=req.full_name,
-        role=req.role or UserRole.STUDENT,
+        role=assigned_role,
         status=UserStatus.ACTIVE,
         ler_profile=initial_ler,
         milestones=[initial_milestone],
+        hosted_classroom_ids=[],
+        joined_classroom_ids=[],
         created_at=time.time(),
         updated_at=time.time()
     )
@@ -280,7 +305,157 @@ async def update_my_ler_profile(
 
 
 # ==========================================
-# 3. Intelligent Chat Endpoint (With User Context)
+# 3. P2P Classroom Management (Pentaschool)
+# ==========================================
+@app.post("/api/classrooms", response_model=ClassroomResponse, status_code=status.HTTP_201_CREATED)
+async def create_classroom(
+    req: ClassroomCreateRequest,
+    current_user: UserLifetimeLedger = Depends(get_current_user)
+):
+    """
+    User tự tạo lớp học mới và trở thành Host ('Giáo viên tạm thời') của lớp đó
+    """
+    classroom_id = f"cls_{uuid.uuid4().hex[:8]}"
+    code = generate_classroom_code()
+    
+    # Đảm bảo mã mời không trùng
+    while code in CLASSROOM_CODE_TO_ID:
+        code = generate_classroom_code()
+        
+    classroom = Classroom(
+        id=classroom_id,
+        code=code,
+        name=req.name,
+        subject=req.subject or "Tự học & Thảo luận",
+        description=req.description,
+        host_user_id=current_user.user_id,
+        host_name=current_user.full_name,
+        host_penta_id=current_user.penta_id,
+        member_user_ids=[current_user.user_id],
+        created_at=time.time()
+    )
+    
+    CLASSROOMS_DB[classroom_id] = classroom
+    CLASSROOM_CODE_TO_ID[code] = classroom_id
+    
+    # Cập nhật vào cuốn sổ học sinh của người tạo
+    if classroom_id not in current_user.hosted_classroom_ids:
+        current_user.hosted_classroom_ids.append(classroom_id)
+        current_user.milestones.append(MilestoneRecord(
+            id=f"ms_{uuid.uuid4().hex[:8]}",
+            title=f"Khởi tạo Lớp học: {req.name}",
+            category="k12",
+            details={"classroom_id": classroom_id, "code": code}
+        ))
+        current_user.updated_at = time.time()
+        
+    return ClassroomResponse(
+        id=classroom.id,
+        code=classroom.code,
+        name=classroom.name,
+        subject=classroom.subject,
+        description=classroom.description,
+        host_user_id=classroom.host_user_id,
+        host_name=classroom.host_name,
+        host_penta_id=classroom.host_penta_id,
+        total_members=len(classroom.member_user_ids),
+        is_host=True,
+        created_at=classroom.created_at
+    )
+
+
+@app.post("/api/classrooms/join", response_model=ClassroomResponse)
+async def join_classroom(
+    req: ClassroomJoinRequest,
+    current_user: UserLifetimeLedger = Depends(get_current_user)
+):
+    """User tham gia lớp học của bạn bè thông qua Invite Code"""
+    clean_code = req.code.strip().upper()
+    classroom_id = CLASSROOM_CODE_TO_ID.get(clean_code)
+    
+    if not classroom_id or classroom_id not in CLASSROOMS_DB:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Mã lớp học không tồn tại hoặc đã đóng"
+        )
+        
+    classroom = CLASSROOMS_DB[classroom_id]
+    
+    if current_user.user_id not in classroom.member_user_ids:
+        classroom.member_user_ids.append(current_user.user_id)
+        
+    if classroom_id not in current_user.joined_classroom_ids:
+        current_user.joined_classroom_ids.append(classroom_id)
+        current_user.milestones.append(MilestoneRecord(
+            id=f"ms_{uuid.uuid4().hex[:8]}",
+            title=f"Tham gia Lớp học: {classroom.name}",
+            category="k12",
+            details={"classroom_id": classroom_id, "host": classroom.host_name}
+        ))
+        current_user.updated_at = time.time()
+        
+    is_host = (classroom.host_user_id == current_user.user_id)
+    
+    return ClassroomResponse(
+        id=classroom.id,
+        code=classroom.code,
+        name=classroom.name,
+        subject=classroom.subject,
+        description=classroom.description,
+        host_user_id=classroom.host_user_id,
+        host_name=classroom.host_name,
+        host_penta_id=classroom.host_penta_id,
+        total_members=len(classroom.member_user_ids),
+        is_host=is_host,
+        created_at=classroom.created_at
+    )
+
+
+@app.get("/api/classrooms/my", response_model=Dict[str, List[ClassroomResponse]])
+async def get_my_classrooms(current_user: UserLifetimeLedger = Depends(get_current_user)):
+    """Lấy danh sách các lớp học do user làm Host và các lớp học user đã tham gia"""
+    hosted = []
+    joined = []
+    
+    for c_id in current_user.hosted_classroom_ids:
+        if c_id in CLASSROOMS_DB:
+            c = CLASSROOMS_DB[c_id]
+            hosted.append(ClassroomResponse(
+                id=c.id,
+                code=c.code,
+                name=c.name,
+                subject=c.subject,
+                description=c.description,
+                host_user_id=c.host_user_id,
+                host_name=c.host_name,
+                host_penta_id=c.host_penta_id,
+                total_members=len(c.member_user_ids),
+                is_host=True,
+                created_at=c.created_at
+            ))
+            
+    for c_id in current_user.joined_classroom_ids:
+        if c_id in CLASSROOMS_DB:
+            c = CLASSROOMS_DB[c_id]
+            joined.append(ClassroomResponse(
+                id=c.id,
+                code=c.code,
+                name=c.name,
+                subject=c.subject,
+                description=c.description,
+                host_user_id=c.host_user_id,
+                host_name=c.host_name,
+                host_penta_id=c.host_penta_id,
+                total_members=len(c.member_user_ids),
+                is_host=(c.host_user_id == current_user.user_id),
+                created_at=c.created_at
+            ))
+            
+    return {"hosted": hosted, "joined": joined}
+
+
+# ==========================================
+# 4. Intelligent QA & Slot Filling Chat Endpoint
 # ==========================================
 @app.post("/api/chat", response_model=ChatResponse)
 async def chat(
@@ -289,41 +464,35 @@ async def chat(
 ):
     """
     Endpoint Chatbot thông minh:
-    - Nếu có JWT User: Tự động ghi nhận hoạt động và cá nhân hóa phản hồi theo hồ sơ LER
-    - Nếu không có JWT: Trả lời dạng khách (Guest)
+    - Tra cứu Knowledge Base trước (Zero-cost)
+    - Tự động điền các slot biến động: [STUDENT_NAME], [AVG], [STATUS_COLOR], [LER_ACTION]
+    - Tự học & lưu ngược kiến thức mới vào Database nếu gặp câu hỏi chưa từng có
     """
     if current_user:
         current_user.total_questions_asked += 1
         current_user.updated_at = time.time()
         
-        # Cá nhân hóa phản hồi theo LER
-        ler = current_user.ler_profile
-        greeting = f"Chào {current_user.full_name} ({current_user.penta_id})!"
-        
-        # Kiểm tra cảnh báo nguy cơ tụt hậu
-        warning_tag = ""
-        if ler.at_risk_score >= 0.7:
-            warning_tag = " [Cảnh báo: Cần chú ý hoàn thành bài tập tuần này]"
-            
-        personalized_response = (
-            f"{greeting}{warning_tag} Hệ thống đã ghi nhận câu hỏi: '{request.query}'. "
-            f"Phong cách học tập của bạn: {ler.primary_style} (Tốc độ: {ler.learning_speed}x)."
-        )
-        
-        return ChatResponse(
-            response=personalized_response,
-            user_context={
-                "user_id": current_user.user_id,
-                "penta_id": current_user.penta_id,
-                "learning_style": ler.primary_style,
-                "total_questions": current_user.total_questions_asked,
-                "at_risk_score": ler.at_risk_score,
-            }
-        )
+    qa_result = qa_engine.process_query(
+        query=request.query,
+        user=current_user,
+        context=request.context
+    )
+    
+    user_ctx = None
+    if current_user:
+        user_ctx = {
+            "user_id": current_user.user_id,
+            "penta_id": current_user.penta_id,
+            "learning_style": current_user.ler_profile.primary_style,
+            "total_questions": current_user.total_questions_asked,
+            "at_risk_score": current_user.ler_profile.at_risk_score,
+        }
         
     return ChatResponse(
-        response=f"Received: {request.query}",
-        user_context=None
+        response=qa_result["response"],
+        source=qa_result["source"],
+        subject=qa_result.get("subject"),
+        user_context=user_ctx
     )
 
 

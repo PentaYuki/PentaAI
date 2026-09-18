@@ -1,6 +1,8 @@
 """
 Penta Lifetime User Identity & Learning Ledger Models
 Triết lý: 'Cuốn sổ học sinh theo suốt cuộc đời'
+Hệ thống chỉ có 2 role toàn cục: USER và ADMIN.
+Mỗi user có thể tự tạo phòng học trong Pentaschool và đóng vai trò Host của phòng học đó.
 """
 
 import time
@@ -10,10 +12,8 @@ from pydantic import BaseModel, Field
 
 
 class UserRole(str, Enum):
-    STUDENT = "student"
-    TEACHER = "teacher"
+    USER = "user"
     ADMIN = "admin"
-    LIFETIME_MEMBER = "lifetime_member"
 
 
 class UserStatus(str, Enum):
@@ -39,7 +39,7 @@ class MilestoneRecord(BaseModel):
     """Cột mốc học tập và phát triển cá nhân theo thời gian"""
     id: str
     title: str
-    category: str = Field(..., description="k12, college, career, cert, project")
+    category: str = Field(..., description="k12, college, career, cert, project, system")
     grade_or_level: Optional[str] = None
     achieved_at: float = Field(default_factory=time.time)
     details: Dict[str, Any] = Field(default_factory=dict)
@@ -54,12 +54,16 @@ class UserLifetimeLedger(BaseModel):
     penta_id: str = Field(..., description="Mã định danh thân thiện (VD: PID-2026-0001)")
     email: str
     full_name: str
-    role: UserRole = Field(default=UserRole.STUDENT)
+    role: UserRole = Field(default=UserRole.USER)
     status: UserStatus = Field(default=UserStatus.ACTIVE)
     
     # Học tập & LER
     ler_profile: LearningStyleLER = Field(default_factory=LearningStyleLER)
     milestones: List[MilestoneRecord] = Field(default_factory=list)
+    
+    # Lớp học P2P (User tự làm Host phòng học hoặc tham gia phòng người khác)
+    hosted_classroom_ids: List[str] = Field(default_factory=list, description="Các lớp học do user này làm Host/Chủ phòng")
+    joined_classroom_ids: List[str] = Field(default_factory=list, description="Các lớp học user này tham gia")
     
     # Thống kê hoạt động
     total_questions_asked: int = 0
@@ -75,7 +79,7 @@ class UserRegisterRequest(BaseModel):
     email: str
     password: str
     full_name: str
-    role: Optional[UserRole] = UserRole.STUDENT
+    role: Optional[UserRole] = UserRole.USER
     primary_learning_style: Optional[str] = "visual"
 
 
@@ -103,6 +107,8 @@ class UserResponse(BaseModel):
     status: UserStatus
     ler_profile: LearningStyleLER
     milestones_count: int
+    hosted_classrooms_count: int
+    joined_classrooms_count: int
     created_at: float
 
 
