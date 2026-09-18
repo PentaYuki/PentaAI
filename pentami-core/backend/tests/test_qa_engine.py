@@ -116,7 +116,7 @@ def test_slot_resolver_good_student_color():
     
     assert "Lê Minh Giỏi" in resolved
     assert "Xanh lá" in resolved
-    assert "XUẤT SẮC" in resolved
+    assert "HOẠT ĐỘNG TỐT" in resolved
 
 
 # ==========================================

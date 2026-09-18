@@ -1,6 +1,8 @@
 """
-Pentaschool P2P Classroom & Study Group Models
-Mỗi User có thể tự tạo phòng học (trở thành Host/Giáo viên tạm thời) và mời các User khác tham gia qua Invite Code.
+Penta P2P Decentralized Space & Group Models
+Mô hình Không gian Quản trị & Làm việc Tự quản P2P trong Hệ thống Penta Core.
+Mỗi User có thể tự tạo Không gian / Phòng làm việc / Nhóm học tập (trở thành Host)
+và mời các User khác tham gia qua Invite Code.
 """
 
 import time
@@ -9,19 +11,23 @@ from typing import List, Optional, Dict, Any
 from pydantic import BaseModel, Field
 
 
-class ClassroomRole(str, Enum):
-    HOST = "host"      # Người tạo/chủ phòng lớp học
-    MEMBER = "member"  # Thành viên/học sinh tham gia
+class SpaceRole(str, Enum):
+    HOST = "host"      # Người tạo/chủ phòng không gian
+    MEMBER = "member"  # Thành viên tham gia
 
 
-class Classroom(BaseModel):
-    """Mô hình Lớp học Tự quản P2P trong Pentaschool"""
+# Alias tương thích ngược
+ClassroomRole = SpaceRole
+
+
+class PentaSpace(BaseModel):
+    """Mô hình Không gian Tự quản P2P trong Hệ sinh thái Penta Core"""
     id: str
-    code: str = Field(..., description="Mã mời tham gia phòng học (VD: CLS-8921)")
-    name: str = Field(..., description="Tên lớp học / nhóm học")
-    subject: str = Field(default="Tự học & Thảo luận", description="Môn học: Lịch sử, Toán, Tiếng Anh, v.v.")
+    code: str = Field(..., description="Mã mời tham gia không gian (VD: SPC-8921 / CLS-8921)")
+    name: str = Field(..., description="Tên không gian / phòng làm việc / nhóm")
+    subject: str = Field(default="Quản trị & Thảo luận chung", description="Chủ đề: Dự án, Lịch sử, Quản trị, Nghề nghiệp, v.v.")
     description: Optional[str] = None
-    host_user_id: str = Field(..., description="User ID của người tạo phòng (Host)")
+    host_user_id: str = Field(..., description="User ID của người tạo không gian (Host)")
     host_name: str
     host_penta_id: str
     member_user_ids: List[str] = Field(default_factory=list, description="Danh sách User ID các thành viên")
@@ -30,17 +36,27 @@ class Classroom(BaseModel):
     metadata: Dict[str, Any] = Field(default_factory=dict)
 
 
-class ClassroomCreateRequest(BaseModel):
+# Alias tương thích ngược
+Classroom = PentaSpace
+
+
+class SpaceCreateRequest(BaseModel):
     name: str
-    subject: Optional[str] = "Tự học & Thảo luận"
+    subject: Optional[str] = "Quản trị & Thảo luận chung"
     description: Optional[str] = None
 
 
-class ClassroomJoinRequest(BaseModel):
-    code: str = Field(..., description="Mã phòng học do Host cung cấp")
+ClassroomCreateRequest = SpaceCreateRequest
 
 
-class ClassroomResponse(BaseModel):
+class SpaceJoinRequest(BaseModel):
+    code: str = Field(..., description="Mã không gian do Host cung cấp")
+
+
+ClassroomJoinRequest = SpaceJoinRequest
+
+
+class SpaceResponse(BaseModel):
     id: str
     code: str
     name: str
@@ -52,3 +68,6 @@ class ClassroomResponse(BaseModel):
     total_members: int
     is_host: bool = False
     created_at: float
+
+
+ClassroomResponse = SpaceResponse

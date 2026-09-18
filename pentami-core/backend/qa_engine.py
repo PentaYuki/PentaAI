@@ -1,9 +1,10 @@
 """
-Penta Intelligent QA Engine with Dynamic Slot Resolution & Self-Learning (Knowledge Harvesting)
+Penta Core Intelligent QA Engine with Dynamic Slot Resolution & Self-Learning (Knowledge Harvesting)
+Hệ thống Quản trị Tập trung Toàn diện cho Người Việt (Penta Life OS)
 Triết lý:
 1. Tra cứu Database/Knowledge Base trước (Rule-First / Zero-LLM-cost).
-2. Điền chỗ trống động (Dynamic Slot Filling: [STUDENT_NAME], [AVG], [STATUS_COLOR], [LER_ACTION]).
-3. Tự học và mở rộng tri thức (Knowledge Harvesting): Khi gặp câu hỏi mới, sinh câu trả lời và tự động lưu ngược vào Database.
+2. Điền chỗ trống động (Dynamic Slot Filling: [USER_NAME], [PENTA_ID], [AVG], [STATUS_COLOR], [ACTION_PLAN]).
+3. Tự học và mở rộng tri thức (Knowledge Harvesting): Tự động nạp dữ liệu câu hỏi mới vào Database cho toàn hệ sinh thái.
 """
 
 import re
@@ -12,7 +13,7 @@ from typing import Dict, Any, Optional, List, Tuple, Set
 from shared.models.user import UserLifetimeLedger
 
 STOPWORDS: Set[str] = {
-    "tại", "sao", "cho", "em", "hỏi", "về", "như", "thế", "nào", "là", "gì",
+    "tại", "sao", "cho", "em", "tôi", "mình", "hỏi", "về", "như", "thế", "nào", "là", "gì",
     "của", "lại", "được", "có", "và", "trong", "đã", "sẽ", "những", "các",
     "bởi", "vì", "với", "hãy", "giải", "thích", "xin"
 }
@@ -38,70 +39,74 @@ class SlotResolver:
     def resolve(template: str, user: Optional[UserLifetimeLedger] = None, context: Optional[Dict[str, Any]] = None) -> str:
         context = context or {}
         
-        # 1. Thông tin cơ bản
-        student_name = user.full_name if user else "Bạn học"
+        # 1. Thông tin người dùng / công dân số
+        user_name = user.full_name if user else "Bạn"
         penta_id = user.penta_id if user else "PID-GUEST"
         
-        # 2. Chỉ số LER
+        # 2. Chỉ số năng lực & phong cách
         ler = user.ler_profile if user else None
-        ler_style_raw = ler.primary_style if ler else "visual"
-        ler_speed = f"{ler.learning_speed}x" if ler else "1.0x"
+        style_raw = ler.primary_style if ler else "visual"
+        speed = f"{ler.efficiency_rate}x" if ler else "1.0x"
         at_risk = ler.at_risk_score if ler else 0.0
         
         style_mapping = {
-            "visual": "Thị giác (Hình ảnh / Sơ đồ)",
-            "auditory": "Thính giác (Âm thanh / Podcast)",
-            "kinesthetic": "Vận động & Thực hành",
-            "reading_writing": "Đọc & Ghi chép"
+            "visual": "Trực quan (Sơ đồ / Báo cáo hình ảnh)",
+            "auditory": "Âm thanh (Hội thoại / Voice)",
+            "kinesthetic": "Thực hành & Trải nghiệm thực tế",
+            "reading_writing": "Văn bản & Tài liệu số",
+            "logical": "Logic & Tư duy hệ thống"
         }
-        ler_style_vi = style_mapping.get(ler_style_raw, "Đa giác quan")
+        style_vi = style_mapping.get(style_raw, "Đa phương thức")
         
-        # 3. Tính toán [AVG] (Điểm hoặc chỉ số trung bình)
+        # 3. Tính toán [AVG] (Chỉ số trung bình: hiệu suất, điểm đánh giá, số liệu quản trị)
         if "scores" in context and isinstance(context["scores"], list) and len(context["scores"]) > 0:
             avg_val = round(sum(context["scores"]) / len(context["scores"]), 1)
         elif "avg" in context:
             avg_val = context["avg"]
         else:
-            base_score = 8.5
+            base_val = 8.5
             if user:
-                base_score = round(min(10.0, 7.0 + (user.total_questions_asked * 0.1)), 1)
-            avg_val = base_score
+                base_val = round(min(10.0, 7.0 + (user.total_questions_asked * 0.1)), 1)
+            avg_val = base_val
 
-        # 4. Tính toán [STATUS_COLOR] / [ALERT_BADGE] (Điều kiện logic)
+        # 4. Tính toán [STATUS_COLOR] / [ALERT_BADGE] (Điều kiện logic quản trị)
         if at_risk >= 0.7:
-            status_color = "Đỏ (Nguy cơ tụt hậu - Cần bổ trợ ngay)"
-            status_badge = "🔴 NGUY CƠ CAO"
+            status_color = "Đỏ (Cảnh báo: Chỉ số rủi ro cao - Cần can thiệp ngay)"
+            status_badge = "🔴 CẢNH BÁO RỦI RO"
         elif at_risk >= 0.4:
-            status_color = "Vàng (Cần duy trì nhịp độ làm bài)"
-            status_badge = "🟡 CẦN CỐ GẮNG"
+            status_color = "Vàng (Mức trung bình - Cần theo dõi tiến độ)"
+            status_badge = "🟡 CẦN THEO DÕI"
         else:
-            status_color = "Xanh lá (Tiếp thu tốt, ổn định)"
-            status_badge = "🟢 XUẤT SẮC"
+            status_color = "Xanh lá (Hiệu quả tốt, ổn định)"
+            status_badge = "🟢 HOẠT ĐỘNG TỐT"
 
-        # 5. Đề xuất hành động theo phong cách học [LER_ACTION]
+        # 5. Đề xuất hành động theo năng lực [ACTION_PLAN]
         if at_risk >= 0.7:
-            if ler_style_raw == "visual":
-                action = "Xem lại sơ đồ tư duy (Mindmap) tóm tắt các sự kiện trọng tâm"
-            elif ler_style_raw == "auditory":
-                action = "Nghe bài giảng audio tóm tắt 5 phút trước khi làm trắc nghiệm"
+            if style_raw == "visual":
+                action = "Xem lại sơ đồ quy trình tổng quan để rà soát các điểm nghẽn"
+            elif style_raw == "auditory":
+                action = "Thảo luận nhanh qua âm thanh hoặc họp nhóm 5 phút"
             else:
-                action = "Luyện tập 3 câu hỏi thực hành nhanh để củng cố kiến thức"
+                action = "Thực hiện ngay danh sách 3 đầu việc ưu tiên cao nhất trong ngày"
         else:
-            if ler_style_raw == "visual":
-                action = "Tự vẽ sơ đồ dòng thời gian (Timeline) cho bài học tiếp theo"
+            if style_raw == "visual":
+                action = "Lập kế hoạch và vẽ sơ đồ phát triển cho giai đoạn tiếp theo"
             else:
-                action = "Thử thách giải các câu hỏi nâng cao hoặc thảo luận trong phòng học"
+                action = "Mở rộng kết nối và chia sẻ trong các không gian làm việc chung"
 
-        # 6. Thay thế biến vào Template
+        # 6. Thay thế biến vào Template (Hỗ trợ cả tên mới và tên alias)
         replacements = {
-            r"\[STUDENT_NAME\]": student_name,
+            r"\[USER_NAME\]": user_name,
+            r"\[STUDENT_NAME\]": user_name, # Alias tương thích ngược
             r"\[PENTA_ID\]": penta_id,
             r"\[AVG\]": str(avg_val),
             r"\[STATUS_COLOR\]": status_color,
             r"\[ALERT_BADGE\]": status_badge,
-            r"\[LER_STYLE\]": ler_style_vi,
-            r"\[LER_SPEED\]": ler_speed,
-            r"\[LER_ACTION\]": action,
+            r"\[LER_STYLE\]": style_vi,
+            r"\[STYLE\]": style_vi,
+            r"\[LER_SPEED\]": speed,
+            r"\[ACTION_PLAN\]": action,
+            r"\[LER_ACTION\]": action,      # Alias tương thích ngược
         }
 
         result = template
@@ -114,27 +119,27 @@ class SlotResolver:
 SEED_KNOWLEDGE: Dict[str, Dict[str, Any]] = {
     "dien_bien_phu": {
         "keywords": ["điện biên phủ", "dien bien phu", "7/5/1954", "7 tháng 5", "tướng de castries"],
-        "subject": "Lịch sử",
-        "template": "Chiến dịch Điện Biên Phủ toàn thắng vào ngày 07/05/1954 sau 56 ngày đêm 'khoét núi, ngủ hầm, mưa dầm, cơm vắt'. Em [STUDENT_NAME] có thể kết hợp phương pháp [LER_STYLE] để ghi nhớ các mốc giai đoạn tấn công Đồi A1, C1, Him Lam."
+        "subject": "Lịch sử Việt Nam",
+        "template": "Chiến dịch Điện Biên Phủ toàn thắng vào ngày 07/05/1954 sau 56 ngày đêm 'khoét núi, ngủ hầm, mưa dầm, cơm vắt'. [USER_NAME] có thể ứng dụng phương pháp [STYLE] để lưu trữ dòng sự kiện lịch sử này vào cuốn sổ cuộc đời cá nhân."
     },
     "phuong_cham_dien_bien": {
         "keywords": ["đánh chắc tiến chắc", "đánh nhanh thắng nhanh", "đổi phương châm", "võ nguyên giáp"],
-        "subject": "Lịch sử",
-        "template": "Đại tướng Võ Nguyên Giáp quyết định chuyển từ 'Đánh nhanh, thắng nhanh' sang 'Đánh chắc, tiến chắc' vì phát hiện tập đoàn cứ điểm Điện Biên Phủ đã được tăng cường công sự kiên cố và pháo binh hạng nặng. Đây là quyết định lịch sử thể hiện tư duy quân sự sắc bén, giúp bảo toàn lực lượng và đảm bảo chắc thắng 100%."
+        "subject": "Lịch sử & Chiến lược",
+        "template": "Đại tướng Võ Nguyên Giáp quyết định chuyển từ 'Đánh nhanh, thắng nhanh' sang 'Đánh chắc, tiến chắc' vì phát hiện tập đoàn cứ điểm Điện Biên Phủ đã được tăng cường công sự kiên cố và pháo binh hạng nặng. Đây là bài học kinh điển về quản trị chiến lược và tư duy thực chứng cho người Việt."
     },
     "bach_dang": {
         "keywords": ["bạch đằng", "bach dang", "ngô quyền", "trần hưng đạo", "cọc gỗ"],
-        "subject": "Lịch sử",
-        "template": "Các trận thủy chiến trên sông Bạch Đằng (năm 938 của Ngô Quyền, năm 981 của Lê Hoàn, và năm 1288 của Trần Hưng Đạo) đều tận dụng tài tình hiện tượng thủy triều và trận địa cọc gỗ ngầm để tiêu diệt chiến thuyền giặc ngoại xâm."
+        "subject": "Lịch sử Việt Nam",
+        "template": "Các trận thủy chiến trên sông Bạch Đằng (năm 938 của Ngô Quyền, năm 981 của Lê Hoàn, và năm 1288 của Trần Hưng Đạo) đều tận dụng tài tình hiện tượng thủy triều và trận địa cọc gỗ ngầm để bảo vệ độc lập dân tộc."
     },
-    "canh_bao_hoc_tap": {
-        "keywords": ["cảnh báo học tập", "tình hình học", "nguy cơ bỏ học", "kết quả học tập", "điểm trung bình avg"],
-        "subject": "Phân tích LER",
-        "template": "Chào [STUDENT_NAME] ([PENTA_ID])! Điểm trung bình hiện tại của em là [AVG] điểm. Trạng thái học tập: [STATUS_COLOR]. Theo phong cách học [LER_STYLE], em nên: [LER_ACTION]."
+    "canh_bao_quan_tri": {
+        "keywords": ["cảnh báo quản trị", "tình hình hoạt động", "nguy cơ rủi ro", "kết quả đánh giá", "chỉ số trung bình avg"],
+        "subject": "Quản trị Cá nhân",
+        "template": "Chào [USER_NAME] ([PENTA_ID])! Chỉ số đánh giá trung bình hiện tại của bạn là [AVG]. Trạng thái quản trị: [STATUS_COLOR]. Đề xuất hành động: [ACTION_PLAN]."
     },
     "pythagore": {
         "keywords": ["pythagore", "pitago", "tam giác vuông", "cạnh huyền"],
-        "subject": "Toán học",
+        "subject": "Khoa học & Toán học",
         "template": "Định lý Pythagore trong tam giác vuông: Bình phương cạnh huyền bằng tổng bình phương hai cạnh góc vuông ($a^2 + b^2 = c^2$)."
     }
 }
@@ -188,7 +193,7 @@ class KnowledgeBase:
 
     def harvest_knowledge(self, query: str, answer_template: str, subject: str = "Tự tổng hợp") -> str:
         """
-        Tự động nạp thêm tri thức mới vào Knowledge Base (Vòng lặp tự học)
+        Tự động nạp thêm tri thức mới vào Knowledge Base (Vòng lặp tự học toàn hệ thống)
         """
         key = f"harvested_{int(time.time() * 1000)}_{len(self._store)}"
         clean_q = clean_text(query)
@@ -218,7 +223,7 @@ class KnowledgeBase:
 
 
 class QAEngine:
-    """Engine xử lý Q&A thông minh, kết hợp tra cứu tri thức, điền slot và tự học"""
+    """Engine xử lý Q&A thông minh cho Hệ thống Quản trị Tập trung Penta Core"""
 
     def __init__(self):
         self.kb = KnowledgeBase()
@@ -260,24 +265,24 @@ class QAEngine:
         harvested_key = self.kb.harvest_knowledge(
             query=query,
             answer_template=fallback_answer,
-            subject="Tổng hợp Kiến thức"
+            subject="Tổng hợp Quản trị"
         )
         
         return {
             "response": resolved_text,
             "source": "ai_fallback_and_harvested",
-            "subject": "Tổng hợp Kiến thức",
+            "subject": "Tổng hợp Quản trị",
             "cached_key": harvested_key,
             "slots_applied": True,
         }
 
     def _generate_fallback_explanation(self, query: str, user: Optional[UserLifetimeLedger]) -> str:
         """Sinh nội dung giải thích logic khi chưa có câu trả lời mẫu sẵn"""
-        student_greeting = "Chào [STUDENT_NAME]! " if user else ""
+        user_greeting = "Chào [USER_NAME]! " if user else ""
         return (
-            f"{student_greeting}Hệ thống đã phân tích chuyên sâu câu hỏi: '{query}'. "
-            f"Về chủ đề này, điểm mấu chốt nằm ở bối cảnh thực tiễn và nguyên lý cốt lõi. "
-            f"Theo phong cách học [LER_STYLE], em nên: [LER_ACTION] để nắm vững kiến thức này."
+            f"{user_greeting}Hệ thống Penta Core đã phân tích chuyên sâu yêu cầu: '{query}'. "
+            f"Về nội dung này, cốt lõi nằm ở phương pháp tiếp cận thực tế và quy trình chuẩn hóa. "
+            f"Theo năng lực [STYLE], bạn nên: [ACTION_PLAN] để triển khai hiệu quả."
         )
 
 
