@@ -88,6 +88,7 @@ class ChatRequest(BaseModel):
 
 class ChatResponse(BaseModel):
     response: str
+    target_app: str = "pentami_core"
     source: str
     subject: Optional[str] = None
     user_context: Optional[Dict[str, Any]] = None
@@ -490,6 +491,7 @@ async def chat(
         
     return ChatResponse(
         response=qa_result["response"],
+        target_app=qa_result.get("target_app", "pentami_core"),
         source=qa_result["source"],
         subject=qa_result.get("subject"),
         user_context=user_ctx

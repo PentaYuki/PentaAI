@@ -249,3 +249,43 @@ def test_qa_chat_historical_and_self_learning_loop():
     assert chat_repeat.status_code == 200
     repeat_res = chat_repeat.json()
     assert repeat_res["source"] == "knowledge_base"
+
+
+# ==========================================
+# 5. Integration Tests for Multi-Domain Intent Routing
+# ==========================================
+def test_multi_domain_intent_routing():
+    # 1. Câu hỏi Giáo dục / Học tập -> pentaschool
+    res_school = client.post("/api/chat", json={"query": "Hướng dẫn giải phương trình đạo hàm lớp 12"})
+    assert res_school.status_code == 200
+    assert res_school.json()["target_app"] == "pentaschool"
+
+    # 2. Câu hỏi Nghề nghiệp / Tuyển dụng -> pentajob
+    res_job = client.post("/api/chat", json={"query": "Cách viết CV xin việc ngành IT và deal lương phỏng vấn"})
+    assert res_job.status_code == 200
+    assert res_job.json()["target_app"] == "pentajob"
+
+    # 3. Câu hỏi Thương mại / Mua sắm -> pentamarket
+    res_market = client.post("/api/chat", json={"query": "Tra cứu giá giáo trình và voucher giảm giá trên sàn"})
+    assert res_market.status_code == 200
+    assert res_market.json()["target_app"] == "pentamarket"
+
+    # 4. Câu hỏi Ghi chép / Sổ tay -> pentanote
+    res_note = client.post("/api/chat", json={"query": "Cách ghi chép Cornell và tạo flashcard mindmap hiệu quả"})
+    assert res_note.status_code == 200
+    assert res_note.json()["target_app"] == "pentanote"
+
+    # 5. Câu hỏi File / Desktop Assistant -> pentakuru
+    res_kuru = client.post("/api/chat", json={"query": "Tìm file tài liệu word excel báo cáo quý trên máy tính"})
+    assert res_kuru.status_code == 200
+    assert res_kuru.json()["target_app"] == "pentakuru"
+
+    # 6. Câu hỏi Web Automation -> mcp_playwright
+    res_playwright = client.post("/api/chat", json={"query": "Tự động hóa click mở trang web và crawl dữ liệu"})
+    assert res_playwright.status_code == 200
+    assert res_playwright.json()["target_app"] == "mcp_playwright"
+
+    # 7. Câu hỏi Quản trị trung tâm / Xã hội -> pentami_core
+    res_core = client.post("/api/chat", json={"query": "Hoạch định mục tiêu cuộc đời và quản trị thời gian số"})
+    assert res_core.status_code == 200
+    assert res_core.json()["target_app"] == "pentami_core"

@@ -1,10 +1,14 @@
 """
-Penta Core Intelligent QA Engine with Dynamic Slot Resolution & Self-Learning (Knowledge Harvesting)
+Penta Core Intelligent QA & Multi-Domain Intent Routing Engine
 Hệ thống Quản trị Tập trung Toàn diện cho Người Việt (Penta Life OS)
-Triết lý:
-1. Tra cứu Database/Knowledge Base trước (Rule-First / Zero-LLM-cost).
-2. Điền chỗ trống động (Dynamic Slot Filling: [USER_NAME], [PENTA_ID], [AVG], [STATUS_COLOR], [ACTION_PLAN]).
-3. Tự học và mở rộng tri thức (Knowledge Harvesting): Tự động nạp dữ liệu câu hỏi mới vào Database cho toàn hệ sinh thái.
+Phân hệ Trường học (Pentaschool) chỉ là một phần nhỏ; Core định tuyến chính xác đến:
+- Pentaschool (Học tập & Giáo dục K12/ĐH)
+- PentaJob (Nghề nghiệp, Tuyển dụng, CV, Sự nghiệp)
+- PentaMarket (Thương mại, Mua bán học liệu, Giao dịch số)
+- Pentanote (Ghi chép số, Sổ tay, Flashcard, Ý tưởng)
+- PentaKuRu (Quản trị tài liệu PC, Desktop Assistant)
+- MCP Playwright (Tự động hóa Web)
+- Pentami Core (Quản trị cuộc đời tập trung, Bản sắc xã hội & Bản sắc Việt Nam)
 """
 
 import re
@@ -15,7 +19,7 @@ from shared.models.user import UserLifetimeLedger
 STOPWORDS: Set[str] = {
     "tại", "sao", "cho", "em", "tôi", "mình", "hỏi", "về", "như", "thế", "nào", "là", "gì",
     "của", "lại", "được", "có", "và", "trong", "đã", "sẽ", "những", "các",
-    "bởi", "vì", "với", "hãy", "giải", "thích", "xin"
+    "bởi", "vì", "với", "hãy", "giải", "thích", "xin", "cần", "muốn"
 }
 
 
@@ -30,6 +34,61 @@ def extract_content_tokens(text: str) -> List[str]:
     """Trích xuất các từ mang ý nghĩa nội dung (bỏ stopwords)"""
     tokens = clean_text(text).split()
     return [t for t in tokens if t not in STOPWORDS and len(t) > 1]
+
+
+class IntentRouter:
+    """Bộ định tuyến ý định thông minh tới các phân hệ chuyên biệt trong Hệ sinh thái Penta"""
+
+    @staticmethod
+    def route(query: str) -> str:
+        q = clean_text(query)
+        
+        # 1. Định tuyến Giáo dục / Học tập -> Pentaschool
+        if any(k in q for k in [
+            "học", "bài tập", "toán", "vật lý", "hóa học", "lịch sử", "văn học",
+            "sinh học", "tiếng anh", "lms", "k12", "thi cử", "bài giảng",
+            "điện biên phủ", "bạch đằng", "pythagore", "đạo hàm", "phương trình"
+        ]):
+            return "pentaschool"
+            
+        # 2. Định tuyến Nghề nghiệp / Tuyển dụng -> PentaJob
+        elif any(k in q for k in [
+            "cv", "việc làm", "tuyển dụng", "phỏng vấn", "lương", "job", "career",
+            "nghề nghiệp", "sự nghiệp", "ứng tuyển", "nhân sự", "deal lương",
+            "kinh nghiệm làm việc", "hồ sơ năng lực"
+        ]):
+            return "pentajob"
+            
+        # 3. Định tuyến Thương mại / Mua sắm / Giá cả -> PentaMarket
+        elif any(k in q for k in [
+            "giá", "mua", "bán", "thanh toán", "tiền", "voucher", "market", "chợ",
+            "học phí", "hóa đơn", "giao dịch", "đơn hàng", "giảm giá", "sàn"
+        ]):
+            return "pentamarket"
+            
+        # 4. Định tuyến Ghi chép / Sổ tay / Ý tưởng -> Pentanote
+        elif any(k in q for k in [
+            "note", "ghi chú", "sổ tay", "flashcard", "mindmap", "sơ đồ tư duy",
+            "ý tưởng", "sổ cá nhân", "cornell", "nhật ký"
+        ]):
+            return "pentanote"
+            
+        # 5. Định tuyến Quản lý tệp tin PC / Desktop -> PentaKuRu
+        elif any(k in q for k in [
+            "file", "tài liệu", "pdf", "word", "excel", "máy tính", "kuru",
+            "tìm file", "ổ cứng", "desktop", "thư mục", "docx"
+        ]):
+            return "pentakuru"
+            
+        # 6. Định tuyến Tự động hóa Web -> MCP Playwright
+        elif any(k in q for k in [
+            "web", "playwright", "tự động hóa", "click", "mở trang", "cào dữ liệu",
+            "duyệt web", "crawl", "browser"
+        ]):
+            return "mcp_playwright"
+            
+        # 7. Mặc định -> Pentami Core (Quản trị cuộc đời trung tâm)
+        return "pentami_core"
 
 
 class SlotResolver:
@@ -58,7 +117,7 @@ class SlotResolver:
         }
         style_vi = style_mapping.get(style_raw, "Đa phương thức")
         
-        # 3. Tính toán [AVG] (Chỉ số trung bình: hiệu suất, điểm đánh giá, số liệu quản trị)
+        # 3. Tính toán [AVG] (Chỉ số trung bình)
         if "scores" in context and isinstance(context["scores"], list) and len(context["scores"]) > 0:
             avg_val = round(sum(context["scores"]) / len(context["scores"]), 1)
         elif "avg" in context:
@@ -94,10 +153,10 @@ class SlotResolver:
             else:
                 action = "Mở rộng kết nối và chia sẻ trong các không gian làm việc chung"
 
-        # 6. Thay thế biến vào Template (Hỗ trợ cả tên mới và tên alias)
+        # 6. Thay thế biến vào Template (Hỗ trợ cả tên mới và alias)
         replacements = {
             r"\[USER_NAME\]": user_name,
-            r"\[STUDENT_NAME\]": user_name, # Alias tương thích ngược
+            r"\[STUDENT_NAME\]": user_name,
             r"\[PENTA_ID\]": penta_id,
             r"\[AVG\]": str(avg_val),
             r"\[STATUS_COLOR\]": status_color,
@@ -106,7 +165,7 @@ class SlotResolver:
             r"\[STYLE\]": style_vi,
             r"\[LER_SPEED\]": speed,
             r"\[ACTION_PLAN\]": action,
-            r"\[LER_ACTION\]": action,      # Alias tương thích ngược
+            r"\[LER_ACTION\]": action,
         }
 
         result = template
@@ -116,31 +175,62 @@ class SlotResolver:
         return result
 
 
+# Kho tri thức định hướng đa phân hệ
 SEED_KNOWLEDGE: Dict[str, Dict[str, Any]] = {
+    # Phân hệ Pentaschool (Giáo dục / K12 / Đại học)
     "dien_bien_phu": {
         "keywords": ["điện biên phủ", "dien bien phu", "7/5/1954", "7 tháng 5", "tướng de castries"],
+        "target_app": "pentaschool",
         "subject": "Lịch sử Việt Nam",
-        "template": "Chiến dịch Điện Biên Phủ toàn thắng vào ngày 07/05/1954 sau 56 ngày đêm 'khoét núi, ngủ hầm, mưa dầm, cơm vắt'. [USER_NAME] có thể ứng dụng phương pháp [STYLE] để lưu trữ dòng sự kiện lịch sử này vào cuốn sổ cuộc đời cá nhân."
+        "template": "Chiến dịch Điện Biên Phủ toàn thắng vào ngày 07/05/1954 sau 56 ngày đêm 'khoét núi, ngủ hầm, mưa dầm, cơm vắt'. [USER_NAME] có thể ứng dụng phương pháp [STYLE] để ghi nhớ các mốc sự kiện trong phân hệ Pentaschool."
     },
     "phuong_cham_dien_bien": {
         "keywords": ["đánh chắc tiến chắc", "đánh nhanh thắng nhanh", "đổi phương châm", "võ nguyên giáp"],
+        "target_app": "pentaschool",
         "subject": "Lịch sử & Chiến lược",
         "template": "Đại tướng Võ Nguyên Giáp quyết định chuyển từ 'Đánh nhanh, thắng nhanh' sang 'Đánh chắc, tiến chắc' vì phát hiện tập đoàn cứ điểm Điện Biên Phủ đã được tăng cường công sự kiên cố và pháo binh hạng nặng. Đây là bài học kinh điển về quản trị chiến lược và tư duy thực chứng cho người Việt."
     },
     "bach_dang": {
         "keywords": ["bạch đằng", "bach dang", "ngô quyền", "trần hưng đạo", "cọc gỗ"],
+        "target_app": "pentaschool",
         "subject": "Lịch sử Việt Nam",
         "template": "Các trận thủy chiến trên sông Bạch Đằng (năm 938 của Ngô Quyền, năm 981 của Lê Hoàn, và năm 1288 của Trần Hưng Đạo) đều tận dụng tài tình hiện tượng thủy triều và trận địa cọc gỗ ngầm để bảo vệ độc lập dân tộc."
     },
-    "canh_bao_quan_tri": {
-        "keywords": ["cảnh báo quản trị", "tình hình hoạt động", "nguy cơ rủi ro", "kết quả đánh giá", "chỉ số trung bình avg"],
-        "subject": "Quản trị Cá nhân",
-        "template": "Chào [USER_NAME] ([PENTA_ID])! Chỉ số đánh giá trung bình hiện tại của bạn là [AVG]. Trạng thái quản trị: [STATUS_COLOR]. Đề xuất hành động: [ACTION_PLAN]."
-    },
     "pythagore": {
         "keywords": ["pythagore", "pitago", "tam giác vuông", "cạnh huyền"],
-        "subject": "Khoa học & Toán học",
+        "target_app": "pentaschool",
+        "subject": "Toán học",
         "template": "Định lý Pythagore trong tam giác vuông: Bình phương cạnh huyền bằng tổng bình phương hai cạnh góc vuông ($a^2 + b^2 = c^2$)."
+    },
+    
+    # Phân hệ PentaJob (Nghề nghiệp & Việc làm)
+    "cv_template_job": {
+        "keywords": ["viết cv", "mẫu cv", "chuẩn bị cv", "hồ sơ xin việc", "tuyển dụng"],
+        "target_app": "pentajob",
+        "subject": "Tuyển dụng & Việc làm",
+        "template": "Chào [USER_NAME] ([PENTA_ID])! Để xây dựng CV nổi bật trên PentaJob, bạn nên làm nổi bật các cột mốc dự án thực tế và kỹ năng cốt lõi. Đề xuất: [ACTION_PLAN]."
+    },
+    "interview_tips": {
+        "keywords": ["phỏng vấn xin việc", "kỹ năng phỏng vấn", "deal lương", "phỏng vấn lương"],
+        "target_app": "pentajob",
+        "subject": "Kỹ năng Phỏng vấn",
+        "template": "Khi phỏng vấn xin việc, hãy áp dụng mô hình STAR (Tình huống, Nhiệm vụ, Hành động, Kết quả) để thuyết phục nhà tuyển dụng trên phân hệ PentaJob."
+    },
+
+    # Phân hệ Pentanote (Ghi chép & Sổ tay)
+    "cornell_note": {
+        "keywords": ["ghi chép cornell", "phương pháp ghi chép", "sổ tay thông minh", "làm flashcard"],
+        "target_app": "pentanote",
+        "subject": "Phương pháp Ghi chép",
+        "template": "Phương pháp ghi chép Cornell chia trang giấy làm 3 phần: Cột gợi ý (từ khóa chính), Cột ghi chép (chi tiết nội dung) và Phần tóm tắt cuối trang. Pentanote đã tích hợp sẵn mẫu này."
+    },
+
+    # Phân hệ Pentami Core (Quản trị cá nhân tập trung)
+    "canh_bao_quan_tri": {
+        "keywords": ["cảnh báo quản trị", "tình hình hoạt động", "nguy cơ rủi ro", "kết quả đánh giá", "chỉ số trung bình avg"],
+        "target_app": "pentami_core",
+        "subject": "Quản trị Cá nhân",
+        "template": "Chào [USER_NAME] ([PENTA_ID])! Chỉ số đánh giá trung bình hiện tại của bạn là [AVG]. Trạng thái quản trị: [STATUS_COLOR]. Đề xuất hành động: [ACTION_PLAN]."
     }
 }
 
@@ -160,11 +250,10 @@ class KnowledgeBase:
             entry["tokens"] = set(extract_content_tokens(" ".join(v["keywords"])))
             self._store[k] = entry
 
-    def lookup(self, query: str) -> Optional[Tuple[str, str, str]]:
+    def lookup(self, query: str) -> Optional[Tuple[str, str, str, str]]:
         """
         Tra cứu câu trả lời chuẩn trong Knowledge Base.
-        1. Khớp cụm từ chính xác (Exact phrase match).
-        2. Khớp độ phủ từ khóa nội dung (Token overlap).
+        Trả về: (key, template, subject, target_app) hoặc None nếu chưa có.
         """
         query_norm = clean_text(query)
         query_tokens = set(extract_content_tokens(query))
@@ -174,7 +263,7 @@ class KnowledgeBase:
             for kw in data["keywords"]:
                 kw_norm = clean_text(kw)
                 if kw_norm and kw_norm in query_norm:
-                    return key, data["template"], data["subject"]
+                    return key, data["template"], data["subject"], data.get("target_app", "pentami_core")
                     
         # 2. Khớp độ phủ từ khóa (Semantic token overlap)
         best_match = None
@@ -187,11 +276,11 @@ class KnowledgeBase:
             common = query_tokens.intersection(entry_tokens)
             if len(common) >= 2 and len(common) > highest_overlap:
                 highest_overlap = len(common)
-                best_match = (key, data["template"], data["subject"])
+                best_match = (key, data["template"], data["subject"], data.get("target_app", "pentami_core"))
                 
         return best_match
 
-    def harvest_knowledge(self, query: str, answer_template: str, subject: str = "Tự tổng hợp") -> str:
+    def harvest_knowledge(self, query: str, answer_template: str, subject: str = "Tự tổng hợp", target_app: str = "pentami_core") -> str:
         """
         Tự động nạp thêm tri thức mới vào Knowledge Base (Vòng lặp tự học toàn hệ thống)
         """
@@ -211,6 +300,7 @@ class KnowledgeBase:
         self._store[key] = {
             "keywords": keywords,
             "tokens": set(tokens),
+            "target_app": target_app,
             "subject": subject,
             "template": answer_template,
             "harvested_at": time.time()
@@ -223,11 +313,12 @@ class KnowledgeBase:
 
 
 class QAEngine:
-    """Engine xử lý Q&A thông minh cho Hệ thống Quản trị Tập trung Penta Core"""
+    """Engine xử lý Q&A và Định tuyến Phân Hệ Tập Trung Penta Core"""
 
     def __init__(self):
         self.kb = KnowledgeBase()
         self.resolver = SlotResolver()
+        self.router = IntentRouter()
 
     def reset(self):
         self.kb.reset()
@@ -239,51 +330,75 @@ class QAEngine:
         context: Optional[Dict[str, Any]] = None
     ) -> Dict[str, Any]:
         """
-        Xử lý truy vấn hỏi-đáp:
-        1. Tra cứu Knowledge Base có sẵn.
-        2. Nếu có: Điền slot và trả về với nguồn 'knowledge_base'.
-        3. Nếu chưa có: Kích hoạt Fallback AI Generator -> Tự động lưu vào KB (Harvesting) -> Trả về với nguồn 'ai_fallback_and_harvested'.
+        Xử lý truy vấn hỏi-đáp và định tuyến phân hệ chính xác:
+        1. Nhận diện phân hệ đích (Pentaschool, PentaJob, PentaMarket, Pentanote, PentaKuRu, Core).
+        2. Tra cứu Knowledge Base có sẵn.
+        3. Nếu có: Điền slot và trả về với nguồn 'knowledge_base'.
+        4. Nếu chưa có: Kích hoạt Fallback AI Generator theo ngữ cảnh phân hệ -> Tự động lưu vào KB -> Trả về với nguồn 'ai_fallback_and_harvested'.
         """
+        routed_app = self.router.route(query)
         lookup_result = self.kb.lookup(query)
         
         if lookup_result:
-            key, template, subject = lookup_result
+            key, template, subject, target_app = lookup_result
             resolved_text = self.resolver.resolve(template, user=user, context=context)
             return {
                 "response": resolved_text,
+                "target_app": target_app or routed_app,
                 "source": "knowledge_base",
                 "subject": subject,
                 "cached_key": key,
                 "slots_applied": True,
             }
         
-        # Fallback Generator: Sinh câu trả lời giải thích khi chưa có trong KB
-        fallback_answer = self._generate_fallback_explanation(query, user)
+        # Fallback Generator: Sinh câu trả lời định hướng theo phân hệ
+        fallback_answer, subject = self._generate_fallback_explanation(query, user, routed_app)
         resolved_text = self.resolver.resolve(fallback_answer, user=user, context=context)
         
         # Tự động nạp vào Knowledge Base cho các lần sau (Continuous Learning)
         harvested_key = self.kb.harvest_knowledge(
             query=query,
             answer_template=fallback_answer,
-            subject="Tổng hợp Quản trị"
+            subject=subject,
+            target_app=routed_app
         )
         
         return {
             "response": resolved_text,
+            "target_app": routed_app,
             "source": "ai_fallback_and_harvested",
-            "subject": "Tổng hợp Quản trị",
+            "subject": subject,
             "cached_key": harvested_key,
             "slots_applied": True,
         }
 
-    def _generate_fallback_explanation(self, query: str, user: Optional[UserLifetimeLedger]) -> str:
-        """Sinh nội dung giải thích logic khi chưa có câu trả lời mẫu sẵn"""
+    def _generate_fallback_explanation(
+        self,
+        query: str,
+        user: Optional[UserLifetimeLedger],
+        target_app: str
+    ) -> Tuple[str, str]:
+        """Sinh nội dung giải thích logic phù hợp với phân hệ được định tuyến"""
         user_greeting = "Chào [USER_NAME]! " if user else ""
-        return (
-            f"{user_greeting}Hệ thống Penta Core đã phân tích chuyên sâu yêu cầu: '{query}'. "
-            f"Về nội dung này, cốt lõi nằm ở phương pháp tiếp cận thực tế và quy trình chuẩn hóa. "
-            f"Theo năng lực [STYLE], bạn nên: [ACTION_PLAN] để triển khai hiệu quả."
+        
+        app_contexts = {
+            "pentaschool": ("Học tập & Giáo dục K12/ĐH", "về nội dung học tập và bài giảng"),
+            "pentajob": ("Nghề nghiệp & Việc làm", "về cơ hội việc làm, định hướng sự nghiệp và thị trường lao động"),
+            "pentamarket": ("Thương mại & Học liệu", "về giao dịch, định giá tài nguyên và học liệu số"),
+            "pentanote": ("Ghi chép & Tri thức cá nhân", "về hệ thống ghi chú và quản trị ý tưởng"),
+            "pentakuru": ("Quản trị Dữ liệu PC", "về tài liệu, tệp tin và tìm kiếm trên máy tính"),
+            "mcp_playwright": ("Tự động hóa Trình duyệt", "về quy trình tự động hóa và thao tác web"),
+            "pentami_core": ("Quản trị Cuộc đời Toàn diện", "về hoạch định mục tiêu cá nhân và quản trị tập trung"),
+        }
+        
+        subject, desc = app_contexts.get(target_app, ("Quản trị Chung", "về yêu cầu của bạn"))
+        
+        explanation = (
+            f"{user_greeting}Hệ thống Penta Core tiếp nhận yêu cầu {desc}: '{query}'. "
+            f"[Đã định tuyến tới phân hệ chuyên trách: {target_app.upper()}]. "
+            f"Về chủ đề này, theo phong cách [STYLE], bạn nên: [ACTION_PLAN] để tối ưu hiệu quả."
         )
+        return explanation, subject
 
 
 # Singleton instance dùng cho toàn backend
